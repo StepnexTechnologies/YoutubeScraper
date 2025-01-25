@@ -1,0 +1,26 @@
+2025-01-25 07:36:06,536 INFO  ====== WebDriver manager ======
+2025-01-25 07:36:06,677 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:06,838 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:06,985 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:36:07,981 INFO  ====== WebDriver manager ======
+2025-01-25 07:36:08,139 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:08,295 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:08,473 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:36:09,448 INFO  ====== WebDriver manager ======
+2025-01-25 07:36:09,590 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:09,767 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:09,953 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:36:11,064 INFO  ====== WebDriver manager ======
+2025-01-25 07:36:11,209 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:11,385 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:36:11,553 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:36:22,588 INFO  Fetching channel name and verification status.
+2025-01-25 07:36:22,634 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:36:23,300 INFO  Fetching channel links.
+2025-01-25 07:36:23,381 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 07:36:23,430 INFO  Closing channel details popup.
+2025-01-25 07:36:34,177 INFO  Fetching channel name and verification status.
+2025-01-25 07:36:34,251 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:36:35,416 INFO  Fetching channel links.
+2025-01-25 07:36:35,484 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 07:36:35,908 INFO  Closing channel details popup.

@@ -1,0 +1,86 @@
+2025-01-25 04:57:47,353 INFO  ====== WebDriver manager ======
+2025-01-25 04:57:47,618 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:47,811 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:47,953 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 04:57:49,906 INFO  ====== WebDriver manager ======
+2025-01-25 04:57:50,082 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:50,251 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:50,417 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 04:57:51,467 INFO  ====== WebDriver manager ======
+2025-01-25 04:57:51,690 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:51,849 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:52,003 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 04:57:53,078 INFO  ====== WebDriver manager ======
+2025-01-25 04:57:53,692 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:53,882 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 04:57:54,036 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 04:57:56,159 ERROR  Error scraping channel info for channel1: 5 validation errors for ChannelInfo
+name
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+is_verified
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+about
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+links
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+channel_details
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-25 04:57:56,160 ERROR  Error scraping channel info for channel2: 5 validation errors for ChannelInfo
+name
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+is_verified
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+about
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+links
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+channel_details
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-25 04:57:56,161 INFO  Fetching video information for channel: channel1
+2025-01-25 04:57:56,162 INFO  Fetching video information for channel: channel2
+2025-01-25 04:58:04,598 INFO  Received signal 2. Initiating graceful shutdown.
+2025-01-25 04:58:04,625 WARNING  Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2025-01-25 04:58:04,625 ERROR  Error scraping videos for channel2: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-01-25 04:58:04,625 ERROR  Error scraping videos for channel1: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-01-25 04:58:04,628 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10754fe00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,628 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107574350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,629 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107575f10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,684 INFO  Closed channel_info driver successfully
+2025-01-25 04:58:04,692 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1075765d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,702 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1075766f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,707 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576840>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,722 INFO  Closed video_details driver successfully
+2025-01-25 04:58:04,760 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107575190>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,806 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576c00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,817 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10730d580>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,822 INFO  Closed shorts_info driver successfully
+2025-01-25 04:58:04,827 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107575a90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,833 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1075765a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,837 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1075769c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,844 INFO  Closed shorts_details driver successfully
+2025-01-25 04:58:04,851 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576030>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,860 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576000>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,872 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107574350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/a340505b1bfd52d3a00815897d89f570
+2025-01-25 04:58:04,876 INFO  Closed channel_info driver successfully
+2025-01-25 04:58:04,889 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107574f80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,902 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107574890>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,916 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576cc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e916c792c9e21bbd2a207bf42a59498
+2025-01-25 04:58:04,941 INFO  Closed video_details driver successfully
+2025-01-25 04:58:04,942 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107577f50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,944 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107577fe0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,946 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1075773b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/0e5bcd1f87c5dac1fb08de65e6748645
+2025-01-25 04:58:04,947 INFO  Closed shorts_info driver successfully
+2025-01-25 04:58:04,949 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107576d20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,951 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107577740>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,954 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107574470>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/13f6379df535ef55987ce3781000318b
+2025-01-25 04:58:04,957 INFO  Closed shorts_details driver successfully

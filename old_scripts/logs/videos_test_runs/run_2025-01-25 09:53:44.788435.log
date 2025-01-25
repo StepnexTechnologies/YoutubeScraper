@@ -1,0 +1,187 @@
+2025-01-25 09:53:48,225 INFO  Fetching video information for channel: @MrBeast
+2025-01-25 09:53:48,233 INFO  Scrolling through the page to load all videos.
+2025-01-25 09:54:03,443 INFO  Extracting video details.
+2025-01-25 09:54:03,495 INFO  Fetching additional details for video: SM66GDRyIVY
+2025-01-25 09:54:14,071 INFO  Clicking expand button to reveal more video details.
+2025-01-25 09:54:14,201 INFO  Fetching likes count.
+2025-01-25 09:54:14,227 INFO  Fetching uploaded date.
+2025-01-25 09:54:39,170 INFO  Fetching comments count and details.
+2025-01-25 09:54:39,503 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,542 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,585 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,624 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,666 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,705 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,743 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,821 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,859 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:54:39,859 INFO  Fetching video duration.
+2025-01-25 09:54:39,868 ERROR  Unexpected error occurred: invalid literal for int() with base 10: ''
+2025-01-25 09:54:40,004 ERROR  Failed to fetch additional video details for SM66GDRyIVY: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,005 INFO  Saving video info to temp_data/@MrBeast/videos/SM66GDRyIVY.json
+2025-01-25 09:54:40,005 ERROR  Failed to save video information for SM66GDRyIVY: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,005 INFO  Extracting video details.
+2025-01-25 09:54:40,038 INFO  Fetching additional details for video: gs8qfL9PNac
+2025-01-25 09:54:40,039 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033836b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,040 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033836e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,040 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033440e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,041 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033442c0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,041 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033444d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,042 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033446b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,042 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344860>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,043 ERROR  Failed to fetch additional video details for gs8qfL9PNac: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,043 INFO  Saving video info to temp_data/@MrBeast/videos/gs8qfL9PNac.json
+2025-01-25 09:54:40,043 ERROR  Failed to save video information for gs8qfL9PNac: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,043 INFO  Extracting video details.
+2025-01-25 09:54:40,069 INFO  Fetching additional details for video: 0BjlBnfHcHM
+2025-01-25 09:54:40,070 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033442f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,070 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344170>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,070 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344a10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,071 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344c20>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,071 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345a00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,071 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345400>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,072 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345c40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,072 ERROR  Failed to fetch additional video details for 0BjlBnfHcHM: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,072 INFO  Saving video info to temp_data/@MrBeast/videos/0BjlBnfHcHM.json
+2025-01-25 09:54:40,072 ERROR  Failed to save video information for 0BjlBnfHcHM: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,072 INFO  Extracting video details.
+2025-01-25 09:54:40,101 INFO  Fetching additional details for video: Xj0Jtjg3lHQ
+2025-01-25 09:54:40,101 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344d10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,102 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346570>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,102 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033467b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,103 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033469f0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,103 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346c30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,103 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103383470>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,104 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103383410>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,104 ERROR  Failed to fetch additional video details for Xj0Jtjg3lHQ: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,104 INFO  Saving video info to temp_data/@MrBeast/videos/Xj0Jtjg3lHQ.json
+2025-01-25 09:54:40,105 ERROR  Failed to save video information for Xj0Jtjg3lHQ: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,105 INFO  Extracting video details.
+2025-01-25 09:54:40,131 INFO  Fetching additional details for video: bn0Kh9c4Zv4
+2025-01-25 09:54:40,131 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346660>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,132 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346540>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,132 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345730>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,132 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345e50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,133 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345a30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,133 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033458e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,133 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344b60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,134 ERROR  Failed to fetch additional video details for bn0Kh9c4Zv4: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,134 INFO  Saving video info to temp_data/@MrBeast/videos/bn0Kh9c4Zv4.json
+2025-01-25 09:54:40,134 ERROR  Failed to save video information for bn0Kh9c4Zv4: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,134 INFO  Extracting video details.
+2025-01-25 09:54:40,160 INFO  Fetching additional details for video: snX5YyflrGw
+2025-01-25 09:54:40,160 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346900>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,161 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346e40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,161 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347020>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,162 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347200>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,162 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347440>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,163 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033837a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,163 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103383170>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,164 ERROR  Failed to fetch additional video details for snX5YyflrGw: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,164 INFO  Saving video info to temp_data/@MrBeast/videos/snX5YyflrGw.json
+2025-01-25 09:54:40,164 ERROR  Failed to save video information for snX5YyflrGw: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,164 INFO  Extracting video details.
+2025-01-25 09:54:40,189 INFO  Fetching additional details for video: aRcUVhVlSHg
+2025-01-25 09:54:40,189 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033441d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,190 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346d20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,190 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345c10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,190 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344c50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,191 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344ad0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,191 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033458b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,192 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033466c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,192 ERROR  Failed to fetch additional video details for aRcUVhVlSHg: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,192 INFO  Saving video info to temp_data/@MrBeast/videos/aRcUVhVlSHg.json
+2025-01-25 09:54:40,192 ERROR  Failed to save video information for aRcUVhVlSHg: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,192 INFO  Extracting video details.
+2025-01-25 09:54:40,218 INFO  Fetching additional details for video: ndAQfTzlVjc
+2025-01-25 09:54:40,219 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347260>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,220 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346a50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,220 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347650>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,221 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347830>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,221 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347a40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,222 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103383980>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,222 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103383170>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,223 ERROR  Failed to fetch additional video details for ndAQfTzlVjc: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,223 INFO  Saving video info to temp_data/@MrBeast/videos/ndAQfTzlVjc.json
+2025-01-25 09:54:40,223 ERROR  Failed to save video information for ndAQfTzlVjc: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,223 INFO  Extracting video details.
+2025-01-25 09:54:40,249 INFO  Fetching additional details for video: UPrkC1LdlLY
+2025-01-25 09:54:40,250 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346480>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,250 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033469c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,251 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346ff0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,251 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103345d90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,251 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346600>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,252 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033449b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,252 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346f90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,253 ERROR  Failed to fetch additional video details for UPrkC1LdlLY: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,253 INFO  Saving video info to temp_data/@MrBeast/videos/UPrkC1LdlLY.json
+2025-01-25 09:54:40,253 ERROR  Failed to save video information for UPrkC1LdlLY: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 09:54:40,253 INFO  Extracting video details.
+2025-01-25 09:54:40,278 INFO  Fetching additional details for video: 4SNThp0YiU4
+2025-01-25 09:54:40,279 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347800>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,280 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103346f00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,280 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347c50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109/url
+2025-01-25 09:54:40,281 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=63305): Max retries exceeded with url: /session/8da32fb915a45d9b6c9cd85be6eb4109/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347e30>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:54:40,282 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103314080>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,282 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103344290>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,283 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103347b60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/8da32fb915a45d9b6c9cd85be6eb4109
+2025-01-25 09:54:40,284 ERROR  Failed to fetch additional video details for 4SNThp0YiU4: 1 validation error for VideoInfo
+duration
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/float_parsing
+2025-01-25 09:54:40,284 INFO  Saving video info to temp_data/@MrBeast/videos/4SNThp0YiU4.json
+2025-01-25 09:54:40,284 ERROR  Failed to save video information for 4SNThp0YiU4: 'dict' object has no attribute 'model_dump_json'

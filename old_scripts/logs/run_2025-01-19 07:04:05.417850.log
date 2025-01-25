@@ -1,0 +1,46 @@
+2025-01-19 07:04:05,418 INFO  ====== WebDriver manager ======
+2025-01-19 07:04:05,636 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:05,821 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:06,004 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:04:07,725 INFO  Starting scrape for channel: @MrBeast (Attempt 1)
+2025-01-19 07:04:07,727 INFO  ====== WebDriver manager ======
+2025-01-19 07:04:07,910 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:08,081 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:08,290 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:04:12,399 INFO  Fetching channel name and verification status.
+2025-01-19 07:04:14,001 INFO  Clicking 'More' button to fetch about info.
+2025-01-19 07:04:24,538 ERROR  Failed to fetch about info.
+2025-01-19 07:04:24,538 INFO  Fetching channel links.
+2025-01-19 07:04:25,182 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-19 07:04:25,224 INFO  Closing channel details popup.
+2025-01-19 07:04:25,263 INFO  Fetching video information for channel: @MrBeast
+2025-01-19 07:04:25,269 INFO  Scrolling through the page to load all videos.
+2025-01-19 07:04:40,502 INFO  Extracting video details.
+2025-01-19 07:04:40,565 INFO  Fetching additional details for video: SM66GDRyIVY
+2025-01-19 07:04:40,565 INFO  ====== WebDriver manager ======
+2025-01-19 07:04:40,756 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:40,959 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:04:41,158 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:04:46,673 INFO  Clicking expand button to reveal more video details.
+2025-01-19 07:04:46,800 INFO  Fetching likes count.
+2025-01-19 07:04:46,829 INFO  Fetching uploaded date.
+2025-01-19 07:05:11,777 INFO  Fetching comments count and details.
+2025-01-19 07:05:12,929 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 07:05:13,661 INFO  Fetching video duration.
+2025-01-19 07:05:13,851 INFO  Saving video info to new_data/@MrBeast/videos/SM66GDRyIVY.json
+2025-01-19 07:05:13,851 ERROR  Failed to save video information for SM66GDRyIVY: Object of type datetime is not JSON serializable
+2025-01-19 07:05:13,851 INFO  Extracting video details.
+2025-01-19 07:05:13,884 INFO  Fetching additional details for video: gs8qfL9PNac
+2025-01-19 07:05:13,884 INFO  ====== WebDriver manager ======
+2025-01-19 07:05:14,034 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:05:14,219 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:05:14,396 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:05:18,543 INFO  Clicking expand button to reveal more video details.
+2025-01-19 07:05:23,878 INFO  Fetching likes count.
+2025-01-19 07:05:23,901 INFO  Fetching uploaded date.
+2025-01-19 07:05:31,869 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a42b40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cda9863ea1e5a8e4799403b9adf0ac10
+2025-01-19 07:05:31,872 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a42660>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cda9863ea1e5a8e4799403b9adf0ac10
+2025-01-19 07:05:31,875 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a42a80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cda9863ea1e5a8e4799403b9adf0ac10
+2025-01-19 07:05:31,880 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a25670>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/accee4f2428f5a10ad6fd0053d286283
+2025-01-19 07:05:31,884 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a24f80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/accee4f2428f5a10ad6fd0053d286283
+2025-01-19 07:05:31,896 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102a258b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/accee4f2428f5a10ad6fd0053d286283

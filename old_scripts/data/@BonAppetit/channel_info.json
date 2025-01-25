@@ -1,0 +1,33 @@
+{
+  "name": "Bon App\u00e9tit",
+  "is_verified": true,
+  "about": "Welcome to Bon App\u00e9tit, where we want everyone to love cooking and eating as much as we do. Recipes you want to make. Cooking advice that works. Restaurant recommendations you trust.",
+  "links": [
+    {
+      "title": "Bon App\u00e9tit",
+      "url": "bonappetit.com"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/bonappetit"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/bonappetitmag"
+    },
+    {
+      "title": "Pinterest",
+      "url": "pinterest.com/bonappetitmag"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/bonappetitmag"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 6000000,
+    "videos_count": 1662,
+    "views_count": 1962744054,
+    "joined_date": "30 Apr 2008"
+  }
+}

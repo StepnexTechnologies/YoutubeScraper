@@ -1,0 +1,213 @@
+2025-01-19 06:50:33,558 INFO  ====== WebDriver manager ======
+2025-01-19 06:50:33,775 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:33,983 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:34,178 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:50:35,467 INFO  Starting scrape for channel: @alwaysalthough (Attempt 1)
+2025-01-19 06:50:35,468 INFO  ====== WebDriver manager ======
+2025-01-19 06:50:35,614 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:35,792 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:35,966 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:50:39,012 INFO  Fetching channel name and verification status.
+2025-01-19 06:50:39,099 INFO  Verification status: Not verified.
+2025-01-19 06:50:39,099 INFO  Clicking 'More' button to fetch about info.
+2025-01-19 06:50:39,767 INFO  Fetching channel links.
+2025-01-19 06:50:39,824 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-19 06:50:39,865 INFO  Closing channel details popup.
+2025-01-19 06:50:39,901 INFO  Fetching video information for channel: @alwaysalthough
+2025-01-19 06:50:39,906 INFO  Scrolling through the page to load all videos.
+2025-01-19 06:50:55,008 INFO  Extracting video details.
+2025-01-19 06:50:55,063 INFO  Fetching additional details for video: Vn70kksyxhs
+2025-01-19 06:50:55,063 INFO  ====== WebDriver manager ======
+2025-01-19 06:50:55,219 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:55,386 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:55,560 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:50:58,109 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:50:58,125 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000100776138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x000000010076e988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x00000001001d47d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000100219cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x000000010020f470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x000000010020eec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001002524f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x000000010020d564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x000000010020e1b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x0000000100740fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001007442dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000100727e60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x0000000100744b9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000100719678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x000000010075f2b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x000000010075f430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x000000010076e5fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 06:50:58,208 INFO  Saving video info to temp_data/@alwaysalthough/videos/Vn70kksyxhs.json
+2025-01-19 06:50:58,208 INFO  Extracting video details.
+2025-01-19 06:50:58,237 INFO  Fetching additional details for video: Fjkyhi1fuUU
+2025-01-19 06:50:58,237 INFO  ====== WebDriver manager ======
+2025-01-19 06:50:58,389 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:58,588 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:50:58,763 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:51:01,196 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:51:01,211 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000104bb2138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000104baa988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x00000001046107d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000104655cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x000000010464b470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x000000010464aec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x000000010468e4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000104649564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x000000010464a1b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x0000000104b7cfc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x0000000104b802dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000104b63e60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x0000000104b80b9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000104b55678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x0000000104b9b2b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x0000000104b9b430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x0000000104baa5fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 06:51:01,298 INFO  Saving video info to temp_data/@alwaysalthough/videos/Fjkyhi1fuUU.json
+2025-01-19 06:51:01,298 INFO  Extracting video details.
+2025-01-19 06:51:01,325 INFO  Fetching additional details for video: 6tNMxBjzfow
+2025-01-19 06:51:01,325 INFO  ====== WebDriver manager ======
+2025-01-19 06:51:01,507 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:01,684 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:01,856 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:51:04,342 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:51:04,356 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000102fce138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000102fc6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000102a2c7d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000102a71cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000102a67470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000102a66ec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x0000000102aaa4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000102a65564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x0000000102a661b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x0000000102f98fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x0000000102f9c2dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000102f7fe60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x0000000102f9cb9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000102f71678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x0000000102fb72b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x0000000102fb7430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x0000000102fc65fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 06:51:04,444 INFO  Saving video info to temp_data/@alwaysalthough/videos/6tNMxBjzfow.json
+2025-01-19 06:51:04,444 INFO  Extracting video details.
+2025-01-19 06:51:04,471 INFO  Fetching additional details for video: i27lhezt-u0
+2025-01-19 06:51:04,471 INFO  ====== WebDriver manager ======
+2025-01-19 06:51:04,621 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:04,840 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:05,039 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:51:07,481 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:51:07,499 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000103576138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x000000010356e988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000102fd47d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000103019cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x000000010300f470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x000000010300eec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001030524f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x000000010300d564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x000000010300e1b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x0000000103540fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001035442dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000103527e60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x0000000103544b9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000103519678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x000000010355f2b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x000000010355f430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x000000010356e5fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 06:51:07,601 INFO  Saving video info to temp_data/@alwaysalthough/videos/i27lhezt-u0.json
+2025-01-19 06:51:07,602 INFO  Extracting video details.
+2025-01-19 06:51:07,646 INFO  Fetching additional details for video: Yv4al1i62-g
+2025-01-19 06:51:07,646 INFO  ====== WebDriver manager ======
+2025-01-19 06:51:07,789 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:08,025 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:08,218 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:51:11,170 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:51:11,269 INFO  Fetching likes count.
+2025-01-19 06:51:11,288 INFO  Fetching uploaded date.
+2025-01-19 06:51:36,116 INFO  Fetching comments count and details.
+2025-01-19 06:51:36,714 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:51:36,778 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:51:36,804 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:51:36,888 INFO  Fetching video duration.
+2025-01-19 06:51:37,026 INFO  Saving video info to temp_data/@alwaysalthough/videos/Yv4al1i62-g.json
+2025-01-19 06:51:37,027 ERROR  Failed to save video information for Yv4al1i62-g: Object of type datetime is not JSON serializable
+2025-01-19 06:51:37,027 INFO  Extracting video details.
+2025-01-19 06:51:37,058 INFO  Fetching additional details for video: 6yin9WBBsxo
+2025-01-19 06:51:37,058 INFO  ====== WebDriver manager ======
+2025-01-19 06:51:37,212 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:37,386 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:51:37,562 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:51:40,850 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:51:40,957 INFO  Fetching likes count.
+2025-01-19 06:51:40,982 INFO  Fetching uploaded date.
+2025-01-19 06:52:05,843 INFO  Fetching comments count and details.
+2025-01-19 06:52:06,221 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:06,246 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:06,271 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:06,330 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:06,357 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:06,428 INFO  Fetching video duration.
+2025-01-19 06:52:06,574 INFO  Saving video info to temp_data/@alwaysalthough/videos/6yin9WBBsxo.json
+2025-01-19 06:52:06,575 ERROR  Failed to save video information for 6yin9WBBsxo: Object of type datetime is not JSON serializable
+2025-01-19 06:52:06,575 INFO  Extracting video details.
+2025-01-19 06:52:06,603 INFO  Fetching additional details for video: pSufMMk_JUE
+2025-01-19 06:52:06,604 INFO  ====== WebDriver manager ======
+2025-01-19 06:52:06,755 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:52:06,974 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:52:07,163 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:52:10,304 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:52:10,404 INFO  Fetching likes count.
+2025-01-19 06:52:10,420 INFO  Fetching uploaded date.
+2025-01-19 06:52:35,249 INFO  Fetching comments count and details.
+2025-01-19 06:52:35,509 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,534 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,559 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,588 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,613 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,638 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,664 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,690 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,717 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,796 ERROR  Failed to fetch comment details: string index out of range
+2025-01-19 06:52:35,796 INFO  Fetching video duration.
+2025-01-19 06:52:35,928 INFO  Saving video info to temp_data/@alwaysalthough/videos/pSufMMk_JUE.json
+2025-01-19 06:52:35,929 ERROR  Failed to save video information for pSufMMk_JUE: Object of type datetime is not JSON serializable
+2025-01-19 06:52:35,929 INFO  Extracting video details.
+2025-01-19 06:52:35,962 INFO  Fetching additional details for video: XGNLZDTHEzE
+2025-01-19 06:52:35,962 INFO  ====== WebDriver manager ======
+2025-01-19 06:52:36,111 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:52:36,292 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 06:52:36,472 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 06:52:39,224 INFO  Clicking expand button to reveal more video details.
+2025-01-19 06:52:39,275 INFO  Fetching likes count.
+2025-01-19 06:52:39,339 INFO  Fetching uploaded date.
+2025-01-19 06:52:49,654 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(54, 'Connection reset by peer')': /session/7e1bbbc4111fe8774540801b701e8692
+2025-01-19 06:52:49,669 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1027c39e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e1bbbc4111fe8774540801b701e8692
+2025-01-19 06:52:49,674 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1027c02c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e1bbbc4111fe8774540801b701e8692
+2025-01-19 06:52:49,679 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1026ddf40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7fa32b66459473ee229f7b28cd5e2421
+2025-01-19 06:52:49,684 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1027c0e00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7fa32b66459473ee229f7b28cd5e2421
+2025-01-19 06:52:49,714 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1027c03e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7fa32b66459473ee229f7b28cd5e2421

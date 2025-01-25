@@ -1,0 +1,347 @@
+2025-01-25 15:22:33,101 INFO  Fetching channel name and verification status.
+2025-01-25 15:22:33,103 INFO  Fetching channel name and verification status.
+2025-01-25 15:22:33,151 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:22:33,153 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:22:33,895 INFO  Fetching channel links.
+2025-01-25 15:22:33,907 INFO  Fetching channel links.
+2025-01-25 15:22:33,947 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:22:33,953 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:22:33,989 INFO  Closing channel details popup.
+2025-01-25 15:22:33,997 INFO  Closing channel details popup.
+2025-01-25 15:22:34,032 ERROR  Error while scraping channel video info for @MrBeast: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:22:49,154 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:22:55,866 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:01,458 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:06,964 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:14,451 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:16,598 WARNING  Thumbnail not found, setting None
+2025-01-25 15:23:24,414 WARNING  Thumbnail not found, setting None
+2025-01-25 15:23:27,631 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:30,061 WARNING  Thumbnail not found, setting None
+2025-01-25 15:23:33,516 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:36,260 WARNING  Thumbnail not found, setting None
+2025-01-25 15:23:39,805 WARNING  Couldn't find views count: Setting Views to 0
+2025-01-25 15:23:41,001 ERROR  Webdriver Exception: Message: element click intercepted: Element <button class="yt-spec-button-shape-next yt-spec-button-shape-next--tonal yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-l yt-spec-button-shape-next--icon-button" aria-disabled="false" aria-label="View 22,355 comments" title="" style="">...</button> is not clickable at point (825, 448). Other element would receive the click: <div id="shorts-inner-container" class="style-scope ytd-shorts">...</div>
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000100a1a138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000100a12988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000100478968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x00000001004c25e0 cxxbridge1$string$len + 391428
+4   chromedriver                        0x00000001004c0c30 cxxbridge1$string$len + 384852
+5   chromedriver                        0x00000001004beb74 cxxbridge1$string$len + 376472
+6   chromedriver                        0x00000001004bdfac cxxbridge1$string$len + 373456
+7   chromedriver                        0x00000001004b3470 cxxbridge1$string$len + 329620
+8   chromedriver                        0x00000001004b2ec4 cxxbridge1$string$len + 328168
+9   chromedriver                        0x00000001004f64f0 cxxbridge1$string$len + 604180
+10  chromedriver                        0x00000001004b1564 cxxbridge1$string$len + 321672
+11  chromedriver                        0x00000001004b21b4 cxxbridge1$string$len + 324824
+12  chromedriver                        0x00000001009e4fc0 cxxbridge1$str$ptr + 3436424
+13  chromedriver                        0x00000001009e82dc cxxbridge1$str$ptr + 3449508
+14  chromedriver                        0x00000001009cbe60 cxxbridge1$str$ptr + 3333672
+15  chromedriver                        0x00000001009e8b9c cxxbridge1$str$ptr + 3451748
+16  chromedriver                        0x00000001009bd678 cxxbridge1$str$ptr + 3274304
+17  chromedriver                        0x0000000100a032b4 cxxbridge1$str$ptr + 3560060
+18  chromedriver                        0x0000000100a03430 cxxbridge1$str$ptr + 3560440
+19  chromedriver                        0x0000000100a125fc cxxbridge1$str$ptr + 3622340
+20  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-25 15:23:41,002 ERROR  Error while scraping channel video info for @PewDiePie: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:23:50,687 INFO  Scraping complete for @MrBeast
+2025-01-25 15:23:50,687 INFO  Scraping complete for @PewDiePie
+2025-01-25 15:23:50,688 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107135cd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:50,689 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071378f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:50,689 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137f20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:50,690 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198650>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:23:50,690 ERROR  Error while scraping channel info for @Cocomelon: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:23:50,690 ERROR  Error while scraping channel video info for @Cocomelon: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:23:51,457 INFO  Fetching channel name and verification status.
+2025-01-25 15:23:52,206 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:23:52,877 INFO  Fetching channel links.
+2025-01-25 15:23:52,944 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:23:52,988 INFO  Closing channel details popup.
+2025-01-25 15:23:53,031 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199940>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:53,031 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199730>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:53,032 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a600>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:23:53,032 ERROR  Error while scraping channel video info for @TSeries: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:23:53,032 INFO  Scraping complete for @Cocomelon
+2025-01-25 15:24:01,480 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee04a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,481 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0200>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,482 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee05f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,483 INFO  Scraping complete for @TSeries
+2025-01-25 15:24:01,483 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,484 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0d70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,484 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0f50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:01,485 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1130>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:01,485 ERROR  Error while scraping channel info for @5MinuteCrafts: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:01,485 ERROR  Error while scraping channel video info for @5MinuteCrafts: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:02,159 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:02,971 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:03,614 INFO  Fetching channel links.
+2025-01-25 15:24:03,693 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:03,727 INFO  Closing channel details popup.
+2025-01-25 15:24:03,755 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0950>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,755 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1220>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,756 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1850>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,756 ERROR  Error while scraping channel video info for @SETIndia: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:03,757 INFO  Scraping complete for @5MinuteCrafts
+2025-01-25 15:24:03,757 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1a60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,758 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1c70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,758 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1eb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,759 INFO  Scraping complete for @SETIndia
+2025-01-25 15:24:03,759 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137f50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,760 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107135be0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,760 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198d10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:03,761 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198230>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:03,761 ERROR  Error while scraping channel info for @DudePerfect: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:03,761 ERROR  Error while scraping channel video info for @DudePerfect: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:04,593 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:05,296 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:05,974 INFO  Fetching channel links.
+2025-01-25 15:24:06,017 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:06,056 INFO  Closing channel details popup.
+2025-01-25 15:24:06,089 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719ab40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,090 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199bb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,090 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198ce0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,091 ERROR  Error while scraping channel video info for @VladandNiki: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:06,091 INFO  Scraping complete for @DudePerfect
+2025-01-25 15:24:06,092 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719adb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,092 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198f50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,093 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199670>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,093 INFO  Scraping complete for @VladandNiki
+2025-01-25 15:24:06,094 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a2d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,094 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,095 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106fa77a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:06,095 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071370e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:06,095 ERROR  Error while scraping channel info for @LikeNastya: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:06,096 ERROR  Error while scraping channel video info for @LikeNastya: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:06,755 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:07,651 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:08,307 INFO  Fetching channel links.
+2025-01-25 15:24:08,400 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:08,437 INFO  Closing channel details popup.
+2025-01-25 15:24:08,466 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719af00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,467 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071995b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,467 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,468 ERROR  Error while scraping channel video info for @Markiplier: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:08,468 INFO  Scraping complete for @LikeNastya
+2025-01-25 15:24:08,468 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a0c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,469 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719adb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,469 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a8d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,470 INFO  Scraping complete for @Markiplier
+2025-01-25 15:24:08,470 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199bb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,471 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199160>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,472 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b380>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:08,472 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b560>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:08,472 ERROR  Error while scraping channel info for @JamesCharles: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:08,473 ERROR  Error while scraping channel video info for @JamesCharles: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:09,205 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:09,855 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:10,559 INFO  Fetching channel links.
+2025-01-25 15:24:10,636 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:10,671 INFO  Closing channel details popup.
+2025-01-25 15:24:10,704 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719acc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,704 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b980>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,705 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bcb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,706 ERROR  Error while scraping channel video info for @EmmaChamberlain: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:10,706 INFO  Scraping complete for @JamesCharles
+2025-01-25 15:24:10,706 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137230>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,707 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071980e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,707 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b5c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,708 INFO  Scraping complete for @EmmaChamberlain
+2025-01-25 15:24:10,708 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199070>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,709 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199880>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,709 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:10,710 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a510>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:10,710 ERROR  Error while scraping channel info for @casey: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:10,710 ERROR  Error while scraping channel video info for @casey: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:11,360 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:12,293 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:12,954 INFO  Fetching channel links.
+2025-01-25 15:24:13,069 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:13,110 INFO  Closing channel details popup.
+2025-01-25 15:24:13,166 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199e80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:13,168 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199460>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:13,171 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199be0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:13,172 ERROR  Error while scraping channel video info for @Kurzgesagt: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:22,995 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bf50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:22,996 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bf80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:22,996 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:22,997 INFO  Scraping complete for @casey
+2025-01-25 15:24:22,997 INFO  Scraping complete for @Kurzgesagt
+2025-01-25 15:24:22,998 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719ae10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:22,999 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198170>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:22,999 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a450>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:23,000 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071981d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:23,000 ERROR  Error while scraping channel info for @MKBHD: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:23,001 ERROR  Error while scraping channel video info for @MKBHD: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:24,225 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:25,250 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:25,845 INFO  Fetching channel links.
+2025-01-25 15:24:25,914 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:25,949 INFO  Closing channel details popup.
+2025-01-25 15:24:25,983 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a420>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,983 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198830>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,984 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137bc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,984 ERROR  Error while scraping channel video info for @HowToBasic: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:25,984 INFO  Scraping complete for @MKBHD
+2025-01-25 15:24:25,985 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107136d50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,985 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1670>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,986 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee12b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,986 INFO  Scraping complete for @HowToBasic
+2025-01-25 15:24:25,987 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137620>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,987 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a600>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,988 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198410>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:25,989 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a000>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:25,989 ERROR  Error while scraping channel info for @LinusTechTips: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:25,989 ERROR  Error while scraping channel video info for @LinusTechTips: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:27,182 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:27,752 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:28,446 INFO  Fetching channel links.
+2025-01-25 15:24:28,593 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:28,726 INFO  Closing channel details popup.
+2025-01-25 15:24:28,953 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199070>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,960 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071982c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,962 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,964 ERROR  Error while scraping channel video info for @TheEllenShow: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:28,964 INFO  Scraping complete for @LinusTechTips
+2025-01-25 15:24:28,966 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bec0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,967 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b890>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,968 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b920>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,970 INFO  Scraping complete for @TheEllenShow
+2025-01-25 15:24:28,971 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a4e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,972 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a5a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,974 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee19d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:28,978 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a090>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:28,978 ERROR  Error while scraping channel info for @Shane: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:28,978 ERROR  Error while scraping channel video info for @Shane: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:30,452 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:31,419 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:32,299 INFO  Fetching channel links.
+2025-01-25 15:24:32,350 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:32,387 INFO  Closing channel details popup.
+2025-01-25 15:24:32,423 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719be00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,424 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bb60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,424 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071982f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,425 ERROR  Error while scraping channel video info for @Smosh: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:32,425 INFO  Scraping complete for @Shane
+2025-01-25 15:24:32,426 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b830>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,426 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071981d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,427 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199c70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,427 INFO  Scraping complete for @Smosh
+2025-01-25 15:24:32,428 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137cb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,428 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107135f10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,428 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee2180>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:32,429 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0c80>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:32,429 ERROR  Error while scraping channel info for @Nigahiga: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:32,429 ERROR  Error while scraping channel video info for @Nigahiga: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:33,214 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:34,268 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:34,990 INFO  Fetching channel links.
+2025-01-25 15:24:35,085 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:35,120 INFO  Closing channel details popup.
+2025-01-25 15:24:35,150 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137a10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:35,151 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0a40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:35,151 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0f80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:35,152 ERROR  Error while scraping channel video info for @JennaMarbles: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:35,152 INFO  Scraping complete for @Nigahiga
+2025-01-25 15:24:43,439 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bef0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,441 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198da0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,441 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198410>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,442 INFO  Scraping complete for @JennaMarbles
+2025-01-25 15:24:43,443 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a270>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,443 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b740>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,444 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199580>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:43,445 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bb30>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:43,445 ERROR  Error while scraping channel info for @Zoella: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:43,445 ERROR  Error while scraping channel video info for @Zoella: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:44,599 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:45,122 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:45,923 INFO  Fetching channel links.
+2025-01-25 15:24:46,009 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:46,052 INFO  Closing channel details popup.
+2025-01-25 15:24:46,104 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a180>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:46,105 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198230>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:46,106 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee2180>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:46,106 ERROR  Error while scraping channel video info for @LillySingh: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:55,037 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee3a70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,038 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee39b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,039 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee3da0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,040 INFO  Scraping complete for @Zoella
+2025-01-25 15:24:55,040 INFO  Scraping complete for @LillySingh
+2025-01-25 15:24:55,041 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f643e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,041 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64560>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,042 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64740>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:55,042 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64920>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:55,043 ERROR  Error while scraping channel info for @JakePaul: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:55,043 ERROR  Error while scraping channel video info for @JakePaul: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:55,721 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:56,398 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:57,039 INFO  Fetching channel links.
+2025-01-25 15:24:57,087 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:57,122 INFO  Closing channel details popup.
+2025-01-25 15:24:57,152 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64a40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,153 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64c50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,153 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f64140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,154 ERROR  Error while scraping channel video info for @DavidDobrik: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:57,154 INFO  Scraping complete for @JakePaul
+2025-01-25 15:24:57,155 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f65190>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,155 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f65370>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,156 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106f65550>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,157 INFO  Scraping complete for @DavidDobrik
+2025-01-25 15:24:57,157 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719aea0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,157 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719bd70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,158 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719b7d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:57,158 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a8a0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:57,158 ERROR  Error while scraping channel info for @LoganPaul: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:57,159 ERROR  Error while scraping channel video info for @LoganPaul: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:57,819 INFO  Fetching channel name and verification status.
+2025-01-25 15:24:58,498 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:24:59,169 INFO  Fetching channel links.
+2025-01-25 15:24:59,322 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:24:59,375 INFO  Closing channel details popup.
+2025-01-25 15:24:59,431 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719ae40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,431 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071998e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,432 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071982c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,432 ERROR  Error while scraping channel video info for @RhettandLink: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:24:59,432 INFO  Scraping complete for @LoganPaul
+2025-01-25 15:24:59,433 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719a1e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,433 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107136c90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,434 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107137230>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,434 INFO  Scraping complete for @RhettandLink
+2025-01-25 15:24:59,435 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee3e30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,435 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee1430>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,437 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee2180>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:24:59,438 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107136a50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:24:59,438 ERROR  Error while scraping channel info for @TheTryGuys: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:24:59,439 ERROR  Error while scraping channel video info for @TheTryGuys: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:25:00,212 INFO  Fetching channel name and verification status.
+2025-01-25 15:25:01,265 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:25:01,961 INFO  Fetching channel links.
+2025-01-25 15:25:02,016 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:25:02,059 INFO  Closing channel details popup.
+2025-01-25 15:25:02,094 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107199ee0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:02,094 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10719aff0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:02,095 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1071980b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:02,095 ERROR  Error while scraping channel video info for @PhilipDeFranco: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:25:02,095 INFO  Scraping complete for @TheTryGuys
+2025-01-25 15:25:11,474 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198bf0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,477 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107198500>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,477 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107135ca0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,479 INFO  Scraping complete for @PhilipDeFranco
+2025-01-25 15:25:11,480 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0d40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,481 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0770>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,482 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee0230>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:11,483 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=61543): Max retries exceeded with url: /session/ae8019e886401ba2ea5521b756c91c5a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee2330>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 15:25:11,483 ERROR  Error while scraping channel info for @MichellePhan: 'dict' object has no attribute 'model_dump_json'
+2025-01-25 15:25:11,483 ERROR  Error while scraping channel video info for @MichellePhan: get_video_info() missing 1 required positional argument: 'logger'
+2025-01-25 15:25:12,224 INFO  Fetching channel name and verification status.
+2025-01-25 15:25:13,181 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 15:25:13,850 INFO  Fetching channel links.
+2025-01-25 15:25:13,971 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 15:25:14,007 INFO  Closing channel details popup.
+2025-01-25 15:25:14,035 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee27e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:14,036 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee28d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:14,037 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106ee2570>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ae8019e886401ba2ea5521b756c91c5a/url
+2025-01-25 15:25:14,037 ERROR  Error while scraping channel video info for @FitnessBlender: get_video_info() missing 1 required positional argument: 'logger'

@@ -1,0 +1,616 @@
+2025-01-25 08:33:24,742 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:24,792 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:25,546 INFO  Fetching channel links.
+2025-01-25 08:33:26,222 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:26,576 INFO  Closing channel details popup.
+2025-01-25 08:33:26,758 INFO  Scraping complete for @PewDiePie
+2025-01-25 08:33:27,073 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:27,131 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:27,257 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:28,241 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:28,268 INFO  Fetching channel links.
+2025-01-25 08:33:28,350 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:28,520 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:28,755 INFO  Closing channel details popup.
+2025-01-25 08:33:28,897 INFO  Scraping complete for @MrBeast
+2025-01-25 08:33:29,300 INFO  Fetching channel links.
+2025-01-25 08:33:29,530 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:29,644 INFO  Closing channel details popup.
+2025-01-25 08:33:29,974 INFO  Scraping complete for @SETIndia
+2025-01-25 08:33:31,025 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:31,889 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:32,126 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:32,426 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:33:32,548 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:33,018 INFO  Fetching channel links.
+2025-01-25 08:33:33,062 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:33,349 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:33,431 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:33,516 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:33,532 INFO  Closing channel details popup.
+2025-01-25 08:33:33,612 INFO  Scraping complete for @DudePerfect
+2025-01-25 08:33:33,882 INFO  Fetching channel links.
+2025-01-25 08:33:33,942 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:33,945 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:34,035 INFO  Closing channel details popup.
+2025-01-25 08:33:34,096 INFO  Scraping complete for @VladandNiki
+2025-01-25 08:33:34,205 INFO  Fetching channel links.
+2025-01-25 08:33:34,705 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:35,061 INFO  Closing channel details popup.
+2025-01-25 08:33:35,686 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:35,772 INFO  Scraping complete for @Cocomelon
+2025-01-25 08:33:36,784 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:37,002 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:37,653 INFO  Fetching channel links.
+2025-01-25 08:33:37,723 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:38,142 ERROR  Failed to fetch about info.
+2025-01-25 08:33:38,149 INFO  Fetching channel links.
+2025-01-25 08:33:38,156 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:38,324 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:38,361 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:38,531 INFO  Closing channel details popup.
+2025-01-25 08:33:38,628 INFO  Scraping complete for @Markiplier
+2025-01-25 08:33:38,878 INFO  Fetching channel links.
+2025-01-25 08:33:38,981 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:39,039 INFO  Closing channel details popup.
+2025-01-25 08:33:39,115 INFO  Scraping complete for @JamesCharles
+2025-01-25 08:33:39,200 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:33:39,206 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:39,256 INFO  Fetching channel links.
+2025-01-25 08:33:39,542 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:39,704 INFO  Closing channel details popup.
+2025-01-25 08:33:40,136 INFO  Scraping complete for @TSeries
+2025-01-25 08:33:40,838 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:41,537 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:42,189 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:42,307 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:42,434 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:43,114 INFO  Fetching channel links.
+2025-01-25 08:33:43,284 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:43,346 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:43,481 INFO  Closing channel details popup.
+2025-01-25 08:33:43,572 INFO  Scraping complete for @EmmaChamberlain
+2025-01-25 08:33:43,620 ERROR  Failed to fetch channel links.
+2025-01-25 08:33:43,624 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:43,817 INFO  Fetching channel links.
+2025-01-25 08:33:43,909 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:44,011 INFO  Closing channel details popup.
+2025-01-25 08:33:44,217 INFO  Fetching channel links.
+2025-01-25 08:33:44,220 INFO  Scraping complete for @casey
+2025-01-25 08:33:44,667 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:44,758 ERROR  Failed to fetch about info.
+2025-01-25 08:33:44,758 INFO  Fetching channel links.
+2025-01-25 08:33:44,965 INFO  Closing channel details popup.
+2025-01-25 08:33:45,161 INFO  Scraping complete for @Kurzgesagt
+2025-01-25 08:33:45,364 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:46,769 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:46,814 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:46,939 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:47,187 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:47,871 INFO  Fetching channel links.
+2025-01-25 08:33:47,989 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:47,993 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:48,099 INFO  Fetching channel links.
+2025-01-25 08:33:48,199 INFO  Closing channel details popup.
+2025-01-25 08:33:48,402 INFO  Scraping complete for @HowToBasic
+2025-01-25 08:33:48,478 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:48,635 INFO  Closing channel details popup.
+2025-01-25 08:33:48,808 INFO  Scraping complete for @MKBHD
+2025-01-25 08:33:48,920 INFO  Fetching channel links.
+2025-01-25 08:33:49,154 ERROR  Failed to fetch channel details section.
+2025-01-25 08:33:49,155 INFO  Closing channel details popup.
+2025-01-25 08:33:49,186 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:49,320 INFO  Closing channel details popup.
+2025-01-25 08:33:49,487 INFO  Scraping complete for @LinusTechTips
+2025-01-25 08:33:49,840 ERROR  Failed to fetch channel links.
+2025-01-25 08:33:49,840 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:50,961 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:51,571 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:51,572 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:52,006 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:52,085 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:52,348 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:52,872 INFO  Fetching channel links.
+2025-01-25 08:33:52,897 INFO  Fetching channel links.
+2025-01-25 08:33:53,034 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:53,054 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:53,154 INFO  Closing channel details popup.
+2025-01-25 08:33:53,154 INFO  Closing channel details popup.
+2025-01-25 08:33:53,218 INFO  Fetching channel links.
+2025-01-25 08:33:53,262 INFO  Scraping complete for @TheEllenShow
+2025-01-25 08:33:53,273 INFO  Scraping complete for @Shane
+2025-01-25 08:33:53,363 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:53,430 INFO  Closing channel details popup.
+2025-01-25 08:33:53,604 INFO  Scraping complete for @Smosh
+2025-01-25 08:33:53,656 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:54,500 ERROR  Failed to close channel details popup.
+2025-01-25 08:33:54,506 INFO  Scraping complete for @5MinuteCrafts
+2025-01-25 08:33:54,510 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:54,968 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:55,331 ERROR  Failed to fetch channel details section.
+2025-01-25 08:33:55,337 INFO  Closing channel details popup.
+2025-01-25 08:33:55,609 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:55,918 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:56,049 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:56,747 INFO  Fetching channel links.
+2025-01-25 08:33:56,771 INFO  Fetching channel links.
+2025-01-25 08:33:56,900 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:56,902 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:56,958 INFO  Closing channel details popup.
+2025-01-25 08:33:56,984 INFO  Closing channel details popup.
+2025-01-25 08:33:57,048 INFO  Scraping complete for @JennaMarbles
+2025-01-25 08:33:57,097 INFO  Scraping complete for @LillySingh
+2025-01-25 08:33:58,024 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:58,082 INFO  Fetching channel name and verification status.
+2025-01-25 08:33:58,671 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:33:58,672 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:59,125 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:59,209 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:33:59,811 INFO  Fetching channel links.
+2025-01-25 08:33:59,892 INFO  Fetching channel links.
+2025-01-25 08:33:59,908 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:59,936 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:33:59,954 INFO  Closing channel details popup.
+2025-01-25 08:33:59,992 INFO  Closing channel details popup.
+2025-01-25 08:33:59,996 INFO  Scraping complete for @JakePaul
+2025-01-25 08:34:00,060 INFO  Scraping complete for @DavidDobrik
+2025-01-25 08:34:00,208 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:00,208 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:00,326 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:00,503 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:00,504 INFO  Scraping complete for @LikeNastya
+2025-01-25 08:34:00,977 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:01,991 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:02,072 INFO  Verification status: Not verified.
+2025-01-25 08:34:02,072 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:02,414 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:02,670 INFO  Fetching channel links.
+2025-01-25 08:34:02,699 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:02,729 ERROR  Failed to fetch videos count.
+2025-01-25 08:34:02,738 ERROR  Failed to fetch views count.
+2025-01-25 08:34:02,745 INFO  Closing channel details popup.
+2025-01-25 08:34:02,775 INFO  Scraping complete for @TheTryGuys
+2025-01-25 08:34:03,105 INFO  Fetching channel links.
+2025-01-25 08:34:03,177 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:03,215 INFO  Closing channel details popup.
+2025-01-25 08:34:03,266 INFO  Scraping complete for @RhettandLink
+2025-01-25 08:34:03,696 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:03,926 ERROR  Failed to fetch about info.
+2025-01-25 08:34:03,926 INFO  Fetching channel links.
+2025-01-25 08:34:04,058 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:04,526 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:04,888 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:05,200 INFO  Fetching channel links.
+2025-01-25 08:34:05,256 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:05,290 INFO  Closing channel details popup.
+2025-01-25 08:34:05,326 INFO  Scraping complete for @PhilipDeFranco
+2025-01-25 08:34:05,521 ERROR  Failed to fetch about info.
+2025-01-25 08:34:05,521 INFO  Fetching channel links.
+2025-01-25 08:34:05,538 INFO  Fetching channel links.
+2025-01-25 08:34:05,541 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:05,541 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:05,646 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:05,694 INFO  Closing channel details popup.
+2025-01-25 08:34:05,726 INFO  Scraping complete for @FitnessBlender
+2025-01-25 08:34:06,092 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:06,538 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:06,725 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:07,429 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:07,670 INFO  Fetching channel links.
+2025-01-25 08:34:07,729 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:07,788 INFO  Closing channel details popup.
+2025-01-25 08:34:07,826 INFO  Scraping complete for @MichellePhan
+2025-01-25 08:34:08,083 INFO  Fetching channel links.
+2025-01-25 08:34:08,145 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:08,203 INFO  Closing channel details popup.
+2025-01-25 08:34:08,241 INFO  Scraping complete for @Vsauce
+2025-01-25 08:34:08,779 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:09,117 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:09,229 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:09,366 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:09,367 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:10,101 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:10,277 INFO  Fetching channel links.
+2025-01-25 08:34:10,361 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:10,402 INFO  Closing channel details popup.
+2025-01-25 08:34:10,449 INFO  Scraping complete for @Veritasium
+2025-01-25 08:34:10,759 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:10,893 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:10,894 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:10,894 ERROR  Failed to fetch about info.
+2025-01-25 08:34:10,894 INFO  Fetching channel links.
+2025-01-25 08:34:14,455 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:14,456 INFO  Closing channel details popup.
+2025-01-25 08:34:15,443 ERROR  Failed to fetch about info.
+2025-01-25 08:34:15,443 INFO  Fetching channel links.
+2025-01-25 08:34:15,496 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:15,590 INFO  Closing channel details popup.
+2025-01-25 08:34:15,660 INFO  Scraping complete for @CGPGrey
+2025-01-25 08:34:15,929 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:15,957 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:16,049 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:16,050 INFO  Closing channel details popup.
+2025-01-25 08:34:16,074 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:16,074 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:16,511 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:17,484 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:18,176 INFO  Fetching channel links.
+2025-01-25 08:34:18,225 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:18,268 INFO  Closing channel details popup.
+2025-01-25 08:34:18,295 INFO  Scraping complete for @Numberphile
+2025-01-25 08:34:19,196 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:19,640 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:19,642 INFO  Scraping complete for @Nigahiga
+2025-01-25 08:34:19,896 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:20,591 INFO  Fetching channel links.
+2025-01-25 08:34:20,674 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:20,758 INFO  Closing channel details popup.
+2025-01-25 08:34:20,833 INFO  Scraping complete for @MinutePhysics
+2025-01-25 08:34:21,192 ERROR  Failed to fetch about info.
+2025-01-25 08:34:21,194 INFO  Fetching channel links.
+2025-01-25 08:34:21,216 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:21,217 INFO  Scraping complete for @Zoella
+2025-01-25 08:34:21,274 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:21,275 INFO  Closing channel details popup.
+2025-01-25 08:34:21,495 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:21,664 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:22,476 INFO  Fetching channel links.
+2025-01-25 08:34:22,621 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:22,679 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:22,767 INFO  Closing channel details popup.
+2025-01-25 08:34:22,834 INFO  Scraping complete for @CrashCourse
+2025-01-25 08:34:23,362 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:23,431 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:23,436 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:23,521 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:24,301 INFO  Fetching channel links.
+2025-01-25 08:34:24,337 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:24,374 INFO  Closing channel details popup.
+2025-01-25 08:34:24,408 INFO  Scraping complete for @AsapSCIENCE
+2025-01-25 08:34:24,555 INFO  Fetching channel links.
+2025-01-25 08:34:24,612 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:24,659 INFO  Closing channel details popup.
+2025-01-25 08:34:24,693 INFO  Scraping complete for @ScienceChannel
+2025-01-25 08:34:24,810 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:25,852 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:26,492 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:26,493 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:26,494 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:26,495 INFO  Scraping complete for @LoganPaul
+2025-01-25 08:34:26,505 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:27,233 INFO  Fetching channel links.
+2025-01-25 08:34:27,332 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:27,384 INFO  Closing channel details popup.
+2025-01-25 08:34:27,493 INFO  Scraping complete for @TechLinked
+2025-01-25 08:34:27,793 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:27,806 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:27,910 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:28,571 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:28,571 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:28,597 INFO  Fetching channel links.
+2025-01-25 08:34:28,657 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:28,692 INFO  Closing channel details popup.
+2025-01-25 08:34:28,721 INFO  Scraping complete for @UnboxTherapy
+2025-01-25 08:34:29,411 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:29,938 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:29,939 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:29,986 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:30,636 INFO  Fetching channel links.
+2025-01-25 08:34:30,743 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:30,778 INFO  Closing channel details popup.
+2025-01-25 08:34:30,807 INFO  Scraping complete for @AustinEvans
+2025-01-25 08:34:31,499 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:31,931 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:31,931 INFO  Closing channel details popup.
+2025-01-25 08:34:32,377 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:32,968 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:32,968 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:33,026 INFO  Fetching channel links.
+2025-01-25 08:34:33,086 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:33,121 INFO  Closing channel details popup.
+2025-01-25 08:34:33,154 INFO  Scraping complete for @LinusTechTips
+2025-01-25 08:34:33,962 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:33,965 ERROR  Failed to fetch about info.
+2025-01-25 08:34:33,965 INFO  Fetching channel links.
+2025-01-25 08:34:34,620 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:35,109 ERROR  Failed to fetch about info.
+2025-01-25 08:34:35,109 INFO  Fetching channel links.
+2025-01-25 08:34:35,303 INFO  Fetching channel links.
+2025-01-25 08:34:35,375 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:35,415 INFO  Closing channel details popup.
+2025-01-25 08:34:35,445 INFO  Scraping complete for @JerryRigEverything
+2025-01-25 08:34:36,121 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:36,768 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:37,045 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:37,045 INFO  Scraping complete for @TEDxTalks
+2025-01-25 08:34:37,410 INFO  Fetching channel links.
+2025-01-25 08:34:37,477 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:37,521 INFO  Closing channel details popup.
+2025-01-25 08:34:37,557 INFO  Scraping complete for @SuperSaf
+2025-01-25 08:34:37,803 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:38,272 ERROR  Failed to fetch about info.
+2025-01-25 08:34:38,272 INFO  Fetching channel links.
+2025-01-25 08:34:39,071 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:39,072 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:40,232 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:40,232 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:40,742 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:40,758 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:41,343 INFO  Fetching channel links.
+2025-01-25 08:34:41,422 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:41,457 INFO  Closing channel details popup.
+2025-01-25 08:34:41,488 INFO  Scraping complete for @TheVerge
+2025-01-25 08:34:42,250 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:42,732 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:42,900 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:42,900 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:43,378 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:43,378 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:44,179 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:44,180 INFO  Closing channel details popup.
+2025-01-25 08:34:44,443 INFO  Fetching channel links.
+2025-01-25 08:34:44,516 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:44,551 INFO  Closing channel details popup.
+2025-01-25 08:34:44,583 INFO  Scraping complete for @JimmyKimmelLive
+2025-01-25 08:34:44,847 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:45,339 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:45,339 INFO  Closing channel details popup.
+2025-01-25 08:34:48,007 ERROR  Failed to fetch about info.
+2025-01-25 08:34:48,009 INFO  Fetching channel links.
+2025-01-25 08:34:48,511 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:48,512 INFO  Closing channel details popup.
+2025-01-25 08:34:49,315 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:49,316 INFO  Scraping complete for @NationalGeographic
+2025-01-25 08:34:49,970 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:34:49,970 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:50,535 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:50,536 INFO  Scraping complete for @DiscoveryChannel
+2025-01-25 08:34:50,810 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:51,070 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:51,255 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:51,670 INFO  Fetching channel links.
+2025-01-25 08:34:51,746 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:51,806 INFO  Closing channel details popup.
+2025-01-25 08:34:51,847 INFO  Scraping complete for @LateNightSeth
+2025-01-25 08:34:51,858 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:52,524 INFO  Fetching channel links.
+2025-01-25 08:34:52,637 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:52,659 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:52,700 INFO  Closing channel details popup.
+2025-01-25 08:34:52,741 INFO  Scraping complete for @Netflix
+2025-01-25 08:34:53,192 ERROR  Failed to fetch channel links.
+2025-01-25 08:34:53,192 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:53,332 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:53,467 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:53,700 ERROR  Failed to close channel details popup.
+2025-01-25 08:34:53,700 INFO  Scraping complete for @DaveLee
+2025-01-25 08:34:53,972 INFO  Fetching channel links.
+2025-01-25 08:34:54,134 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:54,157 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:54,191 INFO  Closing channel details popup.
+2025-01-25 08:34:54,243 INFO  Scraping complete for @HBO
+2025-01-25 08:34:54,829 INFO  Fetching channel links.
+2025-01-25 08:34:55,024 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:55,129 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:55,362 ERROR  Failed to fetch about info.
+2025-01-25 08:34:55,362 INFO  Fetching channel links.
+2025-01-25 08:34:55,388 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:55,475 INFO  Closing channel details popup.
+2025-01-25 08:34:55,532 INFO  Verification status: Not verified.
+2025-01-25 08:34:55,532 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:55,608 INFO  Scraping complete for @PrimeVideo
+2025-01-25 08:34:55,747 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:56,455 INFO  Fetching channel links.
+2025-01-25 08:34:56,562 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:56,607 INFO  Closing channel details popup.
+2025-01-25 08:34:56,700 INFO  Scraping complete for @GameTheory
+2025-01-25 08:34:57,234 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:57,403 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:58,680 ERROR  Failed to fetch channel details section.
+2025-01-25 08:34:58,680 INFO  Closing channel details popup.
+2025-01-25 08:34:58,720 INFO  Fetching channel links.
+2025-01-25 08:34:58,820 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:34:58,872 INFO  Closing channel details popup.
+2025-01-25 08:34:58,917 INFO  Scraping complete for @FilmTheory
+2025-01-25 08:34:59,218 INFO  Fetching channel name and verification status.
+2025-01-25 08:34:59,424 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:34:59,828 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:00,101 INFO  Fetching channel links.
+2025-01-25 08:35:00,183 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:00,225 INFO  Closing channel details popup.
+2025-01-25 08:35:00,259 INFO  Scraping complete for @ScreenJunkies
+2025-01-25 08:35:00,438 INFO  Verification status: Not verified.
+2025-01-25 08:35:00,439 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:00,685 ERROR  Failed to fetch channel links.
+2025-01-25 08:35:00,686 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:01,018 ERROR  Failed to fetch about info.
+2025-01-25 08:35:01,019 INFO  Fetching channel links.
+2025-01-25 08:35:01,034 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:01,044 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:01,068 ERROR  Failed to fetch videos count.
+2025-01-25 08:35:01,077 ERROR  Failed to fetch views count.
+2025-01-25 08:35:01,086 INFO  Closing channel details popup.
+2025-01-25 08:35:01,104 INFO  Fetching channel links.
+2025-01-25 08:35:01,145 INFO  Scraping complete for @MatPatGT
+2025-01-25 08:35:01,393 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:01,460 INFO  Closing channel details popup.
+2025-01-25 08:35:01,537 INFO  Scraping complete for @PitchMeeting
+2025-01-25 08:35:01,934 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:02,166 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:03,025 INFO  Fetching channel links.
+2025-01-25 08:35:03,156 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:03,210 INFO  Closing channel details popup.
+2025-01-25 08:35:03,259 INFO  Scraping complete for @ScreenRant
+2025-01-25 08:35:03,347 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:03,807 INFO  Verification status: Not verified.
+2025-01-25 08:35:03,815 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:03,861 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:04,183 ERROR  Failed to close channel details popup.
+2025-01-25 08:35:04,185 INFO  Scraping complete for @TheLateShow
+2025-01-25 08:35:04,366 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:04,803 INFO  Fetching channel links.
+2025-01-25 08:35:04,812 INFO  Fetching channel links.
+2025-01-25 08:35:04,866 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:04,937 INFO  Closing channel details popup.
+2025-01-25 08:35:05,096 INFO  Scraping complete for @Top10s
+2025-01-25 08:35:05,194 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:05,285 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:05,306 INFO  Closing channel details popup.
+2025-01-25 08:35:05,398 INFO  Scraping complete for @WatchMojo
+2025-01-25 08:35:05,809 ERROR  Failed to fetch channel details section.
+2025-01-25 08:35:05,809 INFO  Closing channel details popup.
+2025-01-25 08:35:06,577 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:07,104 INFO  Fetching channel links.
+2025-01-25 08:35:07,317 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:07,412 INFO  Closing channel details popup.
+2025-01-25 08:35:07,551 INFO  Scraping complete for @EpicMealTime
+2025-01-25 08:35:07,978 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:09,466 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:09,986 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:09,997 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:10,345 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:10,831 INFO  Fetching channel links.
+2025-01-25 08:35:10,861 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:10,939 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:10,985 INFO  Closing channel details popup.
+2025-01-25 08:35:11,036 INFO  Scraping complete for @GordonRamsay
+2025-01-25 08:35:11,180 ERROR  Failed to close channel details popup.
+2025-01-25 08:35:11,182 INFO  Scraping complete for @TheTonightShow
+2025-01-25 08:35:11,305 INFO  Fetching channel links.
+2025-01-25 08:35:11,562 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:11,694 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:35:11,695 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:11,700 INFO  Closing channel details popup.
+2025-01-25 08:35:11,848 INFO  Fetching channel links.
+2025-01-25 08:35:12,108 INFO  Scraping complete for @SortedFood
+2025-01-25 08:35:12,531 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:12,917 INFO  Closing channel details popup.
+2025-01-25 08:35:13,098 INFO  Scraping complete for @JoshuaWeissman
+2025-01-25 08:35:13,807 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:14,195 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:14,348 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:14,439 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:15,380 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:15,471 INFO  Fetching channel links.
+2025-01-25 08:35:15,619 INFO  Fetching channel links.
+2025-01-25 08:35:15,796 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:15,854 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:15,929 INFO  Closing channel details popup.
+2025-01-25 08:35:16,102 INFO  Closing channel details popup.
+2025-01-25 08:35:16,530 INFO  Scraping complete for @JamieOliver
+2025-01-25 08:35:16,769 ERROR  Failed to fetch about info.
+2025-01-25 08:35:16,794 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:16,814 INFO  Scraping complete for @RosannaPansino
+2025-01-25 08:35:16,814 INFO  Fetching channel links.
+2025-01-25 08:35:16,930 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:18,104 INFO  Fetching channel links.
+2025-01-25 08:35:18,772 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:19,031 INFO  Closing channel details popup.
+2025-01-25 08:35:19,126 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:19,519 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:19,670 INFO  Scraping complete for @Jubilee
+2025-01-25 08:35:19,881 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:21,034 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:22,021 ERROR  Failed to fetch channel links.
+2025-01-25 08:35:22,173 INFO  Fetching channel links.
+2025-01-25 08:35:22,988 INFO  Fetching channel links.
+2025-01-25 08:35:24,118 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:24,476 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:24,724 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:25,237 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:25,385 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:25,687 INFO  Closing channel details popup.
+2025-01-25 08:35:26,063 INFO  Scraping complete for @MrBeastGaming
+2025-01-25 08:35:26,228 INFO  Closing channel details popup.
+2025-01-25 08:35:26,526 INFO  Fetching channel links.
+2025-01-25 08:35:26,566 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:26,956 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:27,112 INFO  Scraping complete for @YesTheory
+2025-01-25 08:35:27,582 INFO  Closing channel details popup.
+2025-01-25 08:35:27,983 INFO  Scraping complete for @Dream
+2025-01-25 08:35:28,223 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:29,414 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:29,483 INFO  Fetching channel links.
+2025-01-25 08:35:29,673 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:29,899 INFO  Closing channel details popup.
+2025-01-25 08:35:30,176 INFO  Fetching channel links.
+2025-01-25 08:35:30,248 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:30,297 INFO  Closing channel details popup.
+2025-01-25 08:35:30,346 INFO  Scraping complete for @GeorgeNotFound
+2025-01-25 08:35:30,347 INFO  Scraping complete for @Sapnap
+2025-01-25 08:35:30,502 ERROR  Failed to fetch channel details section.
+2025-01-25 08:35:30,503 INFO  Closing channel details popup.
+2025-01-25 08:35:32,169 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:32,345 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:33,690 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:33,740 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:34,691 INFO  Fetching channel links.
+2025-01-25 08:35:34,877 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:35,014 INFO  Closing channel details popup.
+2025-01-25 08:35:35,067 INFO  Verification status: Not verified.
+2025-01-25 08:35:35,067 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:35,153 INFO  Scraping complete for @Tubbo
+2025-01-25 08:35:36,000 ERROR  Failed to close channel details popup.
+2025-01-25 08:35:36,043 INFO  Scraping complete for @Tasty
+2025-01-25 08:35:36,463 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:36,604 INFO  Fetching channel links.
+2025-01-25 08:35:36,723 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:36,725 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:36,983 INFO  Closing channel details popup.
+2025-01-25 08:35:37,089 INFO  Scraping complete for @WilburSoot
+2025-01-25 08:35:38,451 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:40,181 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:40,298 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:40,799 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:41,836 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 08:35:43,596 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:43,928 INFO  Fetching channel links.
+2025-01-25 08:35:43,964 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:43,972 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:44,163 INFO  Closing channel details popup.
+2025-01-25 08:35:44,410 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:44,596 INFO  Scraping complete for @TommyInnit
+2025-01-25 08:35:44,955 INFO  Fetching channel links.
+2025-01-25 08:35:45,029 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:45,101 INFO  Closing channel details popup.
+2025-01-25 08:35:45,155 INFO  Fetching channel links.
+2025-01-25 08:35:45,514 INFO  Scraping complete for @Ranboo
+2025-01-25 08:35:45,573 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:45,688 INFO  Closing channel details popup.
+2025-01-25 08:35:46,048 INFO  Scraping complete for @PopularMMOs
+2025-01-25 08:35:47,637 INFO  Fetching channel links.
+2025-01-25 08:35:47,708 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:47,826 INFO  Closing channel details popup.
+2025-01-25 08:35:47,948 INFO  Scraping complete for @Technoblade
+2025-01-25 08:35:48,780 ERROR  Failed to fetch about info.
+2025-01-25 08:35:48,780 INFO  Fetching channel links.
+2025-01-25 08:35:52,786 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:52,967 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:55,273 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:55,423 ERROR  Failed to fetch channel links.
+2025-01-25 08:35:55,183 INFO  Fetching channel name and verification status.
+2025-01-25 08:35:55,715 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:55,911 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:56,023 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:56,026 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:56,721 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 08:35:58,635 INFO  Fetching channel links.
+2025-01-25 08:35:58,639 INFO  Fetching channel links.
+2025-01-25 08:35:58,676 INFO  Fetching channel links.
+2025-01-25 08:35:58,735 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:58,863 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:58,907 INFO  Closing channel details popup.
+2025-01-25 08:35:59,004 INFO  Closing channel details popup.
+2025-01-25 08:35:59,063 INFO  Scraping complete for @Jacksepticeye
+2025-01-25 08:35:59,264 INFO  Scraping complete for @Shroud
+2025-01-25 08:35:59,280 INFO  Fetching channel links.
+2025-01-25 08:35:59,451 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:59,559 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 08:35:59,644 INFO  Closing channel details popup.
+2025-01-25 08:35:59,646 INFO  Closing channel details popup.
+2025-01-25 08:35:59,739 INFO  Scraping complete for @Pokimane
+2025-01-25 08:35:59,804 INFO  Scraping complete for @Ninja
+2025-01-25 08:36:00,878 ERROR  Failed to fetch channel details section.
+2025-01-25 08:36:00,879 INFO  Closing channel details popup.
+2025-01-25 08:36:06,063 ERROR  Failed to close channel details popup.
+2025-01-25 08:36:06,069 INFO  Scraping complete for @Stampylonghead

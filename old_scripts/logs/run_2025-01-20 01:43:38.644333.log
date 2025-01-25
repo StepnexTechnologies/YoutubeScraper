@@ -1,0 +1,14 @@
+2025-01-20 01:43:38,644 INFO  ====== WebDriver manager ======
+2025-01-20 01:43:38,740 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:38,974 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:39,253 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:39,842 INFO  WebDriver version 131.0.6778.264 selected
+2025-01-20 01:43:39,844 INFO  Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/mac-arm64/chromedriver-mac-arm64.zip
+2025-01-20 01:43:39,844 INFO  About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/mac-arm64/chromedriver-mac-arm64.zip
+2025-01-20 01:43:40,121 INFO  Driver downloading response is 200
+2025-01-20 01:43:43,694 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:44,072 INFO  Driver has been saved in cache [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264]
+2025-01-20 01:43:46,263 INFO  ====== WebDriver manager ======
+2025-01-20 01:43:46,438 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:46,677 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-20 01:43:46,909 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache

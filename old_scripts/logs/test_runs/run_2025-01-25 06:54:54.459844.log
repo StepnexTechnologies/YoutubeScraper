@@ -1,0 +1,36 @@
+2025-01-25 06:54:54,460 INFO  ====== WebDriver manager ======
+2025-01-25 06:54:54,762 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:55,019 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:55,170 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:54:56,769 INFO  ====== WebDriver manager ======
+2025-01-25 06:54:56,955 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:57,192 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:57,358 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:54:58,358 INFO  ====== WebDriver manager ======
+2025-01-25 06:54:58,504 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:58,741 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:54:58,901 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:54:59,893 INFO  ====== WebDriver manager ======
+2025-01-25 06:55:00,042 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:00,267 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:00,422 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:55:01,459 INFO  ====== WebDriver manager ======
+2025-01-25 06:55:01,604 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:01,840 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:01,997 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:55:02,980 INFO  ====== WebDriver manager ======
+2025-01-25 06:55:03,128 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:03,359 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:03,514 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:55:04,511 INFO  ====== WebDriver manager ======
+2025-01-25 06:55:04,657 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:04,881 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:05,036 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:55:06,063 INFO  ====== WebDriver manager ======
+2025-01-25 06:55:06,211 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:06,453 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:55:06,601 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:55:15,259 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102dd7d40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7c983c2b592c68243a5576b0a94e6976/url
+2025-01-25 06:55:15,260 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102dd6f30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7c983c2b592c68243a5576b0a94e6976/url
+2025-01-25 06:55:15,261 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102dd4770>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7c983c2b592c68243a5576b0a94e6976/url
+2025-01-25 06:55:15,262 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=59652): Max retries exceeded with url: /session/7c983c2b592c68243a5576b0a94e6976/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102dd4260>: Failed to establish a new connection: [Errno 61] Connection refused'))

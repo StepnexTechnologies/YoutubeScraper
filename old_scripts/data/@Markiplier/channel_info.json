@@ -1,0 +1,41 @@
+{
+  "name": "Markiplier",
+  "is_verified": true,
+  "about": "Hi, I'm Markiplier. I make videos. \n\nFrom quality content to meme-able garbage, from scary games to full-on interactive movies you'll find it all. You will, actually. I have over 5000 videos so I'm sure there's something you'd like. \n\nMaybe you like horror games, or funny games, or comedy sketches, or animations, or compilations, or reactions, or reviews, or challenges, or cryptic lore, or mind-crippling ennui, or stuff-that-is-guaranteed-to-probably-make-you-cry? Whatever you're into I'm sure there's something for you down in the briny deep of my video page. So why not dive in?\n\nOr don't. Life is yours to choose after all.",
+  "links": [
+    {
+      "title": "CLOAK",
+      "url": "cloakbrand.com"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/markiplier"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/markiplier"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@notmarkiplier"
+    },
+    {
+      "title": "Tumblr",
+      "url": "markiplier.tumblr.com"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/markiplier"
+    },
+    {
+      "title": "Reddit!",
+      "url": "reddit.com/r/Markiplier"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 37000000,
+    "videos_count": 5691,
+    "views_count": 22184224113,
+    "joined_date": "27 May 2012"
+  }
+}

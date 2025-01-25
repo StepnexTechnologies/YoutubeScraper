@@ -1,0 +1,50 @@
+2025-01-25 07:41:44,941 INFO  ====== WebDriver manager ======
+2025-01-25 07:41:45,034 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:45,194 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:41:45,206 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:45,374 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:45,537 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:41:51,601 ERROR  Failed to fetch channel name and verification status.
+2025-01-25 07:41:51,608 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:41:51,770 INFO  Fetching channel name and verification status.
+2025-01-25 07:41:51,906 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:41:52,745 INFO  Fetching channel links.
+2025-01-25 07:41:53,687 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 07:41:54,124 INFO  Closing channel details popup.
+2025-01-25 07:41:54,572 INFO  ====== WebDriver manager ======
+2025-01-25 07:41:55,442 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:55,648 INFO  Fetching channel name and verification status.
+2025-01-25 07:41:55,905 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:41:56,328 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:56,684 INFO  Fetching channel links.
+2025-01-25 07:41:56,781 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 07:41:56,862 INFO  Closing channel details popup.
+2025-01-25 07:41:56,982 INFO  ====== WebDriver manager ======
+2025-01-25 07:41:57,343 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:57,660 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:41:58,855 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:41:59,572 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:41:59,909 INFO  Fetching channel name and verification status.
+2025-01-25 07:42:01,693 ERROR  Failed to fetch about info.
+2025-01-25 07:42:01,705 INFO  Fetching channel links.
+2025-01-25 07:42:09,720 ERROR  Unexpected error occurred: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-01-25 07:42:09,756 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106b1ce30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3d8215444ab819d78331df772d8e9673/element
+2025-01-25 07:42:09,758 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106a9dca0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/01b2fe0310bd36c6be656851170dd2bb/element
+2025-01-25 07:42:09,879 INFO  ====== WebDriver manager ======
+2025-01-25 07:42:09,913 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab1910>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3d8215444ab819d78331df772d8e9673/element
+2025-01-25 07:42:09,922 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab1b20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/01b2fe0310bd36c6be656851170dd2bb/element
+2025-01-25 07:42:10,021 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab1f40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/01b2fe0310bd36c6be656851170dd2bb/element
+2025-01-25 07:42:10,022 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab1dc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/3d8215444ab819d78331df772d8e9673/element
+2025-01-25 07:42:10,024 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=58407): Max retries exceeded with url: /session/01b2fe0310bd36c6be656851170dd2bb/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab2180>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 07:42:10,024 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=58189): Max retries exceeded with url: /session/3d8215444ab819d78331df772d8e9673/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104ab2300>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 07:42:10,025 INFO  ====== WebDriver manager ======
+2025-01-25 07:42:10,025 INFO  ====== WebDriver manager ======
+2025-01-25 07:42:10,345 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,348 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,378 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,519 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,552 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,563 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:42:10,684 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:42:10,717 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:42:10,736 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache

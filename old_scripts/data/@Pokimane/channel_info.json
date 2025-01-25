@@ -1,0 +1,33 @@
+{
+  "name": "Pokimane",
+  "is_verified": true,
+  "about": "hi :) my name\u2019s imane, but you can call me poki or pokimane! thanks for swinging by & i hope to make your day better \ud83e\udef6\ud83c\udffb\n\n\nbusiness contact:\nteampoki@wmeagency.com",
+  "links": [
+    {
+      "title": "Instagram",
+      "url": "instagram.com/pokimanelol"
+    },
+    {
+      "title": "Twitch",
+      "url": "twitch.tv/pokimane"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/pokimanelol"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@poki"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/pokimane"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 6000000,
+    "videos_count": 282,
+    "views_count": 425252327,
+    "joined_date": "23 Mar 2014"
+  }
+}

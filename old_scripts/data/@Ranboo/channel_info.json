@@ -1,0 +1,21 @@
+{
+  "name": "Ranboo",
+  "is_verified": true,
+  "about": "This is honestly just bad ideas put on the internet for all to see. Have fun!\nBusiness email is ranboobusiness@gmail.com",
+  "links": [
+    {
+      "title": "I say stuff sometimes",
+      "url": "twitter.com/Ranboosaysstuff"
+    },
+    {
+      "title": "I stream!!",
+      "url": "twitch.tv/ranboolive"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 3000000,
+    "videos_count": 21,
+    "views_count": 57137847,
+    "joined_date": "30 Jan 2020"
+  }
+}

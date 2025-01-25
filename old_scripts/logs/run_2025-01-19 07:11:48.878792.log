@@ -1,0 +1,90 @@
+2025-01-19 07:11:48,878 INFO  ====== WebDriver manager ======
+2025-01-19 07:11:49,181 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:11:49,425 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:11:49,615 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:11:51,164 INFO  Starting scrape for channel: @MrBeast (Attempt 1)
+2025-01-19 07:11:51,166 INFO  ====== WebDriver manager ======
+2025-01-19 07:11:51,346 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:11:51,535 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:11:51,703 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:11:55,594 INFO  Fetching channel name and verification status.
+2025-01-19 07:11:55,785 INFO  Clicking 'More' button to fetch about info.
+2025-01-19 07:11:56,888 INFO  Fetching channel links.
+2025-01-19 07:11:56,952 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-19 07:11:56,998 INFO  Closing channel details popup.
+2025-01-19 07:11:57,040 INFO  Fetching video information for channel: @MrBeast
+2025-01-19 07:11:57,045 INFO  Scrolling through the page to load all videos.
+2025-01-19 07:12:12,288 INFO  Extracting video details.
+2025-01-19 07:12:12,335 INFO  Fetching additional details for video: SM66GDRyIVY
+2025-01-19 07:12:12,335 INFO  ====== WebDriver manager ======
+2025-01-19 07:12:12,491 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:12,681 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:12,860 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:12:16,088 INFO  Clicking expand button to reveal more video details.
+2025-01-19 07:12:16,104 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x0000000101166138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x000000010115e988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000100bc47d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000100c09cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000100bff470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000100bfeec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x0000000100c424f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000100bfd564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x0000000100bfe1b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x0000000101130fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001011342dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000101117e60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x0000000101134b9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000101109678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x000000010114f2b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x000000010114f430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x000000010115e5fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 07:12:16,192 INFO  Saving video info to new_data/@MrBeast/videos/SM66GDRyIVY.json
+2025-01-19 07:12:16,193 INFO  Extracting video details.
+2025-01-19 07:12:16,223 INFO  Fetching additional details for video: gs8qfL9PNac
+2025-01-19 07:12:16,223 INFO  ====== WebDriver manager ======
+2025-01-19 07:12:16,382 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:16,574 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:16,751 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:12:19,615 INFO  Clicking expand button to reveal more video details.
+2025-01-19 07:12:19,737 ERROR  Unexpected error occurred: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x00000001031d2138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001031ca988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000102c307d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000102c75cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000102c6b470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000102c6aec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x0000000102cae4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000102c69564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x0000000102c6a1b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x000000010319cfc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001031a02dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x0000000103183e60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x00000001031a0b9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x0000000103175678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x00000001031bb2b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x00000001031bb430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x00000001031ca5fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x00000001885e32e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001885de0fc thread_start + 8
+
+2025-01-19 07:12:19,832 INFO  Saving video info to new_data/@MrBeast/videos/gs8qfL9PNac.json
+2025-01-19 07:12:19,832 INFO  Extracting video details.
+2025-01-19 07:12:19,861 INFO  Fetching additional details for video: 0BjlBnfHcHM
+2025-01-19 07:12:19,861 INFO  ====== WebDriver manager ======
+2025-01-19 07:12:20,012 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:20,199 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-19 07:12:20,409 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-19 07:12:24,403 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102544cb0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/c3b095e86760ad6d81a659858567ed25
+2025-01-19 07:12:24,429 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102544350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/c3b095e86760ad6d81a659858567ed25
+2025-01-19 07:12:24,435 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102544c80>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/c3b095e86760ad6d81a659858567ed25
+2025-01-19 07:12:24,442 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1025215e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/49ef6f37c8ae1f957b72c97b87250ed9
+2025-01-19 07:12:24,450 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1025213a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/49ef6f37c8ae1f957b72c97b87250ed9
+2025-01-19 07:12:24,457 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102521040>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/49ef6f37c8ae1f957b72c97b87250ed9

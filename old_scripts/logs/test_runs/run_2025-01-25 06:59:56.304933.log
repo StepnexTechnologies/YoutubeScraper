@@ -1,0 +1,13 @@
+2025-01-25 06:59:56,305 INFO  ====== WebDriver manager ======
+2025-01-25 06:59:56,489 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:59:56,666 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:59:56,823 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:59:58,237 INFO  ====== WebDriver manager ======
+2025-01-25 06:59:58,392 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:59:58,554 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 06:59:58,712 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 06:59:59,727 INFO  ====== WebDriver manager ======
+2025-01-25 06:59:59,867 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:00:00,028 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:00:00,186 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:00:01,229 INFO  ====== WebDriver manager ======

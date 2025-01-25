@@ -1,0 +1,143 @@
+2025-01-25 09:27:05,354 INFO  Fetching video information for channel: @MrBeast
+2025-01-25 09:27:05,446 INFO  Scrolling through the page to load all videos.
+2025-01-25 09:27:20,683 INFO  Extracting video details.
+2025-01-25 09:27:20,732 INFO  Fetching additional details for video: SM66GDRyIVY
+2025-01-25 09:27:25,466 INFO  Clicking expand button to reveal more video details.
+2025-01-25 09:27:25,697 INFO  Fetching likes count.
+2025-01-25 09:27:25,723 INFO  Fetching uploaded date.
+2025-01-25 09:27:50,890 INFO  Fetching comments count and details.
+2025-01-25 09:27:51,062 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,120 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,158 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,233 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,272 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,318 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,393 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,433 ERROR  Failed to fetch comment details: 1 validation error for Comment
+replies_count
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+2025-01-25 09:27:51,433 INFO  Fetching video duration.
+2025-01-25 09:27:51,441 ERROR  Unexpected error occurred: invalid literal for int() with base 10: ''
+2025-01-25 09:27:51,635 INFO  Saving video info to temp_data/@MrBeast/videos/SM66GDRyIVY.json
+2025-01-25 09:27:51,635 ERROR  Failed to save video information for SM66GDRyIVY: Object of type function is not JSON serializable
+2025-01-25 09:27:51,635 INFO  Extracting video details.
+2025-01-25 09:27:51,667 INFO  Fetching additional details for video: gs8qfL9PNac
+2025-01-25 09:27:51,668 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d281d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,669 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,669 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28530>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,670 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,671 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28920>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,671 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28b00>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,672 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d67590>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,673 INFO  Saving video info to temp_data/@MrBeast/videos/gs8qfL9PNac.json
+2025-01-25 09:27:51,673 ERROR  Failed to save video information for gs8qfL9PNac: Object of type function is not JSON serializable
+2025-01-25 09:27:51,673 INFO  Extracting video details.
+2025-01-25 09:27:51,700 INFO  Fetching additional details for video: 0BjlBnfHcHM
+2025-01-25 09:27:51,702 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d283e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,703 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28bf0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,703 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28e30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,703 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29040>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,704 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29280>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,704 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29460>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,704 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29610>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,705 INFO  Saving video info to temp_data/@MrBeast/videos/0BjlBnfHcHM.json
+2025-01-25 09:27:51,705 ERROR  Failed to save video information for 0BjlBnfHcHM: Object of type function is not JSON serializable
+2025-01-25 09:27:51,705 INFO  Extracting video details.
+2025-01-25 09:27:51,730 INFO  Fetching additional details for video: Xj0Jtjg3lHQ
+2025-01-25 09:27:51,731 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2a660>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,732 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2a930>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,732 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2ab70>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,732 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2adb0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,733 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102e9ddc0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,733 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29220>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,734 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d297c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,734 INFO  Saving video info to temp_data/@MrBeast/videos/Xj0Jtjg3lHQ.json
+2025-01-25 09:27:51,734 ERROR  Failed to save video information for Xj0Jtjg3lHQ: Object of type function is not JSON serializable
+2025-01-25 09:27:51,734 INFO  Extracting video details.
+2025-01-25 09:27:51,759 INFO  Fetching additional details for video: bn0Kh9c4Zv4
+2025-01-25 09:27:51,760 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d282c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,761 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28ec0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,761 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d281a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,761 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28470>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,762 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d285f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,762 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28b60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,762 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b020>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,763 INFO  Saving video info to temp_data/@MrBeast/videos/bn0Kh9c4Zv4.json
+2025-01-25 09:27:51,763 ERROR  Failed to save video information for bn0Kh9c4Zv4: Object of type function is not JSON serializable
+2025-01-25 09:27:51,763 INFO  Extracting video details.
+2025-01-25 09:27:51,788 INFO  Fetching additional details for video: snX5YyflrGw
+2025-01-25 09:27:51,789 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b560>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,790 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b920>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,790 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2bb60>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,790 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2bda0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,791 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b770>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,791 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2aea0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,792 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b110>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,792 INFO  Saving video info to temp_data/@MrBeast/videos/snX5YyflrGw.json
+2025-01-25 09:27:51,793 ERROR  Failed to save video information for snX5YyflrGw: Object of type function is not JSON serializable
+2025-01-25 09:27:51,793 INFO  Extracting video details.
+2025-01-25 09:27:51,818 INFO  Fetching additional details for video: aRcUVhVlSHg
+2025-01-25 09:27:51,819 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,819 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28ce0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,820 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d290d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,820 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d281d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,821 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29610>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,821 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d297c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,822 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29400>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,822 INFO  Saving video info to temp_data/@MrBeast/videos/aRcUVhVlSHg.json
+2025-01-25 09:27:51,822 ERROR  Failed to save video information for aRcUVhVlSHg: Object of type function is not JSON serializable
+2025-01-25 09:27:51,822 INFO  Extracting video details.
+2025-01-25 09:27:51,848 INFO  Fetching additional details for video: ndAQfTzlVjc
+2025-01-25 09:27:51,849 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf43e0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,850 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf4680>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,850 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf48c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,851 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b410>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,851 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2bef0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,852 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28290>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,852 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d296a0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,853 INFO  Saving video info to temp_data/@MrBeast/videos/ndAQfTzlVjc.json
+2025-01-25 09:27:51,853 ERROR  Failed to save video information for ndAQfTzlVjc: Object of type function is not JSON serializable
+2025-01-25 09:27:51,853 INFO  Extracting video details.
+2025-01-25 09:27:51,878 INFO  Fetching additional details for video: UPrkC1LdlLY
+2025-01-25 09:27:51,878 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2a600>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,879 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d294c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,879 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28aa0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,880 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2aff0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,880 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b1d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,880 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2bd40>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,881 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf4470>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,882 INFO  Saving video info to temp_data/@MrBeast/videos/UPrkC1LdlLY.json
+2025-01-25 09:27:51,882 ERROR  Failed to save video information for UPrkC1LdlLY: Object of type function is not JSON serializable
+2025-01-25 09:27:51,882 INFO  Extracting video details.
+2025-01-25 09:27:51,907 INFO  Fetching additional details for video: 4SNThp0YiU4
+2025-01-25 09:27:51,908 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf4dd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,909 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf51c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,910 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104cf5400>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url
+2025-01-25 09:27:51,910 ERROR  Unexpected error occurred: HTTPConnectionPool(host='localhost', port=56301): Max retries exceeded with url: /session/23ae2aa5dcabc3ef9b76f47ff479d2e1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d28e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-01-25 09:27:51,910 WARNING  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2bc50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,911 WARNING  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d29340>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,911 WARNING  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104d2b080>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/23ae2aa5dcabc3ef9b76f47ff479d2e1
+2025-01-25 09:27:51,912 INFO  Saving video info to temp_data/@MrBeast/videos/4SNThp0YiU4.json
+2025-01-25 09:27:51,912 ERROR  Failed to save video information for 4SNThp0YiU4: Object of type function is not JSON serializable

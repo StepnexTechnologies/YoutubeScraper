@@ -1,0 +1,33 @@
+{
+  "name": "Lilly Singh",
+  "is_verified": true,
+  "about": "Actress. Entertainer. Writer. Advocate. Goofball. ",
+  "links": [
+    {
+      "title": "CHECK OUT MY VLOGS HERE!",
+      "url": "youtube.com/lillysinghvlogs"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/lilly"
+    },
+    {
+      "title": "Book Club",
+      "url": "instagram.com/lillyslibrary"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@lilly?lang=en"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/lillysingh"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 14000000,
+    "videos_count": 1197,
+    "views_count": 3553031160,
+    "joined_date": "29 Oct 2010"
+  }
+}

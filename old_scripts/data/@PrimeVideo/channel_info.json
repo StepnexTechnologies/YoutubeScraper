@@ -1,0 +1,33 @@
+{
+  "name": "Prime Video",
+  "is_verified": true,
+  "about": "The official YouTube page for Prime Video US.\n\nWant to watch it now? We\u2019ve got it. This week\u2019s newest movies, last night\u2019s TV shows, classic favorites, and more are available to stream instantly, plus all your videos are stored in Your Video Library. Prime Video offers a variety of unique and captivating entertainment, including original series \u201cThe Boys,\u201d \u201cInvincible,\u201d \u201cHazbin Hotel,\u201d \u201cThe Summer I Turned Pretty,\u201d and more.",
+  "links": [
+    {
+      "title": "Watch More",
+      "url": "amazon.com/Video"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/primevideo"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@primevideo"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/PrimeVideo"
+    },
+    {
+      "title": "X",
+      "url": "twitter.com/primevideo"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 5000000,
+    "videos_count": 6241,
+    "views_count": 4133513264,
+    "joined_date": "19 Aug 2011"
+  }
+}

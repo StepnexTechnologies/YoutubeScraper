@@ -1,0 +1,41 @@
+{
+  "name": "The Verge",
+  "is_verified": true,
+  "about": "Welcome to the YouTube channel for TheVerge.com, a team of journalists that examines how technology will change life in the future. Subscribe for explainers, product reviews, technology news, and more.\n\nSupervising Director: Vjeran Pavic \nVideo Producer, Special Projects:  Victoria Barrios\nVideo Directors: Owen Grove\nSenior Audio Engineer: Andrew Marino\nArt Director: Alex Parkin\nEngagement: Denise Cervantes\nDirector of Audience Development: Ruben Salvadori",
+  "links": [
+    {
+      "title": "Community Guidelines",
+      "url": "theverge.com/pages/community-guidelines"
+    },
+    {
+      "title": "TheVerge.com",
+      "url": "theverge.com"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/verge"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@verge"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/verge"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/verge"
+    },
+    {
+      "title": "The Vergecast",
+      "url": "pod.link/430333725"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 3000000,
+    "videos_count": 5070,
+    "views_count": 1060060794,
+    "joined_date": "8 Aug 2006"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "HBO",
+  "is_verified": true,
+  "about": "Season 3 of the HBO Original Series The White Lotus is streaming February 16 on @StreamOnMax. Start streaming here: https://streamonm.ax/Max",
+  "links": [
+    {
+      "title": "Stream on Max",
+      "url": "streamonm.ax/Max"
+    },
+    {
+      "title": "Instagram",
+      "url": "instagram.com/hbo"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@hbo"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/hbo"
+    },
+    {
+      "title": "Facebook",
+      "url": "facebook.com/HBO"
+    },
+    {
+      "title": "HBO.com",
+      "url": "itsh.bo/discover"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 3000000,
+    "videos_count": 10370,
+    "views_count": 1473589893,
+    "joined_date": "17 May 2006"
+  }
+}

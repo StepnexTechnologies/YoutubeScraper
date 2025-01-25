@@ -1,0 +1,29 @@
+{
+  "name": "Jake Paul",
+  "is_verified": true,
+  "about": "WHATS UP?! I'm Jake Paul.\n27 y/o pro boxer / musical artist\n\nFAHLO ME OTHER SOCIAL MEDIAS \nInstagram: jakepaul\nTwitter: jakepaul\nSnapchat: jakepaul19\n\nBusiness: brands@jakepaul.com",
+  "links": [
+    {
+      "title": "Instagram",
+      "url": "instagram.com/jakepaul"
+    },
+    {
+      "title": "Twitter",
+      "url": "twitter.com/jakepaul"
+    },
+    {
+      "title": "GET W",
+      "url": "getw.com"
+    },
+    {
+      "title": "SUBSCRIBE",
+      "url": "bit.ly/SUB2JAKEPAUL"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 20000000,
+    "videos_count": 1450,
+    "views_count": 7743132521,
+    "joined_date": "20 Sept 2013"
+  }
+}

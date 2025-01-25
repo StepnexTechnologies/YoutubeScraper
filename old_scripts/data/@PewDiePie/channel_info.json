@@ -1,0 +1,25 @@
+{
+  "name": "PewDiePie",
+  "is_verified": true,
+  "about": "I make videos.",
+  "links": [
+    {
+      "title": "IG",
+      "url": "instagram.com/pewdiepie"
+    },
+    {
+      "title": "TikTok",
+      "url": "tiktok.com/@pewdiepie"
+    },
+    {
+      "title": "Twitch",
+      "url": "twitch.tv/pewdiepie"
+    }
+  ],
+  "channel_details": {
+    "subscribers": 110000000,
+    "videos_count": 4806,
+    "views_count": 29473906607,
+    "joined_date": "29 Apr 2010"
+  }
+}

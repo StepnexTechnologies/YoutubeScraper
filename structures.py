@@ -1,0 +1,160 @@
+from dataclasses import dataclass
+from typing import List, Optional
+from enum import Enum
+
+from pydantic import BaseModel
+
+
+@dataclass
+class YtScraperConfig:
+    log_directory: str = "logs"
+    data_directory: str = "data"
+    proxy: Optional[str] = None
+    print_logs_to_console: bool = False
+
+
+class Link(BaseModel):
+    title: str
+    url: str
+
+
+class AffiliatedChannel(BaseModel):
+    name: str
+    url: str
+    code: str
+    subscribers: int
+
+
+class ChannelInfo(BaseModel):
+    name: str
+    is_verified: bool
+    about: str
+    links: List[Link]
+    # display_picture_url: str  # TODO: Not Implemented yet
+    # banner_url: str  # TODO: Not Implemented yet
+    # affiliated_channels: Optional[AffiliatedChannel]  # TODO: Not Implemented yet
+    subscribers: int
+    videos_count: int
+    views_count: int
+    joined_date: str
+    location: Optional[str]  # TODO:Not Implemented yet
+
+
+class Comment(BaseModel):
+    comment: str
+    commenter_channel_name: str
+    likes: int
+    date: str
+    fetched_date: str
+    replies_count: int
+    liked_by_creator: bool
+
+
+class RelatedVideo(BaseModel):
+    video_url: str
+    channel_name: str
+    is_channel_name: str
+    posted_date: str
+    fetched_timestamp: str
+    duration: int
+    views: int
+
+
+class VideoInfo(BaseModel):
+    code: str
+    title: str
+    url: str
+    thumbnail_url: Optional[str]
+    views: int
+    likes: int
+    duration: float
+    embed_code: str
+    uploaded_date: str
+    comments_count: int
+    comments_turned_off: bool  # TODO: Not Implemented yet
+    comments: List[Comment]
+    related: Optional[List[RelatedVideo]]
+
+
+class Short(BaseModel):
+    code: str
+    url: str
+    views: int
+
+
+class ShortMusic(BaseModel):
+    name: str
+    channel_name: str
+    music_url: str
+    channel_url: str
+    used_in_shorts: List[Short]
+
+
+class ShortEffect(BaseModel):
+    name: str
+    shorts_count: int
+
+
+class ShortInfo(BaseModel):
+    code: str
+    url: str
+    description: str
+    secondary_description: Optional[str]  # TODO: Not Implemented yet
+    hashtags: Optional[List[str]]  # TODO: Not Implemented yet
+    music: Optional[ShortMusic]  # TODO: Not Implemented yet
+    effect: Optional[ShortEffect]  # TODO: Not Implemented yet
+    related_shorts: Optional[List[Short]]  # TODO: Not Implemented yet
+    suggested_search_phrase: str  # TODO: Not Implemented yet
+    link: Optional[Link]  # TODO: Not Implemented yet
+    thumbnail_url: str
+    likes: int
+    views: int
+    posted_date: str
+    comments_count: int
+    pinned_comments: Optional[List[Comment]]
+    comments: List[Comment]
+
+
+class CommunityPostType(Enum):
+    TEXT = "Image"
+    IMAGE = "Image"
+    VIDEO = "Video"
+    IMAGE_CAROUSEL = "Image Carousel"
+    VOTE = "Vote"
+    QUIZ = "Quiz"
+
+
+class VoteOption(BaseModel):
+    description: str
+    vote_percentage: str
+    img_url: Optional[str]
+
+
+class VoteTypePost(BaseModel):
+    votes_count: int
+    options: List[VoteOption]
+
+
+class QuizTypePost(BaseModel):
+    question: str
+    options: List[str]
+
+
+class CommunityPost(BaseModel):  # TODO: Not Implemented yet
+    code: str
+    url: str
+    description: Optional[str]
+    post_type: CommunityPostType
+    post: Optional[str | List[str] | VoteTypePost | QuizTypePost]
+    likes: int
+    comments_count: int
+    comments: List[Comment]
+    posted_date: str
+    fetched_timestamp: str
+
+
+class CommunityInfo(BaseModel):  # TODO: Not Implemented yet
+    posts: List[CommunityPost]
+
+
+# Live Stream same model as video just scrape a different link https://www.youtube.com/{channel_name}/streams

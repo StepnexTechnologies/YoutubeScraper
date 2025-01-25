@@ -1,0 +1,25 @@
+2025-01-25 07:14:55,108 INFO  ====== WebDriver manager ======
+2025-01-25 07:14:55,321 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:55,474 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:55,627 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:14:57,136 INFO  ====== WebDriver manager ======
+2025-01-25 07:14:57,291 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:57,454 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:57,612 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:14:58,631 INFO  ====== WebDriver manager ======
+2025-01-25 07:14:58,774 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:58,940 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:14:59,098 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:15:00,102 INFO  ====== WebDriver manager ======
+2025-01-25 07:15:00,244 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:15:00,391 INFO  Get LATEST chromedriver version for google-chrome
+2025-01-25 07:15:00,536 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache
+2025-01-25 07:15:05,008 INFO  Fetching channel name and verification status.
+2025-01-25 07:15:05,037 INFO  Clicking 'More' button to fetch about info.
+2025-01-25 07:15:05,720 INFO  Fetching channel links.
+2025-01-25 07:15:05,795 INFO  Fetching channel details (subscribers, videos, views, joined date).
+2025-01-25 07:15:05,835 INFO  Closing channel details popup.
+2025-01-25 07:15:05,976 INFO  Closed channel_info_driver driver successfully
+2025-01-25 07:15:06,057 INFO  Closed video_details_driver driver successfully
+2025-01-25 07:15:06,136 INFO  Closed shorts_info_driver driver successfully
+2025-01-25 07:15:06,223 INFO  Closed shorts_details_driver driver successfully
