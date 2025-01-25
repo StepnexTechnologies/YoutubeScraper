@@ -1,8 +1,0 @@
-2025-01-20 01:43:09,427 INFO  ====== WebDriver manager ======
-2025-01-20 01:43:09,974 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-20 01:43:10,251 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-20 01:43:10,494 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-20 01:43:11,253 INFO  WebDriver version 131.0.6778.264 selected
-2025-01-20 01:43:11,255 INFO  Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/mac-arm64/chromedriver-mac-arm64.zip
-2025-01-20 01:43:11,255 INFO  About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/mac-arm64/chromedriver-mac-arm64.zip
-2025-01-20 01:43:11,802 INFO  Driver downloading response is 200

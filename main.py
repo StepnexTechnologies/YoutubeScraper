@@ -2,9 +2,9 @@ from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 
 from scraper import YtScraper
-from constants import Constants
-from structures import YtScraperConfig
-from utils import get_webdriver
+from lib.constants import Constants
+from lib.structures import YtScraperConfig
+from lib.utils import get_webdriver
 
 
 def scrape_channel():
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     scraper_config = YtScraperConfig(
         log_directory="logs",
         data_directory="temp_data",
-        print_logs_to_console=True,
+        # print_logs_to_console=True,
     )
 
     driver_pool = Queue(maxsize=Constants.MAX_WORKERS + 2)

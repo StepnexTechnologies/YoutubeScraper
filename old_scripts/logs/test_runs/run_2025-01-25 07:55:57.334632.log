@@ -1,7 +1,0 @@
-2025-01-25 07:55:57,335 INFO  ====== WebDriver manager ======
-2025-01-25 07:55:57,491 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-25 07:55:58,210 INFO  Fetching channel links.
-2025-01-25 07:55:58,289 INFO  Fetching channel details (subscribers, videos, views, joined date).
-2025-01-25 07:55:58,332 INFO  Closing channel details popup.
-2025-01-25 07:55:58,369 INFO  ====== WebDriver manager ======
-2025-01-25 07:55:58,491 INFO  Get LATEST chromedriver version for google-chrome

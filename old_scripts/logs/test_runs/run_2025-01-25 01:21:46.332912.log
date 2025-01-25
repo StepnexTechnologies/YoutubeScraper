@@ -1,4 +1,0 @@
-2025-01-25 01:21:59,516 INFO  ====== WebDriver manager ======
-2025-01-25 01:21:59,684 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-25 01:21:59,857 INFO  Get LATEST chromedriver version for google-chrome
-2025-01-25 01:22:00,021 INFO  Driver [/Users/naaddantale/.wdm/drivers/chromedriver/mac64/131.0.6778.264/chromedriver-mac-arm64/chromedriver] found in cache

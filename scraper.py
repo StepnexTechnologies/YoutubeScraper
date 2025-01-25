@@ -1,17 +1,18 @@
-import csv
 import os
-from datetime import datetime
+import csv
 from queue import Queue
 from threading import Lock
+from datetime import datetime
 
-from community_posts import get_community_posts
-from constants import Constants
-from errors import ScraperRuntimeError
-from shorts import get_shorts
-from videos import get_video_info
-from structures import YtScraperConfig
-from channel_info import get_channel_info
-from utils import get_logger, save_to_json, get_webdriver
+from lib.constants import Constants
+from lib.errors import ScraperRuntimeError
+from lib.structures import YtScraperConfig
+from lib.utils import get_logger, save_to_json, get_webdriver
+
+from scrapers.shorts import get_shorts
+from scrapers.videos import get_video_info
+from scrapers.channel_info import get_channel_info
+from scrapers.community_posts import get_community_posts
 
 
 class YtScraper:
