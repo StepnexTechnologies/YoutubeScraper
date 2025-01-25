@@ -12,7 +12,7 @@ def scrape_channel():
     while not channel_queue.empty():
         channel_name = channel_queue.get()
         if channel_name:
-            scraper.run(channel_name)
+            scraper.run(channel_name, store_run_metadata=True)
             channel_queue.task_done()
 
 
@@ -21,13 +21,13 @@ if __name__ == "__main__":
         channels = [channel.strip() for channel in f.readlines()]
 
     scraper_config = YtScraperConfig(
-        log_directory="logs/test_runs",
+        log_directory="logs",
         data_directory="temp_data",
         print_logs_to_console=True,
     )
 
     driver_pool = Queue(maxsize=Constants.MAX_WORKERS + 2)
-    for _ in range(Constants.MAX_WORKERS):
+    for _ in range(Constants.MAX_WORKERS + 2):
         driver_pool.put(get_webdriver())
 
     channel_queue = Queue()
@@ -39,6 +39,7 @@ if __name__ == "__main__":
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         futures = [executor.submit(scrape_channel) for _ in range(max_threads)]
 
+    print("Gracefully stopping...")
     while not driver_pool.empty():
         driver = driver_pool.get()
         driver.quit()

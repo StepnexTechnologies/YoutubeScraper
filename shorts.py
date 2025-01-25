@@ -1,4 +1,3 @@
-import os
 import time
 from datetime import date
 
@@ -9,15 +8,14 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from constants import Constants
 from structures import ShortInfo, Comment, ShortMusic, Link, ShortEffect
-from utils import scroll_to_bottom, get_webdriver, unzip_large_nums, get_logger
+from utils import scroll_to_bottom, get_webdriver, unzip_large_nums, get_logger, save_to_json
 
 
 def get_shorts(
     channel_name, shorts_info_driver, shorts_details_driver, constants, logger
 ):
-    shorts = []
     try:
-        shorts_info_driver.get(f"https://www.youtube.com/{channel_name}/shorts")
+        shorts_info_driver.get(f"{constants.SHORTS_PAGE_LINK.format(channel_name)}")
         shorts_info_driver.maximize_window()
 
         scroll_to_bottom(shorts_info_driver, pause_time=1.5, scroll_count=5)
@@ -316,7 +314,7 @@ def get_shorts(
                 pinned_comments=[],
                 comments=comments_list,
             )
-            shorts.append(s)
+            save_to_json(f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.SHORTS_DIRECTORY}/{code}.json", s.model_dump_json())
         shorts_details_driver.quit()
 
     except TimeoutError as te:
@@ -331,25 +329,13 @@ def get_shorts(
     except WebDriverException as wde:
         logger.error(f"Webdriver Exception: {wde}")
 
-    finally:
-        return shorts
-
 
 if __name__ == "__main__":
     channel = "@MrBeast"
-    results = get_shorts(
+    get_shorts(
         channel,
         get_webdriver(),
         get_webdriver(),
         Constants(),
         get_logger("logs/test_runs"),
     )
-
-    try:
-        os.mkdir(channel)
-    except Exception as e:
-        print(e)
-
-    for short in results:
-        with open(f"{channel}/{short.code}.json", "w") as f:
-            f.write(short.model_dump_json())

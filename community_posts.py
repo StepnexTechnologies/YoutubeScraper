@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from constants import Constants
 from structures import (
     CommunityPost,
-    CommunityInfo,
     CommunityPostType,
     VoteTypePost,
     QuizTypePost,

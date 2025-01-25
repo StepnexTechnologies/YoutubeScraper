@@ -152,9 +152,4 @@ class CommunityPost(BaseModel):  # TODO: Not Implemented yet
     posted_date: str
     fetched_timestamp: str
 
-
-class CommunityInfo(BaseModel):  # TODO: Not Implemented yet
-    posts: List[CommunityPost]
-
-
 # Live Stream same model as video just scrape a different link https://www.youtube.com/{channel_name}/streams

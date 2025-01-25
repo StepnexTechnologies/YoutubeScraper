@@ -3,8 +3,11 @@ class Constants:
     MAX_WORKERS = 2
 
     DATA_DIRECTORY = "data"
+    INFO_FILE_NAME = "channel_info.json"
     VIDEOS_DIRECTORY = "videos"
     SHORTS_DIRECTORY = "shorts"
+    COMMUNITY_POSTS_DIRECTORY = "community_posts"
+    METADATA_FILE_NAME = "metadata.json"
 
     # VIDEOS_COUNT = 100
     # VIDEO_COMMENTS_COUNT = 100
@@ -25,15 +28,3 @@ class Constants:
     COMMUNITY_POSTS_PAGE_LINK = "https://www.youtube.com/{}/community"
     LIVE_STREAMS_PAGE_LINK = "https://www.youtube.com/{}/streams"
     EMBED_LINK = "https://www.youtube.com/embed/{}"
-
-    # Important Log Messages
-
-    # INFO
-    STARTING_SCRAPE_FOR_CHANNEL = "Starting scrape for channel: {}"
-    SUCCESSFULLY_SCRAPED_CHANNEL = "Successfully scraped channel: {}"
-
-    # WARNING
-    ERROR_SCRAPING_CHANNEL = "Error scraping {0}: {1}. Retrying..."
-
-    # ERROR
-    FAILED_TO_SCRAPE_CHANNEL = "Failed to scrape channel after {0} attempts: {1}"
