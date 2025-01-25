@@ -2,7 +2,7 @@ class Constants:
     MAX_DELAY = 8
     MAX_WORKERS = 2
 
-    DATA_DIRECTORY = "temp_data"
+    DATA_DIRECTORY = "data"
     VIDEOS_DIRECTORY = "videos"
     SHORTS_DIRECTORY = "shorts"
 

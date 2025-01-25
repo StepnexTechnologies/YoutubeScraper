@@ -10,8 +10,8 @@ from selenium.common.exceptions import (
 )
 from urllib3.exceptions import NewConnectionError
 
-from Yt.constants import Constants
-from Yt.structures import VideoInfo, Comment
+from constants import Constants
+from structures import VideoInfo, Comment
 from utils import scroll_to_bottom, unzip_large_nums, get_webdriver, scroll, get_logger
 
 

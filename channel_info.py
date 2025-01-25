@@ -7,7 +7,7 @@ from selenium.common.exceptions import (
     WebDriverException,
 )
 
-from Yt.structures import ChannelInfo, Link
+from structures import ChannelInfo, Link
 from utils import unzip_large_nums
 
 
