@@ -2,13 +2,15 @@ import os
 from queue import Queue
 from typing import Optional
 
+
 from community_posts import get_community_posts
 from constants import Constants
+from errors import ScraperRuntimeError
 from shorts import get_shorts
 from videos import get_video_info
-from structures import ChannelInfo, YtScraperConfig
+from structures import ChannelInfo, YtScraperConfig, CommunityInfo
 from channel_info import get_channel_info
-from utils import get_logger, save_to_json
+from utils import get_logger, save_to_json, get_webdriver
 
 
 class YtScraper:
@@ -44,7 +46,7 @@ class YtScraper:
                 os.makedirs(f"{self.data_directory}/{channel_name}")
 
             channel_info = get_channel_info(
-                channel_info_driver,  # Use the shared driver
+                channel_info_driver,
                 channel_name,
                 Constants,
                 self.logger,
@@ -55,15 +57,16 @@ class YtScraper:
                     f"{self.data_directory}/{channel_name}/channel_info.json",
                     channel_info.model_dump_json(indent=4),
                 )
+            self.driver_pool.put(channel_info_driver)
             return channel_info
+
+        except ScraperRuntimeError:
+            self.driver_pool.put(get_webdriver())
 
         except Exception as e:
             self.logger.error(
                 f"Error while scraping channel info for {channel_name}: {e}"
             )
-            return None
-
-        finally:
             self.driver_pool.put(channel_info_driver)
 
     def scrape_channel_videos(self, channel_name):
@@ -81,11 +84,15 @@ class YtScraper:
                 self.constants,
                 self.logger,
             )
+            self.driver_pool.put(videos_info_driver)
+
+        except ScraperRuntimeError:
+            self.driver_pool.put(get_webdriver())
+
         except Exception as e:
             self.logger.error(
                 f"Error while scraping channel video info for {channel_name}: {e}"
             )
-        finally:
             self.driver_pool.put(videos_info_driver)
 
     def scrape_channel_shorts(self, channel_name) -> Optional[ChannelInfo]:
@@ -103,28 +110,37 @@ class YtScraper:
                 self.constants,
                 self.logger,
             )
+            self.driver_pool.put(shorts_info_driver)
+            self.driver_pool.put(shorts_details_driver)
             return shorts
+
+        except ScraperRuntimeError:
+            self.driver_pool.put(get_webdriver())
+            self.driver_pool.put(get_webdriver())
+
         except Exception as e:
             self.logger.error(
                 f"Error while scraping channel shorts info for {channel_name}: {e}"
             )
-            return None
-        finally:
             self.driver_pool.put(shorts_info_driver)
             self.driver_pool.put(shorts_details_driver)
 
-    def scrape_channel_community_posts(self, channel_name):
+    def scrape_channel_community_posts(self, channel_name) -> Optional[CommunityInfo]:
         if not os.path.exists(f"{self.data_directory}/{channel_name}/community_posts"):
             os.makedirs(f"{self.data_directory}/{channel_name}/community_posts")
-        community_posts_driver = self.driver_pool.get()
 
+        community_posts_driver = self.driver_pool.get()
         try:
             get_community_posts(channel_name, community_posts_driver, self.logger)
+            self.driver_pool.put(community_posts_driver)
+
+        except ScraperRuntimeError:
+            self.driver_pool.put(get_webdriver())
+
         except Exception as e:
             self.logger.error(
                 f"Error while scraping channel community posts info for {channel_name}: {e}"
             )
-        finally:
             self.driver_pool.put(community_posts_driver)
 
     def run(self, channel_name: list[str]):

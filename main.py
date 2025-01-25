@@ -26,7 +26,7 @@ if __name__ == "__main__":
         print_logs_to_console=True,
     )
 
-    driver_pool = Queue(maxsize=Constants.MAX_WORKERS)
+    driver_pool = Queue(maxsize=Constants.MAX_WORKERS + 2)
     for _ in range(Constants.MAX_WORKERS):
         driver_pool.put(get_webdriver())
 

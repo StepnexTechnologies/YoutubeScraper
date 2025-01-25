@@ -11,6 +11,7 @@ from selenium.common.exceptions import (
 from urllib3.exceptions import NewConnectionError
 
 from constants import Constants
+from errors import ScraperRuntimeError
 from structures import VideoInfo, Comment
 from utils import scroll_to_bottom, unzip_large_nums, get_webdriver, scroll, get_logger
 
@@ -18,96 +19,101 @@ from utils import scroll_to_bottom, unzip_large_nums, get_webdriver, scroll, get
 def get_video_info(
     videos_info_driver, videos_details_driver, channel_name, constants, logger
 ):
-    # try:
-    videos_info_driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
-    logger.info(f"Fetching video information for channel: {channel_name}")
-    contents = WebDriverWait(videos_info_driver, constants.MAX_DELAY).until(
-        EC.presence_of_element_located((By.ID, "contents"))
-    )
-
-    # Scrolling logic
     try:
-        logger.info("Scrolling through the page to load all videos.")
-        scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
-    except Exception as e:
-        logger.error(f"Scrolling failed: {e}")
+        videos_info_driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
+        logger.info(f"Fetching video information for channel: {channel_name}")
+        contents = WebDriverWait(videos_info_driver, constants.MAX_DELAY).until(
+            EC.presence_of_element_located((By.ID, "contents"))
+        )
 
-    for count, content in enumerate(contents.find_elements(By.ID, "content")):
-        if count == constants.VIDEOS_COUNT:
-            break
-
-        # video_info = {}
-        code = ""
-        url = ""
-        title = ""
-        thumbnail_url = ""
-        views = 0
-
+        # Scrolling logic
         try:
-            logger.info("Extracting video details.")
-            video_url = content.find_element(By.TAG_NAME, "a").get_attribute("href")
-
-            code = video_url.split("=")[-1]
-
-            thumbnail_url = content.find_element(By.TAG_NAME, "img").get_attribute(
-                "src"
-            )
-
-            title = content.find_element(By.ID, "video-title").text
-
-            try:
-                metadata_container = content.find_element(
-                    By.ID, "metadata-line"
-                ).find_elements(By.TAG_NAME, "span")
-                views = unzip_large_nums(metadata_container[0].text.split(" ")[0])
-            except NoSuchElementException:
-                logger.error("Metadata container or views information not found.")
-
-            # TODO Consider getting more accurate view count in video details
-
-            try:
-                logger.info(f"Fetching additional details for video: {code}")
-
-                video_details = get_video_details(
-                    videos_details_driver, code, constants, logger
-                )
-
-                video_info = VideoInfo(
-                    code=code,
-                    title=title,
-                    url=url,
-                    thumbnail_url=thumbnail_url,
-                    views=views,
-                    likes=video_details["likes"],
-                    duration=video_details["duration"],
-                    embed_code=video_details["embed_code"],
-                    uploaded_date=video_details["uploaded_date"],
-                    comments_count=video_details["comments_count"],
-                    comments_turned_off=False,  # TODO: Not Implemented yet
-                    comments=video_details["comments"],
-                    related=[],  # TODO: Not Implemented yet
-                )
-            except Exception as e:
-                logger.error(
-                    f"Failed to fetch additional video details for {code}: {e}"
-                )
-
-            try:
-                file_path = f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.VIDEOS_DIRECTORY}/{code}.json"
-                logger.info(f"Saving video info to {file_path}")
-                with open(file_path, "w") as file:
-                    file.write(video_info.model_dump_json(indent=4))
-            except Exception as e:
-                logger.error(f"Failed to save video information for {code}: {e}")
-
+            logger.info("Scrolling through the page to load all videos.")
+            scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
         except Exception as e:
-            logger.error(f"Failed to extract details for a video: {e}")
-    return 1
+            logger.error(f"Scrolling failed: {e}")
 
+        for count, content in enumerate(contents.find_elements(By.ID, "content")):
+            if count == constants.VIDEOS_COUNT:
+                break
 
-# except TimeoutException:
-#     logger.error("Unexpected Error - Timeout Exception while fetching videos.")
-#     return 0
+            # video_info = {}
+            code = ""
+            url = ""
+            title = ""
+            thumbnail_url = ""
+            views = 0
+
+            try:
+                logger.info("Extracting video details.")
+                video_url = content.find_element(By.TAG_NAME, "a").get_attribute("href")
+
+                code = video_url.split("=")[-1]
+
+                thumbnail_url = content.find_element(By.TAG_NAME, "img").get_attribute(
+                    "src"
+                )
+
+                title = content.find_element(By.ID, "video-title").text
+
+                try:
+                    metadata_container = content.find_element(
+                        By.ID, "metadata-line"
+                    ).find_elements(By.TAG_NAME, "span")
+                    views = unzip_large_nums(metadata_container[0].text.split(" ")[0])
+                except NoSuchElementException:
+                    logger.error("Metadata container or views information not found.")
+
+                # TODO Consider getting more accurate view count in video details
+
+                try:
+                    logger.info(f"Fetching additional details for video: {code}")
+
+                    video_details = get_video_details(
+                        videos_details_driver, code, constants, logger
+                    )
+
+                    video_info = VideoInfo(
+                        code=code,
+                        title=title,
+                        url=url,
+                        thumbnail_url=thumbnail_url,
+                        views=views,
+                        likes=video_details["likes"],
+                        duration=video_details["duration"],
+                        embed_code=video_details["embed_code"],
+                        uploaded_date=video_details["uploaded_date"],
+                        comments_count=video_details["comments_count"],
+                        comments_turned_off=False,  # TODO: Not Implemented yet
+                        comments=video_details["comments"],
+                        related=[],  # TODO: Not Implemented yet
+                    )
+                except Exception as e:
+                    logger.error(
+                        f"Failed to fetch additional video details for {code}: {e}"
+                    )
+
+                try:
+                    file_path = f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.VIDEOS_DIRECTORY}/{code}.json"
+                    logger.info(f"Saving video info to {file_path}")
+                    with open(file_path, "w") as file:
+                        file.write(video_info.model_dump_json(indent=4))
+                except Exception as e:
+                    logger.error(f"Failed to save video information for {code}: {e}")
+
+            except Exception as e:
+                logger.error(f"Failed to extract details for a video: {e}")
+        return 1
+
+    except NewConnectionError as e:
+        logger.error(
+            f"Connection Error, session expired, youtube invalidated this session."
+        )
+        raise ScraperRuntimeError(message="Connection Error, session expired, youtube invalidated this session", channel=channel_name)
+
+    except TimeoutException:
+        logger.error("Unexpected Error - Timeout Exception while fetching videos.")
+        return 0
 
 
 def get_video_details(video_details_driver, code, constants, logger):
@@ -277,6 +283,13 @@ def get_video_details(video_details_driver, code, constants, logger):
             logger.error("Failed to fetch video duration.")
 
         return other_info
+
+    except NewConnectionError as e:
+        logger.error(
+            f"Connection Error, session expired, youtube invalidated this session."
+        )
+        raise ScraperRuntimeError(message=f"Connection Error, session expired, youtube invalidated this session for "
+                                          f"video details, link: {constants.VIDEO_PAGE_LINK.format(code)}")
 
     except Exception as e:
         logger.error(f"Unexpected error occurred: {e}")

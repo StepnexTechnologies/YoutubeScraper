@@ -1,0 +1,5 @@
+selenium~=4.28.1
+urllib3~=2.3.0
+webdriver-manager
+tenacity
+pydantic

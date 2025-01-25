@@ -270,8 +270,6 @@ def get_shorts(
                         comment.find_element(By.ID, "replies")
                         .find_element(By.TAG_NAME, "ytd-comment-replies-renderer")
                         .find_element(By.ID, "expander")
-                        # .find_element(By.ID, "expander-contents")
-                        # .find_element(By.ID, "contents")
                         .find_element(By.ID, "more-replies")
                         .find_element(By.TAG_NAME, "button")
                         .get_attribute("aria-label")
