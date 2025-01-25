@@ -272,7 +272,6 @@ def get_video_details(video_details_driver, code, constants, logger):
             )
             d = duration_element.text.split(":")
             d.reverse()
-            print(d)
             try:
                 duration = sum(int(num) * (60**i) for i, num in enumerate(d))
                 other_info["duration"] = duration
@@ -293,9 +292,6 @@ def get_video_details(video_details_driver, code, constants, logger):
     except Exception as e:
         logger.error(f"Unexpected error occurred: {e}")
         return other_info
-
-    finally:
-        video_details_driver.quit()
 
 
 if __name__ == "__main__":

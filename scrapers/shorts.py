@@ -315,7 +315,6 @@ def get_shorts(
                 comments=comments_list,
             )
             save_to_json(f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.SHORTS_DIRECTORY}/{code}.json", s.model_dump_json())
-        shorts_details_driver.quit()
 
     except TimeoutError as te:
         logger.error(f"Timeout error: {te}")

@@ -1,8 +1,9 @@
 class Constants:
     MAX_DELAY = 8
-    MAX_WORKERS = 2
+    MAX_WORKERS = 5
 
     DATA_DIRECTORY = "data"
+    LOGS_DIRECTORY = "logs"
     INFO_FILE_NAME = "channel_info.json"
     VIDEOS_DIRECTORY = "videos"
     SHORTS_DIRECTORY = "shorts"

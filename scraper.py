@@ -36,6 +36,10 @@ class YtScraper:
         if not os.path.exists(self.data_directory):
             os.makedirs(self.data_directory)
 
+    def post_run_step(self):
+        while not self.driver_pool.full():
+            self.driver_pool.put(get_webdriver())
+
     def store_metadata(self, channel_name, info_scraped, videos_scraped, shorts_scraped, community_posts):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         metadata = [
@@ -166,14 +170,15 @@ class YtScraper:
             self.driver_pool.put(community_posts_driver)
             return False
 
-    def run(self, channel_name: list[str], store_run_metadata: bool = False):
-        info_scraped, videos_scraped, shorts_scraped, community_posts_scraped = False
+    def run(self, channel_name: str, store_run_metadata: bool = False):
+        info_scraped, videos_scraped, shorts_scraped, community_posts_scraped = False, False, False, False
         try:
             self.pre_run_setup()
             info_scraped = self.scrape_channel_info(channel_name=channel_name)
             videos_scraped = self.scrape_channel_videos(channel_name=channel_name)
             shorts_scraped = self.scrape_channel_shorts(channel_name=channel_name)
             community_posts_scraped = self.scrape_channel_community_posts(channel_name=channel_name)
+            self.post_run_step()
 
         except Exception as e:
             self.logger.critical(f"Scraping process failed: {e}")
