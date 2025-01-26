@@ -8,7 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from lib.constants import Constants
 from lib.structures import ShortInfo, Comment, ShortMusic, Link, ShortEffect
-from lib.utils import scroll_to_bottom, get_webdriver, unzip_large_nums, get_logger, save_to_json
+from lib.utils import (
+    scroll_to_bottom,
+    get_webdriver,
+    unzip_large_nums,
+    get_logger,
+    save_to_json,
+)
 
 
 def get_shorts(
@@ -278,8 +284,9 @@ def get_shorts(
 
                 comments_list.append(
                     Comment(
-                        commenter_channel_name=commenter_channel_name,
                         comment=description,
+                        commenter_channel_name=commenter_channel_name,
+                        commenter_display_picture_url="",
                         likes=likes,
                         date=comment_date,
                         fetched_date=fetched_date,
@@ -314,7 +321,10 @@ def get_shorts(
                 pinned_comments=[],
                 comments=comments_list,
             )
-            save_to_json(f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.SHORTS_DIRECTORY}/{code}.json", s.model_dump_json())
+            save_to_json(
+                f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.SHORTS_DIRECTORY}/{code}.json",
+                s.model_dump_json(),
+            )
 
     except TimeoutError as te:
         logger.error(f"Timeout error: {te}")

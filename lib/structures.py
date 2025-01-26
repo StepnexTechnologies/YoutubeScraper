@@ -43,6 +43,9 @@ class ChannelInfo(BaseModel):
 class Comment(BaseModel):
     comment: str
     commenter_channel_name: str
+    commenter_display_picture_url: Optional[
+        str
+    ]  # TODO: Not implemented for shorts and videos, remove Optional once done
     likes: int
     date: str
     fetched_date: str

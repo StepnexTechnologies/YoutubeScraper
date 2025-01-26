@@ -256,6 +256,7 @@ def get_video_details(video_details_driver, code, constants, logger):
                         Comment(
                             comment=text,
                             commenter_channel_name=commenter_channel_name,
+                            commenter_display_picture_url="",
                             likes=likes,
                             date=comment_date,
                             fetched_date=str(datetime.now()),

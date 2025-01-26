@@ -121,7 +121,12 @@ def get_community_posts(channel_name, community_posts_driver, constants, logger)
             post_content = get_post_content(main_area, post_type)
 
             # Post Comments
-            comments = get_comments(url=url)
+            c_count, comments = get_comments(
+                community_posts_driver, code, constants, logger
+            )
+
+            if c_count != 0 and c_count != comments_count:
+                comments_count = c_count
 
             # Final Step
             post = CommunityPost(
@@ -325,8 +330,132 @@ def get_post_content(
     return None
 
 
-def get_comments(url: str) -> List[Comment]:
-    return []
+def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment]):
+    comments = []
+    comments_count = 0
+    try:
+        comments_driver.get(constants.COMMUNITY_POST_PAGE_LINK.format(code))
+
+        scroll(
+            comments_driver,
+            2,
+            constants.COMMUNITY_POSTS_COMMENTS_COUNT
+            // constants.COMMUNITY_POSTS_COMMENTS_PER_PAGE
+            + 1,
+            constants.MAX_DELAY,
+        )
+
+        # Comments Count
+        comments_count_element = (
+            WebDriverWait(comments_driver, constants.MAX_DELAY)
+            .until(
+                EC.presence_of_element_located(
+                    (
+                        By.XPATH,
+                        "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-comments/ytd-item-section-renderer/div[1]/ytd-comments-header-renderer/div[1]/div[1]/h2/yt-formatted-string/span[1]",
+                    )
+                )
+            )
+            .text
+        )
+
+        if comments_count_element != "":
+            comments_count = int(comments_count_element.replace(",", ""))
+
+        # Comments
+        comment_containers_element = WebDriverWait(
+            comments_driver, comments_count
+        ).until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-comments/ytd-item-section-renderer/div[3]",
+                )
+            )
+        )
+        comment_containers = comment_containers_element.find_elements(
+            By.TAG_NAME, "ytd-comment-thread-renderer"
+        )
+
+        for i, comment_container in enumerate(comment_containers):
+            if i == constants.COMMUNITY_POSTS_COMMENTS_COUNT:
+                break
+
+            dp_element = (
+                comment_container.find_element(By.ID, "body")
+                .find_element(By.ID, "author-thumbnail")
+                .find_element(By.TAG_NAME, "a")
+                .find_element(By.TAG_NAME, "yt-img-shadow")
+                .find_element(By.TAG_NAME, "img")
+            )
+
+            commenter_dp_url = dp_element.get_attribute("src")
+
+            commenter_channel_name = (
+                comment_container.find_element(By.TAG_NAME, "a")
+                .get_attribute("href")
+                .split("/")[-1]
+            )
+            comment_date = comment_container.find_element(
+                By.ID, "published-time-text"
+            ).text
+            text = comment_container.find_element(By.ID, "content-text").text
+            likes = unzip_large_nums(
+                comment_container.find_element(By.ID, "vote-count-middle").text
+            )
+
+            try:
+                replies = (
+                    comment_container.find_element(By.ID, "replies")
+                    .find_element(By.TAG_NAME, "button")
+                    .get_attribute("label")
+                )
+            except NoSuchElementException:
+                replies = 0
+
+            liked_by_creator = False
+            try:
+                creator_heart = comment_container.find_element(
+                    By.ID, "creator-heart-button"
+                )
+                if creator_heart:
+                    liked_by_creator = True
+            except NoSuchElementException:
+                pass
+
+            comment = Comment(
+                comment=text,
+                commenter_channel_name=commenter_channel_name,
+                commenter_display_picture_url=commenter_dp_url,
+                likes=likes,
+                date=comment_date,
+                fetched_date=str(datetime.now()),
+                replies_count=replies,
+                liked_by_creator=liked_by_creator,
+            )
+            print(comment.model_dump())
+
+            comments.append(comment)
+
+    except TimeoutError as te:
+        logger.error(f"Timeout error while getting community post comments: {te}")
+
+    except ValueError as ve:
+        logger.error(f"Value error while getting community post comments: {ve}")
+
+    except NoSuchElementException as nse:
+        logger.error(f"No such element while getting community post comments: {nse}")
+
+    except WebDriverException as wde:
+        logger.error(
+            f"Webdriver Exception while getting community post comments: {wde}"
+        )
+
+    except Exception as e:
+        logger.error(f"Unknown Exception while getting community post comments: {e}")
+
+    finally:
+        return comments_count, comments
 
 
 def get_post_type(main_area: WebElement) -> CommunityPostType:
