@@ -26,7 +26,9 @@ from lib.utils import (
 )
 
 
-def get_community_posts(channel_name, community_posts_driver, constants, logger):
+def get_community_posts(
+    channel_name, comments_driver, community_posts_driver, constants, logger
+):
     try:
         community_posts_driver.get(
             constants.COMMUNITY_POSTS_PAGE_LINK.format(channel_name)
@@ -76,8 +78,12 @@ def get_community_posts(channel_name, community_posts_driver, constants, logger)
             # Post URL
             url = header_element.get_attribute("href")
 
+            posted_date_element = main_area.find_element(By.ID, "header").find_element(
+                By.TAG_NAME, "yt-formatted-string"
+            )
+
             # Post Date
-            posted_date = header_element.text
+            posted_date = posted_date_element.text
 
             # Post Code
             code = header_element.get_attribute("href").split("/")[-1]
@@ -100,20 +106,6 @@ def get_community_posts(channel_name, community_posts_driver, constants, logger)
             else:
                 likes = unzip_large_nums(likes_content)
 
-            # Comments Count
-            comments_count_content = (
-                toolbar.find_element(By.ID, "reply-button-end")
-                .find_element(By.TAG_NAME, "ytd-button-renderer")
-                .find_element(By.TAG_NAME, "yt-button-shape")
-                .find_element(By.TAG_NAME, "a")
-                .find_elements(By.TAG_NAME, "div")[1]
-                .text
-            )
-            if comments_count_content == "":
-                comments_count = 0
-            else:
-                comments_count = unzip_large_nums(comments_count_content)
-
             # Post Type
             post_type = get_post_type(main_area)
 
@@ -121,12 +113,9 @@ def get_community_posts(channel_name, community_posts_driver, constants, logger)
             post_content = get_post_content(main_area, post_type)
 
             # Post Comments
-            c_count, comments = get_comments(
-                community_posts_driver, code, constants, logger
+            comments_count, comments = get_comments(
+                comments_driver, code, constants, logger
             )
-
-            if c_count != 0 and c_count != comments_count:
-                comments_count = c_count
 
             # Final Step
             post = CommunityPost(
@@ -288,7 +277,7 @@ def get_post_content(
             description=description,
             views=views,
             posted_date=posted_date,
-            fetched_date=str(datetime.now()),
+            fetched_timestamp=str(datetime.now()),
             duration=duration,
         )
 
@@ -352,7 +341,7 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
                 EC.presence_of_element_located(
                     (
                         By.XPATH,
-                        "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-comments/ytd-item-section-renderer/div[1]/ytd-comments-header-renderer/div[1]/div[1]/h2/yt-formatted-string/span[1]",
+                        "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-comments/ytd-item-section-renderer/div[1]/ytd-comments-header-renderer/div[1]/div[1]/h2/yt-formatted-string",
                     )
                 )
             )
@@ -360,7 +349,7 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
         )
 
         if comments_count_element != "":
-            comments_count = int(comments_count_element.replace(",", ""))
+            comments_count = int(comments_count_element.split(" ")[0].replace(",", ""))
 
         # Comments
         comment_containers_element = WebDriverWait(
@@ -405,13 +394,20 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
             )
 
             try:
-                replies = (
+                replies_count = (
                     comment_container.find_element(By.ID, "replies")
+                    .find_element(By.TAG_NAME, "ytd-comment-replies-renderer")
+                    .find_element(By.ID, "expander")
+                    .find_element(By.ID, "more-replies")
                     .find_element(By.TAG_NAME, "button")
-                    .get_attribute("label")
+                    .get_attribute("aria-label")
+                    .split(" ")[0]
                 )
-            except NoSuchElementException:
-                replies = 0
+            except Exception as e:
+                logger.error(
+                    f"Could not find post comment replies for post {code}: {e}"
+                )
+                replies_count = 0
 
             liked_by_creator = False
             try:
@@ -429,11 +425,10 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
                 commenter_display_picture_url=commenter_dp_url,
                 likes=likes,
                 date=comment_date,
-                fetched_date=str(datetime.now()),
-                replies_count=replies,
+                fetched_timestamp=str(datetime.now()),
+                replies_count=replies_count,
                 liked_by_creator=liked_by_creator,
             )
-            print(comment.model_dump())
 
             comments.append(comment)
 
@@ -509,4 +504,6 @@ def get_post_type(main_area: WebElement) -> CommunityPostType:
 
 
 if __name__ == "__main__":
-    get_community_posts("@MrBeast", get_webdriver(), Constants, get_logger("logs"))
+    get_community_posts(
+        "@MrBeast", get_webdriver(), get_webdriver(), Constants, get_logger("logs")
+    )

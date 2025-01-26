@@ -1,6 +1,14 @@
 class Constants:
     MAX_DELAY = 8
-    MAX_WORKERS = 5
+
+    MAX_WORKERS = 2
+    """
+    Minimum Drivers required to run a step of scraping for each channel is 2
+    (per worker so if MAX_WORKERS = 2, this number will be 4) so recommended
+    number of workers is > 2 per worker, (optimum number is 4-5 depending upon system
+    specs - headless mode requires lower overhead)
+    """
+    MAX_DRIVERS = 4
 
     DATA_DIRECTORY = "data"
     LOGS_DIRECTORY = "logs"

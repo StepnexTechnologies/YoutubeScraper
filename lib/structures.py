@@ -48,7 +48,7 @@ class Comment(BaseModel):
     ]  # TODO: Not implemented for shorts and videos, remove Optional once done
     likes: int
     date: str
-    fetched_date: str
+    fetched_timestamp: str
     replies_count: int
     liked_by_creator: bool
 
@@ -148,7 +148,7 @@ class VideoTypePost(BaseModel):
     description: str
     views: int
     posted_date: str
-    fetched_date: str
+    fetched_timestamp: str
     duration: int
 
 

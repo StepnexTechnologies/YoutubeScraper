@@ -1,5 +1,5 @@
 import time
-from datetime import date
+from datetime import date, datetime
 
 from selenium.common import NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
@@ -250,8 +250,6 @@ def get_shorts(
 
                 comment_date = d.text
 
-                fetched_date = str(date.today())
-
                 description = (
                     comment_main.find_element(By.ID, "expander")
                     .find_element(By.ID, "content")
@@ -279,7 +277,10 @@ def get_shorts(
                         .get_attribute("aria-label")
                         .split(" ")[0]
                     )
-                except NoSuchElementException:
+                except Exception as e:
+                    logger.error(
+                        f"Could not find post comment replies for short {code}: {e}"
+                    )
                     replies_count = 0
 
                 comments_list.append(
@@ -289,7 +290,7 @@ def get_shorts(
                         commenter_display_picture_url="",
                         likes=likes,
                         date=comment_date,
-                        fetched_date=fetched_date,
+                        fetched_timestamp=str(datetime.now()),
                         replies_count=replies_count,
                         liked_by_creator=False,  # TODO: Not Implemented yet
                     )
@@ -323,7 +324,7 @@ def get_shorts(
             )
             save_to_json(
                 f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.SHORTS_DIRECTORY}/{code}.json",
-                s.model_dump_json(),
+                s.model_dump_json(indent=4),
             )
 
     except TimeoutError as te:

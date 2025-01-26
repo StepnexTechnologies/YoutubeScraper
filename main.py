@@ -23,10 +23,10 @@ if __name__ == "__main__":
     scraper_config = YtScraperConfig(
         log_directory=Constants.LOGS_DIRECTORY,
         data_directory=Constants.DATA_DIRECTORY,
-        # print_logs_to_console=True,
+        print_logs_to_console=True,
     )
 
-    driver_pool = Queue(maxsize=Constants.MAX_WORKERS)
+    driver_pool = Queue(maxsize=Constants.MAX_DRIVERS)
     while not driver_pool.full():
         driver_pool.put(get_webdriver())
 

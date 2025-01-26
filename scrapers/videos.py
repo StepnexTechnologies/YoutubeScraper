@@ -234,13 +234,20 @@ def get_video_details(video_details_driver, code, constants, logger):
                     )
 
                     try:
-                        replies = (
+                        replies_count = (
                             comment.find_element(By.ID, "replies")
+                            .find_element(By.TAG_NAME, "ytd-comment-replies-renderer")
+                            .find_element(By.ID, "expander")
+                            .find_element(By.ID, "more-replies")
                             .find_element(By.TAG_NAME, "button")
-                            .get_attribute("label")
+                            .get_attribute("aria-label")
+                            .split(" ")[0]
                         )
-                    except NoSuchElementException:
-                        replies = 0
+                    except Exception as e:
+                        logger.error(
+                            f"Could not find post comment replies for video {code}: {e}"
+                        )
+                        replies_count = 0
 
                     liked_by_creator = False
                     try:
@@ -259,8 +266,8 @@ def get_video_details(video_details_driver, code, constants, logger):
                             commenter_display_picture_url="",
                             likes=likes,
                             date=comment_date,
-                            fetched_date=str(datetime.now()),
-                            replies_count=replies,
+                            fetched_timestamp=str(datetime.now()),
+                            replies_count=replies_count,
                             liked_by_creator=liked_by_creator,
                         )
                     )

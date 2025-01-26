@@ -1,9 +1,11 @@
 import time
 import logging
 from datetime import datetime
+from logging.handlers import TimedRotatingFileHandler
 
 from selenium import webdriver
 from selenium.webdriver import Keys
+from selenium_stealth import stealth
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -12,27 +14,45 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def get_webdriver():
+def get_webdriver(headless: bool = True):
     options = Options()
-    # options.add_argument("--headless")
-    # options.add_argument("--disable-gpu")
+
+    if headless:
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
 
     options.add_argument("--no-sandbox")
+    options.add_argument("--mute-audio")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-extensions")
-    options.add_argument("--blink-settings=imagesEnabled=false")
+    options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-logging")
     options.add_argument("--disable-popup-blocking")
     options.add_argument("--ignore-certificate-errors")
-    options.add_argument(
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/90.0.4430.93 Safari/537.36"
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
+    # options.add_argument(
+    #     "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+    #     "Chrome/90.0.4430.93 Safari/537.36"
+    # )
+    driver = webdriver.Chrome(options=options)
+    driver.execute_script(
+        "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+    )
+    stealth(
+        driver=driver,
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
+        languages=["en-US", "en"],
+        vendor="Google Inc.",
+        platform="Win32",
+        webgl_vendor="Intel Inc.",
+        renderer="Intel Iris OpenGL Engine",
+        fix_hairline=False,
+        run_on_insecure_origins=False,
     )
 
     # options.add_argument("--proxy-server={}")
-    return webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()), options=options
-    )
+    return driver
 
 
 def unzip_large_nums(num: str) -> int:
@@ -73,7 +93,7 @@ def scroll_to_bottom(driver, pause_time, scroll_count):
 
 def scroll(driver, pause_time, scroll_count, delay):
     for _ in range(scroll_count):
-        for _ in range(3):
+        for _ in range(4):
             WebDriverWait(driver, delay).until(
                 EC.presence_of_element_located((By.TAG_NAME, "body"))
             ).send_keys(Keys.PAGE_DOWN)
@@ -87,12 +107,20 @@ def scroll_until_element_found():
 
 
 def get_logger(directory: str, print_to_console: bool = False):
-    log_formatter = logging.Formatter("%(asctime)s %(levelname)s  %(message)s")
+    log_formatter = logging.Formatter(
+        "%(asctime)s - %(threadName)s - %(levelname)s - %(message)s"
+    )
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    file_handler = logging.FileHandler(f"{directory}/run_{datetime.now()}.log")
+    # file_handler = logging.FileHandler(f"{directory}/run_{datetime.now()}.log")
+    file_handler = TimedRotatingFileHandler(
+        f"{directory}/run_{datetime.now()}.log",
+        when="midnight",
+        interval=1,
+        backupCount=7,
+    )
     file_handler.setFormatter(log_formatter)
     logger.addHandler(file_handler)
 

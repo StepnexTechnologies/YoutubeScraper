@@ -17,8 +17,6 @@ from scrapers.community_posts import get_community_posts
 
 
 class YtScraper:
-    max_retry_count = Constants.MAX_RETRY_COUNT
-
     def __init__(self, driver_pool: Queue, config: YtScraperConfig = YtScraperConfig()):
         self.log_directory = config.log_directory
         self.data_directory = config.data_directory
@@ -180,9 +178,14 @@ class YtScraper:
             )
 
         community_posts_driver = self.driver_pool.get()
+        comments_posts_driver = self.driver_pool.get()
         try:
             get_community_posts(
-                channel_name, community_posts_driver, self.constants, self.logger
+                channel_name,
+                comments_posts_driver,
+                community_posts_driver,
+                self.constants,
+                self.logger,
             )
             self.driver_pool.put(community_posts_driver)
             return True
@@ -241,15 +244,15 @@ class YtScraper:
         )
         try:
             self.pre_run_setup()
-            info_scraped = self.scrape_channel_info(channel_name=channel_name)
+            # info_scraped = self.scrape_channel_info(channel_name=channel_name)
             shorts_scraped = self.scrape_channel_shorts(channel_name=channel_name)
-            videos_scraped = self.scrape_channel_videos(channel_name=channel_name)
-            community_posts_scraped = self.scrape_channel_community_posts(
-                channel_name=channel_name
-            )
-            channel_live_streams_scraped = self.scrape_channel_live_streams(
-                channel_name=channel_name
-            )
+            # videos_scraped = self.scrape_channel_videos(channel_name=channel_name)
+            # community_posts_scraped = self.scrape_channel_community_posts(
+            #     channel_name=channel_name
+            # )
+            # channel_live_streams_scraped = self.scrape_channel_live_streams(
+            #     channel_name=channel_name
+            # )
             self.post_run_step()
 
         except Exception as e:
