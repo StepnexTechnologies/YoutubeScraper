@@ -30,9 +30,9 @@ class ChannelInfo(BaseModel):
     is_verified: bool
     about: str
     links: List[Link]
-    # display_picture_url: str  # TODO: Not Implemented yet
-    # banner_url: str  # TODO: Not Implemented yet
-    # affiliated_channels: Optional[AffiliatedChannel]  # TODO: Not Implemented yet
+    display_picture_url: str  # TODO: Not Implemented yet
+    banner_url: str  # TODO: Not Implemented yet
+    affiliated_channels: Optional[List[AffiliatedChannel]]  # TODO: Not Implemented yet
     subscribers: int
     videos_count: int
     views_count: int
@@ -116,40 +116,47 @@ class ShortInfo(BaseModel):
 
 
 class CommunityPostType(Enum):
-    TEXT = "Image"
     IMAGE = "Image"
     VIDEO = "Video"
     IMAGE_CAROUSEL = "Image Carousel"
-    VOTE = "Vote"
-    QUIZ = "Quiz"
+    POLL = "Poll"
+    POST_UPLOADED_VIDEO = "Post Uploaded Video"  # TODO: Not implemented yet
+    OTHER = "Other"
 
 
-class VoteOption(BaseModel):
+class PollOption(BaseModel):
     description: str
-    vote_percentage: str
     img_url: Optional[str]
 
 
-class VoteTypePost(BaseModel):
+class PollTypePost(BaseModel):
     votes_count: int
-    options: List[VoteOption]
+    options: List[PollOption]
 
 
-class QuizTypePost(BaseModel):
-    question: str
-    options: List[str]
+class VideoTypePost(BaseModel):
+    title: str
+    url: str
+    thumbnail_url: str
+    channel_url: str
+    channel_name: str
+    is_channel_verified: bool
+    code: str
+    description: str
+    views: int
+    posted_date: str
+    fetched_date: str
+    duration: int
 
 
-class CommunityPost(BaseModel):  # TODO: Not Implemented yet
+class CommunityPost(BaseModel):
     code: str
     url: str
     description: Optional[str]
     post_type: CommunityPostType
-    post: Optional[str | List[str] | VoteTypePost | QuizTypePost]
+    post_content: str | List[str] | PollTypePost | VideoTypePost | None
     likes: int
     comments_count: int
-    comments: List[Comment]
+    comments: List[Comment]  # TODO: Not Implemented yet
     posted_date: str
     fetched_timestamp: str
-
-# Live Stream same model as video just scrape a different link https://www.youtube.com/{channel_name}/streams

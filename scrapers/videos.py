@@ -12,7 +12,13 @@ from urllib3.exceptions import NewConnectionError
 from lib.constants import Constants
 from lib.errors import ScraperRuntimeError
 from lib.structures import VideoInfo, Comment
-from lib.utils import scroll_to_bottom, unzip_large_nums, get_webdriver, scroll, get_logger
+from lib.utils import (
+    scroll_to_bottom,
+    unzip_large_nums,
+    get_webdriver,
+    scroll,
+    get_logger,
+)
 
 
 def get_video_info(
@@ -108,7 +114,10 @@ def get_video_info(
         logger.error(
             f"Connection Error, session expired, youtube invalidated this session."
         )
-        raise ScraperRuntimeError(message="Connection Error, session expired, youtube invalidated this session", channel=channel_name)
+        raise ScraperRuntimeError(
+            message="Connection Error, session expired, youtube invalidated this session",
+            channel=channel_name,
+        )
 
     except TimeoutException:
         logger.error("Unexpected Error - Timeout Exception while fetching videos.")
@@ -260,9 +269,7 @@ def get_video_details(video_details_driver, code, constants, logger):
         except TimeoutException:
             logger.error("Failed to fetch comments section.")
 
-        # Advertisement logic not implemented in final code yet but has been tested - check youtube.py
-
-        # Duration
+        # Duration - TODO: Take duration from the videos page in every thumbnail area of a video
         try:
             logger.info("Fetching video duration.")
             duration_element = WebDriverWait(
@@ -286,8 +293,10 @@ def get_video_details(video_details_driver, code, constants, logger):
         logger.error(
             f"Connection Error, session expired, youtube invalidated this session."
         )
-        raise ScraperRuntimeError(message=f"Connection Error, session expired, youtube invalidated this session for "
-                                          f"video details, link: {constants.VIDEO_PAGE_LINK.format(code)}")
+        raise ScraperRuntimeError(
+            message=f"Connection Error, session expired, youtube invalidated this session for "
+            f"video details, link: {constants.VIDEO_PAGE_LINK.format(code)}"
+        )
 
     except Exception as e:
         logger.error(f"Unexpected error occurred: {e}")

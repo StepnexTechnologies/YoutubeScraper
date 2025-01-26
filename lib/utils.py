@@ -111,3 +111,15 @@ def save_to_json(path, data):
         print(f"Data successfully saved to {path}")
     except Exception as e:
         print(f"An error occurred while saving to JSON: {e}")
+
+
+def video_duration_parser(str_duration: str) -> int:
+    if str_duration == "":
+        return 0
+
+    d = str_duration.split(":")
+    d.reverse()
+
+    duration = sum(int(num) * (60**i) for i, num in enumerate(d))
+
+    return duration
