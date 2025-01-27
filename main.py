@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     driver_pool = Queue(maxsize=Constants.MAX_DRIVERS)
     while not driver_pool.full():
-        driver_pool.put(get_webdriver())
+        driver_pool.put(get_webdriver(headless=True))
 
     channel_queue = Queue()
     for channel in channels:

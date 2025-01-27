@@ -6,20 +6,14 @@ from logging.handlers import TimedRotatingFileHandler
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium_stealth import stealth
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 
 
-def get_webdriver(headless: bool = True):
+def get_webdriver(headless: bool = True, proxy_server_url: str | None = None):
     options = Options()
-
-    if headless:
-        options.add_argument("--headless")
-        options.add_argument("--disable-gpu")
 
     options.add_argument("--no-sandbox")
     options.add_argument("--mute-audio")
@@ -31,14 +25,19 @@ def get_webdriver(headless: bool = True):
     options.add_argument("--ignore-certificate-errors")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
-    # options.add_argument(
-    #     "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-    #     "Chrome/90.0.4430.93 Safari/537.36"
-    # )
+
+    if headless:
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+
+    if proxy_server_url:
+        options.add_argument(f"--proxy-server={proxy_server_url}")
+
     driver = webdriver.Chrome(options=options)
     driver.execute_script(
         "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
     )
+
     stealth(
         driver=driver,
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
@@ -51,7 +50,6 @@ def get_webdriver(headless: bool = True):
         run_on_insecure_origins=False,
     )
 
-    # options.add_argument("--proxy-server={}")
     return driver
 
 
@@ -151,3 +149,19 @@ def video_duration_parser(str_duration: str) -> int:
     duration = sum(int(num) * (60**i) for i, num in enumerate(d))
 
     return duration
+
+
+def calculate_trend_score(
+    views: int, likes: int, comments: int, uploaded_date: str, current_date: str
+) -> float:
+    from datetime import datetime
+
+    # Normalize date to "days since uploaded"
+    days_since_uploaded = (
+        datetime.strptime(current_date, "%Y-%m-%d")
+        - datetime.strptime(uploaded_date, "%Y-%m-%d")
+    ).days + 1
+
+    # Score = weighted views, likes, and comments, divided by days since uploaded
+    score = (0.5 * views + 0.3 * likes + 0.2 * comments) / days_since_uploaded
+    return score

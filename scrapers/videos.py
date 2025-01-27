@@ -18,6 +18,7 @@ from lib.utils import (
     get_webdriver,
     scroll,
     get_logger,
+    video_duration_parser,
 )
 
 
@@ -243,9 +244,9 @@ def get_video_details(video_details_driver, code, constants, logger):
                             .get_attribute("aria-label")
                             .split(" ")[0]
                         )
-                    except Exception as e:
+                    except Exception:
                         logger.error(
-                            f"Could not find post comment replies for video {code}: {e}"
+                            f"Could not find post comment replies for video {code}"
                         )
                         replies_count = 0
 
@@ -285,13 +286,7 @@ def get_video_details(video_details_driver, code, constants, logger):
             ).until(
                 EC.presence_of_element_located((By.CLASS_NAME, "ytp-time-duration"))
             )
-            d = duration_element.text.split(":")
-            d.reverse()
-            try:
-                duration = sum(int(num) * (60**i) for i, num in enumerate(d))
-                other_info["duration"] = duration
-            except Exception as e:
-                logger.warning(f"Failed to fetch duration from video {code}: {e}")
+            other_info["duration"] = video_duration_parser(duration_element.text)
         except TimeoutException:
             logger.error("Failed to fetch video duration.")
 

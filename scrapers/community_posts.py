@@ -30,34 +30,45 @@ def get_community_posts(
     channel_name, comments_driver, community_posts_driver, constants, logger
 ):
     try:
+        logger.info(f"Getting Community Posts for {channel_name}")
         community_posts_driver.get(
             constants.COMMUNITY_POSTS_PAGE_LINK.format(channel_name)
         )
         community_posts_driver.maximize_window()
 
-        scroll(
-            community_posts_driver,
-            2,
-            constants.COMMUNITY_POSTS_COUNT // constants.COMMUNITY_POSTS_PER_PAGE,
-            constants.MAX_DELAY,
-        )
+        def get_posts():
+            main_content = WebDriverWait(
+                community_posts_driver, constants.MAX_DELAY
+            ).until(EC.presence_of_element_located((By.ID, "content")))
 
-        main_content = WebDriverWait(community_posts_driver, constants.MAX_DELAY).until(
-            EC.presence_of_element_located((By.ID, "content"))
-        )
+            posts_container = (
+                WebDriverWait(main_content, constants.MAX_DELAY)
+                .until(EC.presence_of_element_located((By.ID, "page-manager")))
+                .find_element(By.ID, "primary")
+                .find_element(By.TAG_NAME, "ytd-section-list-renderer")
+                .find_element(By.ID, "contents")
+                .find_element(By.ID, "contents")
+            )
 
-        posts_container = (
-            WebDriverWait(main_content, constants.MAX_DELAY)
-            .until(EC.presence_of_element_located((By.ID, "page-manager")))
-            .find_element(By.ID, "primary")
-            .find_element(By.TAG_NAME, "ytd-section-list-renderer")
-            .find_element(By.ID, "contents")
-            .find_element(By.ID, "contents")
-        )
+            p = posts_container.find_elements(
+                By.TAG_NAME, "ytd-backstage-post-thread-renderer"
+            )
+            return p
 
-        posts = posts_container.find_elements(
-            By.TAG_NAME, "ytd-backstage-post-thread-renderer"
-        )
+        current_posts_count = len(get_posts())
+        while current_posts_count < constants.COMMUNITY_POSTS_COUNT:
+            scroll(
+                community_posts_driver,
+                2,
+                1,
+                constants.MAX_DELAY,
+            )
+            new_posts_count = len(get_posts())
+            if new_posts_count == current_posts_count:
+                break
+            current_posts_count = new_posts_count
+
+        posts = get_posts()
 
         for i, post_element in enumerate(posts):
             if i == constants.COMMUNITY_POSTS_COUNT:
@@ -110,7 +121,7 @@ def get_community_posts(
             post_type = get_post_type(main_area)
 
             # Post Content
-            post_content = get_post_content(main_area, post_type)
+            post_content = get_post_content(main_area, post_type, logger, url)
 
             # Post Comments
             comments_count, comments = get_comments(
@@ -150,173 +161,194 @@ def get_community_posts(
 
 
 def get_post_content(
-    main_area: WebElement, post_type: CommunityPostType
+    main_area: WebElement, post_type: CommunityPostType, logger, post_url
 ) -> str | List[str] | PollTypePost | VideoTypePost | None:
-    content_attachment = main_area.find_element(By.ID, "content-attachment")
-    if post_type == CommunityPostType.IMAGE:
-        img_url = (
-            content_attachment.find_element(By.TAG_NAME, "ytd-backstage-image-renderer")
-            .find_element(By.TAG_NAME, "a")
-            .find_element(By.ID, "image-container")
-            .find_element("img")
-            .get_attribute("src")
-        )
-        return img_url
-    if post_type == CommunityPostType.IMAGE_CAROUSEL:
-        carousel = (
-            content_attachment.find_element(
-                By.TAG_NAME, "ytd-post-multi-image-renderer"
-            )
-            .find_element(By.ID, "shelf-container")
-            .find_element(By.ID, "scroll-container")
-            .find_element(By.ID, "items")
-            .find_elements(By.TAG_NAME, "ytd-backstage-image-renderer")
-        )
-
-        img_urls = []
-        for img in carousel:
+    try:
+        content_attachment = main_area.find_element(By.ID, "content-attachment")
+        if post_type == CommunityPostType.IMAGE:
             img_url = (
-                img.find_element(By.TAG_NAME, "a")
+                content_attachment.find_element(
+                    By.TAG_NAME, "ytd-backstage-image-renderer"
+                )
+                .find_element(By.TAG_NAME, "a")
                 .find_element(By.ID, "image-container")
+                .find_element(By.TAG_NAME, "yt-img-shadow")
                 .find_element(By.TAG_NAME, "img")
                 .get_attribute("src")
             )
-            img_urls.append(img_url)
+            if img_url:
+                return img_url
 
-        return img_urls
-
-    if post_type == CommunityPostType.VIDEO:
-        video_container = content_attachment.find_element(
-            By.TAG_NAME, "ytd-video-renderer"
-        ).find_element(By.ID, "dismissible")
-
-        thumbnail_container = video_container.find_element(By.TAG_NAME, "ytd-thumbnail")
-
-        a_container = thumbnail_container.find_element(By.TAG_NAME, "a")
-
-        url = a_container.get_attribute("href")
-
-        thumbnail_url = (
-            a_container.find_element(By.TAG_NAME, "yt-image")
-            .find_element(By.TAG_NAME, "img")
-            .get_attribute("src")
-        )
-
-        duration_content = (
-            a_container.find_element(By.ID, "overlays")
-            .find_element(
-                By.XPATH,
-                '//*[@id="overlays"]/ytd-thumbnail-overlay-time-status-renderer/div[1]/badge-shape/div',
+        elif post_type == CommunityPostType.IMAGE_CAROUSEL:
+            carousel = (
+                content_attachment.find_element(
+                    By.TAG_NAME, "ytd-post-multi-image-renderer"
+                )
+                .find_element(By.ID, "shelf-container")
+                .find_element(By.ID, "scroll-container")
+                .find_element(By.ID, "items")
+                .find_elements(By.TAG_NAME, "ytd-backstage-image-renderer")
             )
-            .text
-        )
-        duration = video_duration_parser(duration_content)
 
-        if url != "":
-            code = url.split("=")[-1]
-        else:
-            code = ""
+            img_urls = []
+            for img in carousel:
+                img_url = (
+                    img.find_element(By.TAG_NAME, "a")
+                    .find_element(By.ID, "image-container")
+                    .find_element(By.TAG_NAME, "img")
+                    .get_attribute("src")
+                )
+                if img_url:
+                    img_urls.append(img_url)
 
-        video_info = video_container.find_element(By.TAG_NAME, "div")
-        meta_element = video_info.find_element(By.ID, "meta")
-        title = (
-            meta_element.find_element(By.ID, "title-wrapper")
-            .find_element(By.TAG_NAME, "h3")
-            .text
-        )
-        metadata = meta_element.find_element(
-            By.TAG_NAME, "ytd-video-meta-block"
-        ).find_element(By.ID, "metadata")
+            return img_urls
 
-        name_and_verification_element = metadata.find_element(
-            By.ID, "byline-container"
-        ).find_element(By.ID, "channel-name")
+        elif post_type == CommunityPostType.VIDEO:
+            video_container = content_attachment.find_element(
+                By.TAG_NAME, "ytd-video-renderer"
+            ).find_element(By.ID, "dismissible")
 
-        name_and_verification = (
-            name_and_verification_element.find_element(By.ID, "container")
-            .find_element(By.ID, "text-container")
-            .find_element(By.ID, "text")
-            .find_element(By.TAG_NAME, "a")
-        )
-
-        channel_name = name_and_verification.text
-        channel_url = name_and_verification.get_attribute("href")
-
-        try:
-            name_and_verification.find_element(
-                By.TAG_NAME, "ytd-badge-supported-renderer"
+            thumbnail_container = video_container.find_element(
+                By.TAG_NAME, "ytd-thumbnail"
             )
-            is_channel_verified = True
-        except NoSuchElementException:
-            is_channel_verified = False
 
-        metadata_line = metadata.find_element(By.ID, "metadata-line")
+            a_container = thumbnail_container.find_element(By.TAG_NAME, "a")
 
-        views_text = metadata_line.find_element(
-            By.XPATH, '//*[@id="metadata-line"]/span[1]'
-        ).text
-        if views_text == "":
-            views = 0
-        else:
-            views = unzip_large_nums(views_text.split(" ")[0])
+            url = a_container.get_attribute("href")
 
-        posted_date = metadata_line.find_element(
-            By.XPATH, '//*[@id="metadata-line"]/span[2]'
-        )
+            thumbnail_url = (
+                a_container.find_element(By.TAG_NAME, "yt-image")
+                .find_element(By.TAG_NAME, "img")
+                .get_attribute("src")
+            )
+            if not thumbnail_url:
+                thumbnail_url = ""
 
-        description = video_info.find_element(By.ID, "description-text").text
-
-        return VideoTypePost(
-            title=title,
-            url=url,
-            thumbnail_url=thumbnail_url,
-            channel_url=channel_url,
-            channel_name=channel_name,
-            is_channel_verified=is_channel_verified,
-            code=code,
-            description=description,
-            views=views,
-            posted_date=posted_date,
-            fetched_timestamp=str(datetime.now()),
-            duration=duration,
-        )
-
-    if post_type == CommunityPostType.POLL:
-        poll_content = main_area.find_element(
-            By.TAG_NAME, "ytd-backstage-poll-renderer"
-        )
-        votes_count_element = poll_content.find_element(By.ID, "vote-info").text
-        if votes_count_element == "":
-            votes_count = 0
-        else:
-            votes_count = unzip_large_nums(votes_count_element)
-
-        votes_options = poll_content.find_element(By.ID, "poll-votes").find_elements(
-            By.ID, "sign-in"
-        )
-
-        options = []
-        for option_element in votes_options:
-            try:
-                description = option_element.find_element(
+            duration_content = (
+                a_container.find_element(By.ID, "overlays")
+                .find_element(
                     By.XPATH,
-                    '//*[@id="sign-in"]/tp-yt-paper-item/div/div[1]/yt-formatted-string[1]',
+                    '//*[@id="overlays"]/ytd-thumbnail-overlay-time-status-renderer/div[1]/badge-shape/div',
+                )
+                .text
+            )
+            duration = video_duration_parser(duration_content)
+
+            if url != "":
+                code = url.split("=")[-1]
+            else:
+                code = ""
+
+            video_info = video_container.find_element(By.TAG_NAME, "div")
+            meta_element = video_info.find_element(By.XPATH, '//*[@id="meta"]')
+            title = (
+                meta_element.find_element(By.ID, "title-wrapper")
+                .find_element(By.TAG_NAME, "h3")
+                .text
+            )
+            metadata = meta_element.find_element(
+                By.TAG_NAME, "ytd-video-meta-block"
+            ).find_element(By.ID, "metadata")
+
+            name_and_verification_element = metadata.find_element(
+                By.ID, "byline-container"
+            ).find_element(By.ID, "channel-name")
+
+            name_and_verification = (
+                name_and_verification_element.find_element(By.ID, "container")
+                .find_element(By.ID, "text-container")
+                .find_element(By.ID, "text")
+                .find_element(By.TAG_NAME, "a")
+            )
+
+            channel_name = name_and_verification.text
+            channel_url = name_and_verification.get_attribute("href")
+
+            try:
+                name_and_verification.find_element(
+                    By.TAG_NAME, "ytd-badge-supported-renderer"
+                )
+                is_channel_verified = True
+            except NoSuchElementException:
+                is_channel_verified = False
+
+            metadata_line = metadata.find_element(By.ID, "metadata-line")
+
+            views_text = metadata_line.find_element(
+                By.XPATH, '//*[@id="metadata-line"]/span[1]'
+            ).text
+            if views_text == "":
+                views = 0
+            else:
+                views = unzip_large_nums(views_text.split(" ")[0])
+
+            posted_date = metadata_line.find_element(
+                By.XPATH, '//*[@id="metadata-line"]/span[2]'
+            ).text
+
+            try:
+                description = video_info.find_element(
+                    By.TAG_NAME, "yt-formatted-string"
                 ).text
             except NoSuchElementException:
                 description = ""
 
-            try:
-                img_url = option_element.find_element(
-                    By.XPATH, '//*[@id="sign-in"]/tp-yt-paper-item/img'
-                ).get_attribute("src")
-            except NoSuchElementException:
-                img_url = ""
+            return VideoTypePost(
+                title=title,
+                url=url,
+                thumbnail_url=thumbnail_url,
+                channel_url=channel_url,
+                channel_name=channel_name,
+                is_channel_verified=is_channel_verified,
+                code=code,
+                description=description,
+                views=views,
+                posted_date=posted_date,
+                fetched_timestamp=str(datetime.now()),
+                duration=duration,
+            )
 
-            options.append(PollOption(description=description, img_url=img_url))
+        elif post_type == CommunityPostType.POLL:
+            poll_content = main_area.find_element(
+                By.TAG_NAME, "ytd-backstage-poll-renderer"
+            )
+            votes_count_element = poll_content.find_element(By.ID, "vote-info").text
+            if votes_count_element == "":
+                votes_count = 0
+            else:
+                votes_count = unzip_large_nums(votes_count_element)
 
-        return PollTypePost(votes_count=votes_count, options=options)
+            votes_options = poll_content.find_element(
+                By.ID, "poll-votes"
+            ).find_elements(By.ID, "sign-in")
 
-    return None
+            options = []
+            for option_element in votes_options:
+                try:
+                    description = option_element.find_element(
+                        By.XPATH,
+                        '//*[@id="sign-in"]/tp-yt-paper-item/div/div[1]/yt-formatted-string[1]',
+                    ).text
+                except NoSuchElementException:
+                    description = ""
+
+                try:
+                    img_url = option_element.find_element(
+                        By.XPATH, '//*[@id="sign-in"]/tp-yt-paper-item/img'
+                    ).get_attribute("src")
+                except NoSuchElementException:
+                    img_url = ""
+
+                options.append(PollOption(description=description, img_url=img_url))
+
+            return PollTypePost(votes_count=votes_count, options=options)
+
+        else:
+            return None
+
+    except Exception as e:
+        logger.error(f"Error While getting post content for post - {post_url}: {e}")
+        return None
 
 
 def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment]):
@@ -403,10 +435,8 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
                     .get_attribute("aria-label")
                     .split(" ")[0]
                 )
-            except Exception as e:
-                logger.error(
-                    f"Could not find post comment replies for post {code}: {e}"
-                )
+            except Exception:
+                logger.error(f"Could not find post comment replies for post {code}")
                 replies_count = 0
 
             liked_by_creator = False
@@ -454,56 +484,47 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
 
 
 def get_post_type(main_area: WebElement) -> CommunityPostType:
-    # Conditionally rendered if type is a video, an image or a carousel of images
-    # ytd-post-multi-image-renderer ✅
-    # ytd-backstage-image-renderer ✅
-    # ytd-video-renderer ✅
-
-    # Already Present in the DOM
-    # ytd-backstage-poll-renderer ✅
-    # ytd-post-uploaded-video-renderer ❌
-
-    # Other (In case of updates to YouTube)
+    #     # Conditionally rendered if type is a video, an image or a carousel of images
+    #     # ytd-post-multi-image-renderer ✅
+    #     # ytd-backstage-image-renderer ✅
+    #     # ytd-video-renderer ✅
+    #
+    #     # Already Present in the DOM
+    #     # ytd-backstage-poll-renderer ✅
+    #     # ytd-post-uploaded-video-renderer ❌
 
     content_attachment = main_area.find_element(By.ID, "content-attachment")
 
+    if content_attachment:
+        renderers = [
+            ("ytd-post-multi-image-renderer", CommunityPostType.IMAGE_CAROUSEL),
+            ("ytd-backstage-image-renderer", CommunityPostType.IMAGE),
+            ("ytd-video-renderer", CommunityPostType.VIDEO),
+        ]
+        for renderer_id, post_type in renderers:
+            try:
+                if content_attachment.find_element(By.TAG_NAME, renderer_id):
+                    return post_type
+            except NoSuchElementException:
+                continue
+
     try:
-        content_attachment.find_element(By.XPATH, "./*")
-
-        try:
-            content_attachment.find_element(By.ID, "ytd-post-multi-image-renderer")
-            return CommunityPostType.IMAGE_CAROUSEL
-        except NoSuchElementException:
-            pass
-
-        try:
-            content_attachment.find_element(By.ID, "ytd-backstage-image-renderer")
-            return CommunityPostType.IMAGE
-        except NoSuchElementException:
-            pass
-
-        try:
-            content_attachment.find_element(By.ID, "ytd-video-renderer")
-            return CommunityPostType.VIDEO
-        except NoSuchElementException:
-            pass
-
-        return CommunityPostType.OTHER
-
+        poll_element_content = main_area.find_element(
+            By.TAG_NAME, "ytd-backstage-poll-renderer"
+        ).find_elements(By.XPATH, "./*")
+        if len(poll_element_content) > 0:
+            return CommunityPostType.POLL
     except NoSuchElementException:
-        try:
-            poll_element_content = main_area.find_element(
-                By.TAG_NAME, "ytd-backstage-poll-renderer"
-            ).find_elements(By.XPATH, "./*")
-            if len(poll_element_content) > 0:
-                return CommunityPostType.POLL
-        except NoSuchElementException:
-            pass
+        pass
 
-        return CommunityPostType.OTHER
+    return CommunityPostType.OTHER
 
 
 if __name__ == "__main__":
     get_community_posts(
-        "@MrBeast", get_webdriver(), get_webdriver(), Constants, get_logger("logs")
+        "@tanmaybhat",
+        get_webdriver(),
+        get_webdriver(headless=False),
+        Constants,
+        get_logger("logs"),
     )

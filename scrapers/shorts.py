@@ -180,7 +180,7 @@ def get_shorts(
                 .text
             )
 
-            # # Modified scrolling logic
+            # # Scrolling logic
             # comments_section = contents.find_element(By.TAG_NAME, "ytd-comments")
 
             # # Wait for comments to load
@@ -277,9 +277,9 @@ def get_shorts(
                         .get_attribute("aria-label")
                         .split(" ")[0]
                     )
-                except Exception as e:
+                except Exception:
                     logger.error(
-                        f"Could not find post comment replies for short {code}: {e}"
+                        f"Could not find post comment replies for short {code}"
                     )
                     replies_count = 0
 

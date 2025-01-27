@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 from typing import List, Optional
 from enum import Enum
 
@@ -10,7 +11,17 @@ class YtScraperConfig:
     log_directory: str = "logs"
     data_directory: str = "data"
     proxy: Optional[str] = None
-    print_logs_to_console: bool = False
+    print_logs_to_console: bool = True
+
+
+class BaseContent(BaseModel):
+    views: int
+    likes: int
+    comments_count: int
+    fetched_timestamp: str = str(datetime.now())
+    likes_to_views_ratio: Optional[float]
+    comments_to_views: Optional[float]
+    duration_to_likes: Optional[float]
 
 
 class Link(BaseModel):
@@ -63,17 +74,14 @@ class RelatedVideo(BaseModel):
     views: int
 
 
-class VideoInfo(BaseModel):
+class VideoInfo(BaseContent):
     code: str
     title: str
     url: str
     thumbnail_url: Optional[str]
-    views: int
-    likes: int
     duration: float
     embed_code: str
     uploaded_date: str
-    comments_count: int
     comments_turned_off: bool  # TODO: Not Implemented yet
     comments: List[Comment]
     related: Optional[List[RelatedVideo]]
@@ -98,7 +106,7 @@ class ShortEffect(BaseModel):
     shorts_count: int
 
 
-class ShortInfo(BaseModel):
+class ShortInfo(BaseContent):
     code: str
     url: str
     description: str
@@ -110,10 +118,7 @@ class ShortInfo(BaseModel):
     suggested_search_phrase: str  # TODO: Not Implemented yet
     link: Optional[Link]  # TODO: Not Implemented yet
     thumbnail_url: str
-    likes: int
-    views: int
     posted_date: str
-    comments_count: int
     pinned_comments: Optional[List[Comment]]
     comments: List[Comment]
 
@@ -152,14 +157,11 @@ class VideoTypePost(BaseModel):
     duration: int
 
 
-class CommunityPost(BaseModel):
+class CommunityPost(BaseContent):
     code: str
     url: str
     description: Optional[str]
     post_type: CommunityPostType
     post_content: str | List[str] | PollTypePost | VideoTypePost | None
-    likes: int
-    comments_count: int
     comments: List[Comment]  # TODO: Not Implemented yet
     posted_date: str
-    fetched_timestamp: str
