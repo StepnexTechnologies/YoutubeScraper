@@ -11,7 +11,7 @@ from urllib3.exceptions import NewConnectionError
 
 from lib.constants import Constants
 from lib.errors import ScraperRuntimeError
-from lib.structures import VideoInfo, Comment
+from lib.structures import VideoInfo, Comment, RelatedVideo
 from lib.utils import (
     scroll_to_bottom,
     unzip_large_nums,
@@ -19,6 +19,7 @@ from lib.utils import (
     scroll,
     get_logger,
     video_duration_parser,
+    extract_hashtags,
 )
 
 
@@ -27,17 +28,18 @@ def get_video_info(
 ):
     try:
         videos_info_driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
+        videos_info_driver.maximize_window()
         logger.info(f"Fetching video information for channel: {channel_name}")
         contents = WebDriverWait(videos_info_driver, constants.MAX_DELAY).until(
             EC.presence_of_element_located((By.ID, "contents"))
         )
 
-        # Scrolling logic
-        try:
-            logger.info("Scrolling through the page to load all videos.")
-            scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
-        except Exception as e:
-            logger.error(f"Scrolling failed: {e}")
+        # # Scrolling logic
+        # try:
+        #     logger.info("Scrolling through the page to load all videos.")
+        #     scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
+        # except Exception as e:
+        #     logger.error(f"Scrolling failed: {e}")
 
         for count, content in enumerate(contents.find_elements(By.ID, "content")):
             if count == constants.VIDEOS_COUNT:
@@ -82,17 +84,20 @@ def get_video_info(
                     video_info = VideoInfo(
                         code=code,
                         title=title,
-                        url=url,
+                        url=constants.VIDEO_PAGE_LINK.format(url),
                         thumbnail_url=thumbnail_url,
                         views=views,
+                        description=video_details["description"],
+                        hashtags=extract_hashtags(video_details["description"]),
                         likes=video_details["likes"],
                         duration=video_details["duration"],
                         embed_code=video_details["embed_code"],
                         uploaded_date=video_details["uploaded_date"],
+                        fetched_timestamp=str(datetime.now()),
                         comments_count=video_details["comments_count"],
                         comments_turned_off=False,  # TODO: Not Implemented yet
                         comments=video_details["comments"],
-                        related=[],  # TODO: Not Implemented yet
+                        related=video_details["related"],  # TODO: Not Implemented yet
                     )
                 except Exception as e:
                     logger.error(
@@ -127,6 +132,7 @@ def get_video_info(
 
 def get_video_details(video_details_driver, code, constants, logger):
     other_info = {
+        "description": "",
         "likes": 0,
         "duration": "",
         "embed_code": f"https://www.youtube.com/embed/{code}",
@@ -150,6 +156,25 @@ def get_video_details(video_details_driver, code, constants, logger):
             expand_btn.click()
         except TimeoutException:
             logger.error("Failed to find or click the expand button.")
+
+        # Description
+        try:
+            logger.info("Fetching Description")
+            description = (
+                WebDriverWait(video_details_driver, constants.MAX_DELAY)
+                .until(
+                    EC.presence_of_element_located(
+                        (
+                            By.XPATH,
+                            "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/ytd-watch-metadata/div/div[4]/div[1]/div/ytd-text-inline-expander/yt-attributed-string",
+                        )
+                    )
+                )
+                .text
+            )
+        except Exception:
+            description = ""
+        other_info["description"] = description
 
         # Likes
         try:
@@ -190,7 +215,8 @@ def get_video_details(video_details_driver, code, constants, logger):
         except TimeoutException:
             logger.error("Failed to fetch uploaded date.")
 
-        scroll(video_details_driver, 3, 8, constants.MAX_DELAY)
+        # scroll(video_details_driver, constants.PAUSE_TIME, 8, constants.MAX_DELAY)
+        scroll(video_details_driver, constants.PAUSE_TIME, 2, constants.MAX_DELAY)
 
         # Comments Info
         try:
@@ -278,6 +304,127 @@ def get_video_details(video_details_driver, code, constants, logger):
         except TimeoutException:
             logger.error("Failed to fetch comments section.")
 
+        # Related Videos -
+        try:
+            logger.info("Extracting Related Videos")
+
+            related_videos_containers = (
+                WebDriverWait(video_details_driver, constants.MAX_DELAY)
+                .until(
+                    EC.presence_of_element_located(
+                        (
+                            By.ID,
+                            "related",
+                        )
+                    )
+                )
+                .find_elements(By.TAG_NAME, "ytd-compact-video-renderer")
+            )
+
+            print(len(list(set(related_videos_containers))))
+
+            for video in related_videos_containers:
+                video_container = video.find_element(By.ID, "dismissible")
+
+                thumbnail_container = video_container.find_element(
+                    By.TAG_NAME, "ytd-thumbnail"
+                )
+
+                a_container = thumbnail_container.find_element(By.TAG_NAME, "a")
+
+                v_url = a_container.get_attribute("href")
+
+                v_thumbnail_url = (
+                    a_container.find_element(By.TAG_NAME, "yt-image")
+                    .find_element(By.TAG_NAME, "img")
+                    .get_attribute("src")
+                )
+                if not v_thumbnail_url:
+                    v_thumbnail_url = ""
+
+                duration_content = (
+                    a_container.find_element(By.ID, "overlays")
+                    .find_element(
+                        By.XPATH,
+                        '//*[@id="overlays"]/ytd-thumbnail-overlay-time-status-renderer/div[1]/badge-shape/div',
+                    )
+                    .text
+                )
+                v_duration = video_duration_parser(duration_content)
+
+                if v_url != "":
+                    v_code = v_url.split("=")[-1]
+                else:
+                    v_code = ""
+
+                # video_info = video_container.find_element(
+                #     By.TAG_NAME, "div"
+                # ).find_element(By.TAG_NAME, "div")
+                # meta_element = video_info.find_element(By.TAG_NAME, "a")
+
+                video_info = video_container.find_element(
+                    By.XPATH, '//*[@id="dismissible"]/div/div[1]/a'
+                )
+
+                v_title = video_info.find_element(By.TAG_NAME, "h3").text
+
+                metadata = (
+                    video_info.find_element(By.TAG_NAME, "div")
+                    .find_element(By.TAG_NAME, "ytd-video-meta-block")
+                    .find_element(By.ID, "metadata")
+                )
+
+                name_and_verification_element = metadata.find_element(
+                    By.ID, "byline-container"
+                ).find_element(By.ID, "channel-name")
+
+                name_and_verification = (
+                    name_and_verification_element.find_element(By.ID, "container")
+                    .find_element(By.ID, "text-container")
+                    .find_element(By.ID, "text")
+                )
+
+                v_channel_name = name_and_verification.text
+
+                v_is_channel_verified = False
+                try:
+                    name_and_verification_element.find_element(
+                        By.TAG_NAME, "ytd-badge-supported-renderer"
+                    )
+                    v_is_channel_verified = True
+                except NoSuchElementException:
+                    pass
+
+                metadata_line = metadata.find_element(By.ID, "metadata-line")
+
+                views_text = metadata_line.find_element(
+                    By.XPATH, '//*[@id="metadata-line"]/span[1]'
+                ).text
+                if views_text == "":
+                    v_views = 0
+                else:
+                    v_views = unzip_large_nums(views_text.split(" ")[0])
+
+                posted_date = metadata_line.find_element(
+                    By.XPATH, '//*[@id="metadata-line"]/span[2]'
+                ).text
+
+                other_info["related"].append(
+                    RelatedVideo(
+                        code=code,
+                        url=v_url,
+                        thumbnail_url=v_thumbnail_url,
+                        title=v_title,
+                        channel_name=v_channel_name,
+                        is_channel_verified=v_is_channel_verified,
+                        views=v_views,
+                        posted_date=posted_date,
+                        duration=v_duration,
+                    )
+                )
+        except Exception as e:
+            logger.error(f"Error while getting Related Videos Information: {e}")
+
         # Duration - TODO: Take duration from the videos page in every thumbnail area of a video
         try:
             logger.info("Fetching video duration.")
@@ -310,7 +457,7 @@ if __name__ == "__main__":
     get_video_info(
         get_webdriver(),
         get_webdriver(),
-        "@MrBeast",
+        "@PewDiePie",
         Constants,
-        get_logger("logs/videos_test_runs"),
+        get_logger("logs", print_to_console=True),
     )

@@ -18,10 +18,11 @@ class BaseContent(BaseModel):
     views: int
     likes: int
     comments_count: int
-    fetched_timestamp: str = str(datetime.now())
-    likes_to_views_ratio: Optional[float]
-    comments_to_views: Optional[float]
-    duration_to_likes: Optional[float]
+    hashtags: Optional[List[str]]
+    fetched_timestamp: str
+    # likes_to_views_ratio: Optional[float]
+    # comments_to_views: Optional[float]
+    # duration_to_likes: Optional[float]
 
 
 class Link(BaseModel):
@@ -59,17 +60,18 @@ class Comment(BaseModel):
     ]  # TODO: Not implemented for shorts and videos, remove Optional once done
     likes: int
     date: str
-    fetched_timestamp: str
     replies_count: int
     liked_by_creator: bool
 
 
 class RelatedVideo(BaseModel):
-    video_url: str
+    code: str
+    url: str
+    thumbnail_url: str
+    title: str
     channel_name: str
-    is_channel_name: str
+    is_channel_verified: bool
     posted_date: str
-    fetched_timestamp: str
     duration: int
     views: int
 
@@ -77,6 +79,7 @@ class RelatedVideo(BaseModel):
 class VideoInfo(BaseContent):
     code: str
     title: str
+    description: str
     url: str
     thumbnail_url: Optional[str]
     duration: float
@@ -111,7 +114,6 @@ class ShortInfo(BaseContent):
     url: str
     description: str
     secondary_description: Optional[str]  # TODO: Not Implemented yet
-    hashtags: Optional[List[str]]  # TODO: Not Implemented yet
     music: Optional[ShortMusic]  # TODO: Not Implemented yet
     effect: Optional[ShortEffect]  # TODO: Not Implemented yet
     related_shorts: Optional[List[Short]]  # TODO: Not Implemented yet
@@ -128,7 +130,6 @@ class CommunityPostType(Enum):
     VIDEO = "Video"
     IMAGE_CAROUSEL = "Image Carousel"
     POLL = "Poll"
-    POST_UPLOADED_VIDEO = "Post Uploaded Video"  # TODO: Not implemented yet
     OTHER = "Other"
 
 
@@ -163,5 +164,5 @@ class CommunityPost(BaseContent):
     description: Optional[str]
     post_type: CommunityPostType
     post_content: str | List[str] | PollTypePost | VideoTypePost | None
-    comments: List[Comment]  # TODO: Not Implemented yet
+    comments: List[Comment]
     posted_date: str

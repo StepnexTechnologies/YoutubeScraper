@@ -42,6 +42,7 @@ class Constants:
     # COMMUNITY_POSTS_COMMENTS_PER_PAGE = 20
 
     MAX_RETRY_COUNT = 2
+    PAUSE_TIME = 2
 
     # Links
     VIDEOS_PAGE_LINK = "https://www.youtube.com/{}/videos"

@@ -1,5 +1,5 @@
 import time
-from datetime import date, datetime
+from datetime import datetime
 
 from selenium.common import NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
@@ -14,6 +14,7 @@ from lib.utils import (
     unzip_large_nums,
     get_logger,
     save_to_json,
+    extract_hashtags,
 )
 
 
@@ -290,7 +291,6 @@ def get_shorts(
                         commenter_display_picture_url="",
                         likes=likes,
                         date=comment_date,
-                        fetched_timestamp=str(datetime.now()),
                         replies_count=replies_count,
                         liked_by_creator=False,  # TODO: Not Implemented yet
                     )
@@ -301,7 +301,7 @@ def get_shorts(
                 thumbnail_url=thumbnail_url,
                 description=description,
                 secondary_description="",  # TODO: Not Implemented yet
-                hashtags=[],  # TODO: Not Implemented yet
+                hashtags=extract_hashtags(description),
                 music=ShortMusic(
                     name="",
                     channel_name="",

@@ -23,6 +23,7 @@ from lib.utils import (
     video_duration_parser,
     get_webdriver,
     get_logger,
+    extract_hashtags,
 )
 
 
@@ -133,6 +134,7 @@ def get_community_posts(
                 code=code,
                 url=url,
                 description=description,
+                hashtags=extract_hashtags(description),
                 post_type=post_type,
                 post_content=post_content,
                 likes=likes,
@@ -265,7 +267,7 @@ def get_post_content(
             channel_url = name_and_verification.get_attribute("href")
 
             try:
-                name_and_verification.find_element(
+                name_and_verification_element.find_element(
                     By.TAG_NAME, "ytd-badge-supported-renderer"
                 )
                 is_channel_verified = True
@@ -455,7 +457,6 @@ def get_comments(comments_driver, code, constants, logger) -> (int, List[Comment
                 commenter_display_picture_url=commenter_dp_url,
                 likes=likes,
                 date=comment_date,
-                fetched_timestamp=str(datetime.now()),
                 replies_count=replies_count,
                 liked_by_creator=liked_by_creator,
             )

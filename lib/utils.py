@@ -1,3 +1,4 @@
+import re
 import time
 import logging
 from datetime import datetime
@@ -151,17 +152,15 @@ def video_duration_parser(str_duration: str) -> int:
     return duration
 
 
-def calculate_trend_score(
-    views: int, likes: int, comments: int, uploaded_date: str, current_date: str
-) -> float:
-    from datetime import datetime
+def extract_hashtags(text: str) -> list[str]:
+    if text:
+        return re.findall(r"#\w+", text)
+    return []
 
-    # Normalize date to "days since uploaded"
-    days_since_uploaded = (
-        datetime.strptime(current_date, "%Y-%m-%d")
-        - datetime.strptime(uploaded_date, "%Y-%m-%d")
-    ).days + 1
 
-    # Score = weighted views, likes, and comments, divided by days since uploaded
-    score = (0.5 * views + 0.3 * likes + 0.2 * comments) / days_since_uploaded
-    return score
+if __name__ == "__main__":
+    print(
+        extract_hashtags(
+            "Loving the #awesome weather and feeling #grateful for everything! #Python #coding"
+        )
+    )
