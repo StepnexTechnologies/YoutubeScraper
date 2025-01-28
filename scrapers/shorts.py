@@ -318,6 +318,7 @@ def get_shorts(
                 likes=likes,
                 views=views,
                 posted_date=posted_date,
+                fetched_timestamp=str(datetime.now()),
                 comments_count=comments_count,
                 pinned_comments=[],
                 comments=comments_list,
@@ -344,8 +345,8 @@ if __name__ == "__main__":
     channel = "@MrBeast"
     get_shorts(
         channel,
-        get_webdriver(),
-        get_webdriver(),
+        get_webdriver(headless=False),
+        get_webdriver(headless=False),
         Constants(),
         get_logger("logs/test_runs"),
     )

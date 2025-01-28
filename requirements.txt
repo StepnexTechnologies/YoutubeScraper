@@ -2,4 +2,9 @@ selenium~=4.28.1
 urllib3~=2.3.0
 webdriver-manager
 tenacity
-pydantic
+pydantic~=2.10.6
+psycopg2-binary
+python-dotenv~=1.0.1
+Flask~=3.1.0
+prometheus_client~=0.21.1
+Werkzeug~=3.1.3

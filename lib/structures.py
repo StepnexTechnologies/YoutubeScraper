@@ -20,9 +20,6 @@ class BaseContent(BaseModel):
     comments_count: int
     hashtags: Optional[List[str]]
     fetched_timestamp: str
-    # likes_to_views_ratio: Optional[float]
-    # comments_to_views: Optional[float]
-    # duration_to_likes: Optional[float]
 
 
 class Link(BaseModel):
@@ -76,12 +73,18 @@ class RelatedVideo(BaseModel):
     views: int
 
 
+class TranscriptItem(BaseModel):
+    timestamp: int
+    text: str
+
+
 class VideoInfo(BaseContent):
     code: str
     title: str
     description: str
     url: str
     thumbnail_url: Optional[str]
+    transcript: Optional[List[TranscriptItem]]
     duration: float
     embed_code: str
     uploaded_date: str

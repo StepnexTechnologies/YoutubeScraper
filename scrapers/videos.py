@@ -11,7 +11,7 @@ from urllib3.exceptions import NewConnectionError
 
 from lib.constants import Constants
 from lib.errors import ScraperRuntimeError
-from lib.structures import VideoInfo, Comment, RelatedVideo
+from lib.structures import VideoInfo, Comment, RelatedVideo, TranscriptItem
 from lib.utils import (
     scroll_to_bottom,
     unzip_large_nums,
@@ -34,12 +34,12 @@ def get_video_info(
             EC.presence_of_element_located((By.ID, "contents"))
         )
 
-        # # Scrolling logic
-        # try:
-        #     logger.info("Scrolling through the page to load all videos.")
-        #     scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
-        # except Exception as e:
-        #     logger.error(f"Scrolling failed: {e}")
+        # Scrolling logic
+        try:
+            logger.info("Scrolling through the page to load all videos.")
+            scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
+        except Exception as e:
+            logger.error(f"Scrolling failed: {e}")
 
         for count, content in enumerate(contents.find_elements(By.ID, "content")):
             if count == constants.VIDEOS_COUNT:
@@ -87,17 +87,19 @@ def get_video_info(
                         url=constants.VIDEO_PAGE_LINK.format(url),
                         thumbnail_url=thumbnail_url,
                         views=views,
+                        transcript=video_details["transcript"],
                         description=video_details["description"],
-                        hashtags=extract_hashtags(video_details["description"]),
+                        hashtags=extract_hashtags(video_details["description"])
+                        + extract_hashtags(title),
                         likes=video_details["likes"],
                         duration=video_details["duration"],
-                        embed_code=video_details["embed_code"],
+                        embed_code=constants.EMBED_LINK.format(code),
                         uploaded_date=video_details["uploaded_date"],
                         fetched_timestamp=str(datetime.now()),
                         comments_count=video_details["comments_count"],
                         comments_turned_off=False,  # TODO: Not Implemented yet
                         comments=video_details["comments"],
-                        related=video_details["related"],  # TODO: Not Implemented yet
+                        related=video_details["related"],
                     )
                 except Exception as e:
                     logger.error(
@@ -134,12 +136,12 @@ def get_video_details(video_details_driver, code, constants, logger):
     other_info = {
         "description": "",
         "likes": 0,
-        "duration": "",
-        "embed_code": f"https://www.youtube.com/embed/{code}",
+        "duration": 0,
         "uploaded_date": "",
         "comments_count": 0,
+        "transcript": [],
         "comments": [],
-        "related": [],  # TODO: Implementation not done yet
+        "related": [],
         "sponsor_info": [],
     }
 
@@ -175,6 +177,20 @@ def get_video_details(video_details_driver, code, constants, logger):
         except Exception:
             description = ""
         other_info["description"] = description
+
+        try:
+            WebDriverWait(video_details_driver, constants.MAX_DELAY).until(
+                EC.presence_of_element_located(
+                    (
+                        By.XPATH,
+                        "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/ytd-watch-metadata/div/div[4]/div[1]/div/ytd-text-inline-expander/div[2]/ytd-structured-description-content-renderer/div/ytd-video-description-transcript-section-renderer/div[3]/div/ytd-button-renderer/yt-button-shape/button",
+                    )
+                )
+            ).click()
+        except Exception as e:
+            logger.error(
+                f"Transcript Button not found, this video might not have a transcript{e}"
+            )
 
         # Likes
         try:
@@ -215,8 +231,38 @@ def get_video_details(video_details_driver, code, constants, logger):
         except TimeoutException:
             logger.error("Failed to fetch uploaded date.")
 
-        # scroll(video_details_driver, constants.PAUSE_TIME, 8, constants.MAX_DELAY)
-        scroll(video_details_driver, constants.PAUSE_TIME, 2, constants.MAX_DELAY)
+        # Transcript
+        try:
+
+            transcript_segments = WebDriverWait(
+                video_details_driver, constants.MAX_DELAY
+            ).until(
+                EC.presence_of_all_elements_located(
+                    (By.TAG_NAME, "ytd-transcript-segment-renderer")
+                )
+            )
+
+            for transcript_segment in transcript_segments:
+                timestamp = video_duration_parser(
+                    transcript_segment.find_element(By.TAG_NAME, "div")
+                    .find_element(By.TAG_NAME, "div")
+                    .find_element(By.TAG_NAME, "div")
+                    .text
+                )
+                content = (
+                    transcript_segment.find_element(By.TAG_NAME, "div")
+                    .find_element(By.TAG_NAME, "yt-formatted-string")
+                    .text
+                )
+                other_info["transcript"].append(
+                    TranscriptItem(timestamp=timestamp, text=content)
+                )
+
+        except TimeoutException:
+            logger.error("Failed to fetch transcript")
+
+        scroll(video_details_driver, constants.PAUSE_TIME, 8, constants.MAX_DELAY)
+        # scroll(video_details_driver, constants.PAUSE_TIME, 2, constants.MAX_DELAY)
 
         # Comments Info
         try:
@@ -455,9 +501,9 @@ def get_video_details(video_details_driver, code, constants, logger):
 
 if __name__ == "__main__":
     get_video_info(
-        get_webdriver(),
-        get_webdriver(),
-        "@PewDiePie",
+        get_webdriver(headless=False),
+        get_webdriver(headless=False),
+        "@tanmaybhat",
         Constants,
         get_logger("logs", print_to_console=True),
     )
