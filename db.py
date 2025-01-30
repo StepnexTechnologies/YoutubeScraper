@@ -4,10 +4,9 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from contextlib import contextmanager
-from typing import Optional, Dict, List, Any, Tuple
-from dotenv import load_dotenv
+from typing import Optional, Dict, List, Any
 
-load_dotenv()
+from lib.utils import serialize_value
 
 
 def get_connection_string() -> str:
@@ -322,30 +321,38 @@ class YtChannelDB:
                     "INSERT INTO youtube_channel (channel_code, remarks) VALUES (%s, %s) RETURNING id",
                     [username, "To be Scraped"],
                 )
-                profile_id = cur.fetchone()[0]
+                channel_id = cur.fetchone()[0]
                 conn.commit()
-                return profile_id
+                return channel_id
 
     @staticmethod
-    def update_remarks(channel_id: int, remarks: str) -> bool:
+    def update_remarks(channel_code: str, remarks: str) -> bool:
         with get_db() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                query = f"UPDATE youtube_channel SET remarks = %s WHERE id = %s"
-                cur.execute(query, [remarks, channel_id])
+                query = (
+                    f"UPDATE youtube_channel SET remarks = %s WHERE channel_code = %s"
+                )
+                cur.execute(query, [remarks, channel_code])
                 conn.commit()
                 return True
 
     @staticmethod
-    def update(channel_id: int, update_data: Dict) -> bool:
+    def update(channel_code: str, update_data: Dict) -> bool:
+        if update_data == {}:
+            return False
         with get_db() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
-                    "SELECT * FROM youtube_channel WHERE id = %s", (channel_id,)
+                    "SELECT * FROM youtube_channel WHERE channel_code = %s",
+                    (channel_code,),
                 )
                 current_data = cur.fetchone()
 
                 if not current_data:
                     return False
+
+                channel_id = current_data["id"]
+
                 if update_data:
                     # Record changes
                     changes = ChannelChangeTracker.compare_values(
@@ -369,16 +376,41 @@ class YtChannelDB:
                             ),
                         )
 
-                    # Update profile
+                    # Ensure dictionary values are converted to JSON
+                    values = [serialize_value(v) for v in update_data.values()]
+                    values += ["Scraped", channel_id]
+
                     set_clause = (
                         ", ".join([f"{k} = %s" for k in update_data.keys()])
                         + ", remarks = %s"
                     )
-                    values = list(update_data.values()) + ["Scraped", channel_id]
+
                     query = f"UPDATE youtube_channel SET {set_clause} WHERE id = %s"
                     cur.execute(query, values)
+
                 conn.commit()
                 return True
+
+    @staticmethod
+    def get_unscraped_channels(limit: int = 100) -> List[str]:
+        with get_db() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(
+                    """
+                    SELECT id, channel_code 
+                    FROM youtube_channel 
+                    WHERE remarks = 'To be Scraped'
+                    AND update_time IS NULL 
+                        OR update_time < NOW() - INTERVAL '24 hours'
+                    ORDER BY update_time NULLS FIRST
+                    LIMIT %s
+                    FOR UPDATE SKIP LOCKED
+                    """,
+                    (limit,),
+                )
+                channels = cur.fetchall()
+
+                return [channel["channel_code"] for channel in channels]
 
 
 class YtShortDB:
@@ -590,10 +622,11 @@ class YtCommentsDB:
 
 
 if __name__ == "__main__":
-    # init_db()
+    init_db()
 
     channel_db = YtChannelDB()
 
-    with open("seed_channels.txt", "r") as file:
+    with open("channel_names.txt", "r") as file:
         for channel_name in file.readlines():
-            channel_db.create(channel_name)
+            channel_db.create(channel_name.strip())
+            print(channel_name.strip())

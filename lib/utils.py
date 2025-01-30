@@ -1,31 +1,34 @@
+import json
 import re
 import time
 import logging
-from datetime import datetime
 from logging.handlers import TimedRotatingFileHandler
+from typing import Any
 
 from selenium import webdriver
 from selenium.webdriver import Keys
+from selenium.webdriver.chrome.service import Service
 from selenium_stealth import stealth
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def get_webdriver(headless: bool = True, proxy_server_url: str | None = None):
     options = Options()
 
-    options.add_argument("--no-sandbox")
     options.add_argument("--mute-audio")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--no-sandbox")
     options.add_argument("--disable-logging")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-popup-blocking")
     options.add_argument("--ignore-certificate-errors")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("useAutomationExtension", False)
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
     if headless:
         options.add_argument("--headless")
@@ -34,7 +37,9 @@ def get_webdriver(headless: bool = True, proxy_server_url: str | None = None):
     if proxy_server_url:
         options.add_argument(f"--proxy-server={proxy_server_url}")
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(
+        options=options, service=Service(ChromeDriverManager().install())
+    )
     driver.execute_script(
         "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
     )
@@ -115,7 +120,8 @@ def get_logger(directory: str, print_to_console: bool = False):
 
     # file_handler = logging.FileHandler(f"{directory}/run_{datetime.now()}.log")
     file_handler = TimedRotatingFileHandler(
-        f"{directory}/run_{datetime.now()}.log",
+        # f"{directory}/run_{datetime.now()}.log",
+        f"{directory}/run.log",
         when="midnight",
         interval=1,
         backupCount=7,
@@ -156,6 +162,14 @@ def extract_hashtags(text: str) -> list[str]:
     if text:
         return re.findall(r"#\w+", text)
     return []
+
+
+def serialize_value(value: Any) -> str | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, (dict, list)):
+        return json.dumps(value)
+    return str(value)
 
 
 if __name__ == "__main__":

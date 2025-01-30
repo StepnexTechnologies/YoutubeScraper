@@ -1,22 +1,60 @@
 services:
+  postgres:
+    image: postgres:latest
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: naad
+      POSTGRES_PASSWORD: naad@dantale123A
+      POSTGRES_DB: youtube_scraper
+    networks:
+      - my_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   app:
     build:
       context: .
       dockerfile: Dockerfile
+    networks:
+      - my_network
     ports:
       - "5001:5001"
     environment:
       - PYTHONUNBUFFERED=1
     depends_on:
       - prometheus
+
   prometheus:
     image: prom/prometheus
-    ports:
-      - "9090:9090"
+    networks:
+      - my_network
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
   grafana:
     hostname: grafana
     image: grafana/grafana
+    networks:
+      - my_network
     ports:
-      - 3000:3000
+      - "3000:3000"
+
+#  selenium-hub:
+#    image: selenium/hub:latest
+#    networks:
+#      - my_network
+#    ports:
+#      - "4442:4442"
+#      - "4443:4443"
+#      - "4444:4444"
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

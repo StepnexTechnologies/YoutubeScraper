@@ -11,8 +11,8 @@ from lib.structures import ChannelInfo, Link
 from lib.utils import unzip_large_nums
 
 
-def get_channel_info(driver, channel_name, constants, logger):
-    info = {}
+def get_channel_info(driver, channel_name, constants, logger, channel_db):
+    stored = False
 
     try:
         driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
@@ -145,7 +145,7 @@ def get_channel_info(driver, channel_name, constants, logger):
                 )
             except (IndexError, AttributeError):
                 logger.error("Failed to fetch joined date.")
-                joined_date = ""
+                joined_date = None
 
         except TimeoutException:
             logger.error("Failed to fetch channel details section.")
@@ -168,6 +168,7 @@ def get_channel_info(driver, channel_name, constants, logger):
             logger.error("Failed to close channel details popup.")
 
         info = ChannelInfo(
+            channel_code=channel_name,
             name=name,
             is_verified=is_verified,
             about=about,
@@ -182,7 +183,7 @@ def get_channel_info(driver, channel_name, constants, logger):
             location=location,
         )
 
-        return info
+        stored = channel_db.update(channel_name, info.dict())
 
     except TimeoutError as e:
         logger.error(f"Timeout error: {e}")
@@ -198,7 +199,6 @@ def get_channel_info(driver, channel_name, constants, logger):
 
     except Exception as e:
         logger.error(f"Unexpected error occurred: {e}")
-        return None
 
     finally:
-        return info
+        return stored
