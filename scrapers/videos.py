@@ -9,22 +9,24 @@ from selenium.common.exceptions import (
 )
 from urllib3.exceptions import NewConnectionError
 
-from lib.constants import Constants
+from db import YtVideoDB
 from lib.errors import ScraperRuntimeError
-from lib.structures import VideoInfo, Comment, RelatedVideo, TranscriptItem
+from lib.structures import Comment, RelatedVideo, TranscriptItem
 from lib.utils import (
     scroll_to_bottom,
     unzip_large_nums,
-    get_webdriver,
     scroll,
-    get_logger,
     video_duration_parser,
-    extract_hashtags,
 )
 
 
 def get_video_info(
-    videos_info_driver, videos_details_driver, channel_name, constants, logger
+    videos_info_driver,
+    channel_name,
+    channel_id,
+    constants,
+    logger,
+    videos_db: YtVideoDB,
 ):
     try:
         videos_info_driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
@@ -37,23 +39,14 @@ def get_video_info(
         # Scrolling logic
         try:
             logger.info("Scrolling through the page to load all videos.")
-            scroll_to_bottom(driver=videos_info_driver, pause_time=3, scroll_count=5)
+            scroll_to_bottom(driver=videos_info_driver, pause_time=3)
         except Exception as e:
             logger.error(f"Scrolling failed: {e}")
 
+        videos = []
         for count, content in enumerate(contents.find_elements(By.ID, "content")):
-            if count == constants.VIDEOS_COUNT:
-                break
-
-            # video_info = {}
-            code = ""
-            url = ""
-            title = ""
-            thumbnail_url = ""
-            views = 0
-
             try:
-                logger.info("Extracting video details.")
+                # logger.info("Extracting video details.")
                 video_url = content.find_element(By.TAG_NAME, "a").get_attribute("href")
 
                 code = video_url.split("=")[-1]
@@ -64,58 +57,29 @@ def get_video_info(
 
                 title = content.find_element(By.ID, "video-title").text
 
-                try:
-                    metadata_container = content.find_element(
-                        By.ID, "metadata-line"
-                    ).find_elements(By.TAG_NAME, "span")
-                    views = unzip_large_nums(metadata_container[0].text.split(" ")[0])
-                except NoSuchElementException:
-                    logger.error("Metadata container or views information not found.")
-
-                # TODO Consider getting more accurate view count in video details
-
-                try:
-                    logger.info(f"Fetching additional details for video: {code}")
-
-                    video_details = get_video_details(
-                        videos_details_driver, code, constants, logger
+                videos.append(
+                    (
+                        title,
+                        code,
+                        video_url,
+                        thumbnail_url,
+                        channel_id,
                     )
-
-                    video_info = VideoInfo(
-                        code=code,
-                        title=title,
-                        url=constants.VIDEO_PAGE_LINK.format(url),
-                        thumbnail_url=thumbnail_url,
-                        views=views,
-                        transcript=video_details["transcript"],
-                        description=video_details["description"],
-                        hashtags=extract_hashtags(video_details["description"])
-                        + extract_hashtags(title),
-                        likes=video_details["likes"],
-                        duration=video_details["duration"],
-                        embed_code=constants.EMBED_LINK.format(code),
-                        uploaded_date=video_details["uploaded_date"],
-                        fetched_timestamp=str(datetime.now()),
-                        comments_count=video_details["comments_count"],
-                        comments_turned_off=False,  # TODO: Not Implemented yet
-                        comments=video_details["comments"],
-                        related=video_details["related"],
-                    )
-                except Exception as e:
-                    logger.error(
-                        f"Failed to fetch additional video details for {code}: {e}"
-                    )
-
-                try:
-                    file_path = f"{constants.DATA_DIRECTORY}/{channel_name}/{constants.VIDEOS_DIRECTORY}/{code}.json"
-                    logger.info(f"Saving video info to {file_path}")
-                    with open(file_path, "w") as file:
-                        file.write(video_info.model_dump_json(indent=4))
-                except Exception as e:
-                    logger.error(f"Failed to save video information for {code}: {e}")
+                )
 
             except Exception as e:
                 logger.error(f"Failed to extract details for a video: {e}")
+
+        try:
+            logger.info(f"Storing all videos basic info for channel: {channel_name}")
+
+            videos_db.create_many(values=videos)
+
+        except Exception as e:
+            logger.error(
+                f"Failed to store all videos basic info for channel: {channel_name}: {e}"
+            )
+
         return 1
 
     except NewConnectionError as e:
@@ -499,11 +463,11 @@ def get_video_details(video_details_driver, code, constants, logger):
         return other_info
 
 
-if __name__ == "__main__":
-    get_video_info(
-        get_webdriver(headless=False),
-        get_webdriver(headless=False),
-        "@tanmaybhat",
-        Constants,
-        get_logger("logs", print_to_console=True),
-    )
+# if __name__ == "__main__":
+#     get_video_info(
+#         get_webdriver(headless=False),
+#         get_webdriver(headless=False),
+#         "@tanmaybhat",
+#         Constants,
+#         get_logger("logs", print_to_console=True),
+#     )

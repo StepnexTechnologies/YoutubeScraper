@@ -241,12 +241,14 @@ def init_db():
 def delete_db():
     with get_db() as conn:
         with conn.cursor() as cur:
-            cur.execute("DROP TABLE IF EXISTS youtube_channel_table CASCADE")
-            cur.execute("DROP TABLE IF EXISTS youtube_videos_table CASCADE")
-            cur.execute("DROP TABLE IF EXISTS youtube_shorts_table CASCADE")
-            cur.execute("DROP TABLE IF EXISTS youtube_community_posts_table CASCADE")
-            cur.execute("DROP TABLE IF EXISTS youtube_comments_table CASCADE")
-            cur.execute("DROP TABLE IF EXISTS channel_changes_table CASCADE")
+            cur.execute("DROP TABLE IF EXISTS youtube_channel CASCADE")
+            cur.execute("DROP TABLE IF EXISTS youtube_videos CASCADE")
+            cur.execute("DROP TABLE IF EXISTS youtube_shorts CASCADE")
+            cur.execute("DROP TABLE IF EXISTS youtube_community_posts CASCADE")
+            cur.execute("DROP TABLE IF EXISTS youtube_comments CASCADE")
+            cur.execute("DROP TABLE IF EXISTS channel_changes CASCADE")
+
+    print("Deleted DB")
 
 
 class ChannelChangeTracker:
@@ -337,9 +339,9 @@ class YtChannelDB:
                 return True
 
     @staticmethod
-    def update(channel_code: str, update_data: Dict) -> bool:
+    def update(channel_code: str, update_data: Dict) -> tuple[bool, int]:
         if update_data == {}:
-            return False
+            return False, -1
         with get_db() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
@@ -349,7 +351,7 @@ class YtChannelDB:
                 current_data = cur.fetchone()
 
                 if not current_data:
-                    return False
+                    return False, -1
 
                 channel_id = current_data["id"]
 
@@ -389,7 +391,7 @@ class YtChannelDB:
                     cur.execute(query, values)
 
                 conn.commit()
-                return True
+                return True, channel_id
 
     @staticmethod
     def get_unscraped_channels(limit: int = 100) -> List[str]:
@@ -468,7 +470,9 @@ class YtShortDB:
 
 class YtVideoDB:
     @staticmethod
-    def create(video_code: str, channel_id: int) -> int:
+    def create(
+        title: str, video_code: str, url: str, thumbnail_url: str, channel_id: int
+    ) -> int:
         with get_db() as conn:
             with conn.cursor() as cur:
                 cur.execute(
@@ -481,12 +485,34 @@ class YtVideoDB:
                     return result[0]
 
                 cur.execute(
-                    "INSERT INTO youtube_videos (video_code, channel_id) VALUES (%s, %s) RETURNING id",
-                    [video_code, channel_id],
+                    "INSERT INTO youtube_videos (title, video_code, url, thumbnail_url, channel_id) VALUES (%s, %s, %s, %s, %s) RETURNING id",
+                    [
+                        title,
+                        video_code,
+                        url,
+                        thumbnail_url,
+                        channel_id,
+                    ],
                 )
                 video_id = cur.fetchone()[0]
                 conn.commit()
                 return video_id
+
+    @staticmethod
+    def create_many(values: list[tuple]) -> bool:
+        with get_db() as conn:
+            with conn.cursor() as cur:
+                cur.executemany(
+                    """
+                    INSERT INTO youtube_videos 
+                    (title, video_code, url, thumbnail_url, channel_id)
+                    VALUES (%s, %s, %s, %s, %s)
+                    ON CONFLICT DO NOTHING
+                """,
+                    values,
+                )
+                conn.commit()
+                return True
 
     @staticmethod
     def update(video_id: int, update_data: Dict) -> bool:
@@ -623,10 +649,3 @@ class YtCommentsDB:
 
 if __name__ == "__main__":
     init_db()
-
-    channel_db = YtChannelDB()
-
-    with open("channel_names.txt", "r") as file:
-        for channel_name in file.readlines():
-            channel_db.create(channel_name.strip())
-            print(channel_name.strip())

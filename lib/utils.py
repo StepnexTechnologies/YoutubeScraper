@@ -79,19 +79,24 @@ def unzip_large_nums(num: str) -> int:
         return 0
 
 
-def scroll_to_bottom(driver, pause_time, scroll_count):
+def scroll_to_bottom(driver, pause_time=2, max_attempts=100000):
     last_height = driver.execute_script("return document.documentElement.scrollHeight")
 
-    for i in range(scroll_count):
+    for _ in range(max_attempts):
         driver.execute_script(
             "window.scrollTo(0, document.documentElement.scrollHeight);"
         )
         time.sleep(pause_time)
+
         new_height = driver.execute_script(
             "return document.documentElement.scrollHeight"
         )
-        if new_height != last_height:
-            last_height = new_height
+
+        if new_height == last_height:
+            break
+
+        last_height = new_height
+
     driver.execute_script("window.scrollTo(0, 0);")
 
 
@@ -118,14 +123,13 @@ def get_logger(directory: str, print_to_console: bool = False):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    # file_handler = logging.FileHandler(f"{directory}/run_{datetime.now()}.log")
     file_handler = TimedRotatingFileHandler(
-        # f"{directory}/run_{datetime.now()}.log",
         f"{directory}/run.log",
         when="midnight",
         interval=1,
         backupCount=7,
     )
+
     file_handler.setFormatter(log_formatter)
     logger.addHandler(file_handler)
 

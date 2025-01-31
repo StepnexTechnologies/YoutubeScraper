@@ -50,4 +50,5 @@ ENV DATABASE__PASSWORD=naad@dantale123A
 ENV DATABASE__HOST=postgres
 ENV DATABASE__PORT=5432
 
+CMD ["python", "db.py"]
 CMD ["python", "app.py"]

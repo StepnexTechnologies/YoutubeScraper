@@ -1,14 +1,10 @@
+from prometheus_client import Counter, Histogram, Gauge
+
+
 class Constants:
     MAX_DELAY = 8
 
-    MAX_WORKERS = 1
-    """
-    Minimum Drivers required to run a step of scraping for each channel is 2
-    (per worker so if MAX_WORKERS = 2, this number will be 4) so recommended
-    number of workers is > 2 per worker, (optimum number is 4-5 depending upon system
-    specs - headless mode requires lower overhead)
-    """
-    MAX_DRIVERS = MAX_WORKERS * 2 + 1  # + 1 just in case
+    MAX_WORKERS = 4
 
     DATA_DIRECTORY = "data"
     LOGS_DIRECTORY = "logs"
@@ -29,6 +25,9 @@ class Constants:
     COMMUNITY_POSTS_PER_PAGE = 10
     COMMUNITY_POSTS_COMMENTS_COUNT = 100
     COMMUNITY_POSTS_COMMENTS_PER_PAGE = 20
+
+    # Criteria for a channel to be scrapable
+    MIN_SUBS = 10000
 
     # VIDEOS_COUNT = 10
     # VIDEO_COMMENTS_COUNT = 10
@@ -52,6 +51,36 @@ class Constants:
     COMMUNITY_POST_PAGE_LINK = "https://www.youtube.com/post/{}"
     LIVE_STREAMS_PAGE_LINK = "https://www.youtube.com/{}/streams"
     EMBED_LINK = "https://www.youtube.com/embed/{}"
+
+    METRICS_PORT = 5001
+
+    CHANNEL_SCRAPES = Counter(
+        "channel_scrapes_total",
+        "Total number of channel scraping attempts",
+        ["status", "type"],
+    )
+
+    SCRAPE_DURATION = Histogram(
+        "scrape_duration_seconds",
+        "Time spent scraping channels",
+        buckets=[10.0, 30.0, 60.0, 120.0, 300.0, 600.0],
+    )
+
+    TOTAL_SCRAPE_DURATION = Counter(
+        "total_scrape_duration",
+        "Total time taken for scraping",
+        ["status", "type"],
+    )
+
+    ACTIVE_SCRAPES = Gauge(
+        "active_scrapes", "Number of currently active scraping operations"
+    )
+
+    JOBS_PROCESSED = Counter(
+        "jobs_processed_total", "Total number of jobs processed", ["status"]
+    )
+
+    QUEUE_SIZE = Gauge("job_queue_size", "Current number of jobs in queue")
 
     # Trending Algo
     TRENDING_DAYS_THRESHOLD = 3

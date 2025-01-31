@@ -13,6 +13,7 @@ from lib.utils import unzip_large_nums
 
 def get_channel_info(driver, channel_name, constants, logger, channel_db):
     stored = False
+    channel_id = -1
 
     try:
         driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
@@ -183,7 +184,7 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
             location=location,
         )
 
-        stored = channel_db.update(channel_name, info.dict())
+        stored, channel_id = channel_db.update(channel_name, info.dict())
 
     except TimeoutError as e:
         logger.error(f"Timeout error: {e}")
@@ -201,4 +202,4 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
         logger.error(f"Unexpected error occurred: {e}")
 
     finally:
-        return stored
+        return stored, channel_id

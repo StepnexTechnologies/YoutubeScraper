@@ -1,17 +1,38 @@
 from dataclasses import dataclass
-from datetime import datetime
 from typing import List, Optional
 from enum import Enum
 
 from pydantic import BaseModel
 
+from db import YtChannelDB, YtVideoDB, YtShortDB, YtCommentsDB, YtCommunityPostDB
+
 
 @dataclass
 class YtScraperConfig:
-    log_directory: str = "logs"
-    data_directory: str = "data"
     proxy: Optional[str] = None
     print_logs_to_console: bool = True
+    channel_db: YtChannelDB = YtChannelDB()
+    video_db: YtVideoDB = YtVideoDB()
+    short_db: YtShortDB = YtShortDB()
+    community_post_db: YtCommunityPostDB = YtCommunityPostDB()
+    comments_db: YtCommentsDB = YtCommentsDB()
+
+
+class JobType(Enum):
+    channel_info = "channel info"
+    videos_basic_info = "videos basic info"
+    video_details = "video details"
+    shorts_basic_info = "shorts basic info"
+    short_details = "short details"
+    community_posts_basic_info = "community posts basic info"
+    community_post_details = "community post details"
+
+
+@dataclass
+class ScrapeInfoJob:
+    channel_name: str
+    job_type: JobType
+    data: Optional[dict[str, any]] = None
 
 
 class BaseContent(BaseModel):
