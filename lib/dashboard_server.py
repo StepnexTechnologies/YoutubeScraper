@@ -206,7 +206,7 @@ class DashboardServer:
                                 <h3>{{ channel.channel_code }}</h3>
                                 <p>Subscribers: {{ channel.subscribers }}</p>
                                 <p>Views: {{ channel.views_count }}</p>
-                                <p>Content: {{ channel.num_content }}</p>
+                                <p>Content: {{ channel.content_count }}</p>
                             </div>
                         </a>
                         {% endfor %}
