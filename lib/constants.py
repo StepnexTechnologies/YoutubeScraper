@@ -4,10 +4,12 @@ from prometheus_client import Counter, Histogram, Gauge
 class Constants:
     MAX_DELAY = 8
 
-    MAX_WORKERS = 4
+    MAX_WORKERS = 2
 
     DATA_DIRECTORY = "data"
     LOGS_DIRECTORY = "logs"
+    BANNER_PATH = "content/banners/{}.jpg"
+    DP_PATH = "content/display_pictures/{}.jpg"
     INFO_FILE_NAME = "channel_info.json"
     VIDEOS_DIRECTORY = "videos"
     SHORTS_DIRECTORY = "shorts"
@@ -16,6 +18,7 @@ class Constants:
     METADATA_FILE_NAME = "metadata.json"
 
     VIDEOS_COUNT = 100
+    VIDEOS_COUNT_BASIC_INFO = 1000
     VIDEO_COMMENTS_COUNT = 100
     VIDEO_COMMENTS_PER_PAGE = 20
     SHORTS_COMMENTS_COUNT = 100
@@ -42,6 +45,7 @@ class Constants:
 
     MAX_RETRY_COUNT = 2
     PAUSE_TIME = 2
+    SCROLL_WAIT_TIME = 3
 
     # Links
     VIDEOS_PAGE_LINK = "https://www.youtube.com/{}/videos"
@@ -53,6 +57,7 @@ class Constants:
     EMBED_LINK = "https://www.youtube.com/embed/{}"
 
     METRICS_PORT = 5001
+    DASHBOARD_PORT = 5002
 
     CHANNEL_SCRAPES = Counter(
         "channel_scrapes_total",

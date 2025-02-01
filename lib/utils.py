@@ -5,6 +5,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 from typing import Any
 
+import requests
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.chrome.service import Service
@@ -14,6 +15,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+
+from lib.errors import EmptyStringException
 
 
 def get_webdriver(headless: bool = True, proxy_server_url: str | None = None):
@@ -150,6 +153,24 @@ def save_to_json(path, data):
         print(f"An error occurred while saving to JSON: {e}")
 
 
+def save_img_from_url(path, url, logger):
+    if url == "":
+        logger.error("url is empty")
+        raise EmptyStringException(message="url is empty", content=url)
+    try:
+        logger.info("Saving Banner...")
+
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+
+        with open(path, "wb") as file:
+            file.write(response.content)
+
+        logger.info(f"Image saved successfully at {path}")
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Failed to download image: {e}")
+
+
 def video_duration_parser(str_duration: str) -> int:
     if str_duration == "":
         return 0
@@ -168,8 +189,14 @@ def extract_hashtags(text: str) -> list[str]:
     return []
 
 
+def extract_channel_codes(text: str) -> list[str]:
+    if text:
+        return re.findall(r"@\w+", text)
+    return []
+
+
 def serialize_value(value: Any) -> str | None:
-    if value is None or value == "":
+    if value is None or value == "" or value == []:
         return None
     if isinstance(value, (dict, list)):
         return json.dumps(value)
@@ -177,8 +204,6 @@ def serialize_value(value: Any) -> str | None:
 
 
 if __name__ == "__main__":
-    print(
-        extract_hashtags(
-            "Loving the #awesome weather and feeling #grateful for everything! #Python #coding"
-        )
-    )
+    text = "Loving the #awesome weather and feeling #grateful for everything! #Python #coding @Awesome"
+    print(extract_hashtags(text))
+    print(extract_channel_codes(text))

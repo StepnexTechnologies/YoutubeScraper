@@ -36,7 +36,7 @@ class ScraperWorker(threading.Thread):
             try:
                 self.constants.ACTIVE_SCRAPES.inc()
                 self.logger.info(
-                    f"Worker {self.worker_id} processing {job.channel_name}"
+                    f"Worker {self.worker_id} processing {job.channel_name}: Job - {job.job_type.value}"
                 )
 
                 if job.job_type == JobType.channel_info:

@@ -39,16 +39,21 @@ def init_db():
                     display_picture_url TEXT,
                     banner_url TEXT,
                     subscribers INTEGER,
-                    videos_count INTEGER,
+                    content_count INTEGER,
+                    num_videos INTEGER,
+                    num_shorts INTEGER,
                     views_count BIGINT,
                     joined_date TIMESTAMP WITH TIME ZONE,
                     location VARCHAR,
                     links JSONB,  -- Array of {title, url}
                     affiliated_channels JSONB,  -- Array of {name, url, code, subscribers}
-                    shorts_scraped VARCHAR,
-                    videos_scraped VARCHAR,
-                    community_posts_scraped VARCHAR,
-                    remarks VARCHAR
+                    channel_info_scraped BOOLEAN DEFAULT FALSE,
+                    shorts_info_scraped BOOLEAN DEFAULT FALSE,
+                    shorts_details_scraped BOOLEAN DEFAULT FALSE,
+                    videos_info_scraped BOOLEAN DEFAULT FALSE,
+                    videos_details_scraped BOOLEAN DEFAULT FALSE,
+                    community_posts_basic_info_scraped BOOLEAN DEFAULT FALSE,
+                    community_posts_details_scraped BOOLEAN DEFAULT FALSE
                 );
                 """
             )
@@ -320,32 +325,24 @@ class YtChannelDB:
                 if result:
                     return result[0]
                 cur.execute(
-                    "INSERT INTO youtube_channel (channel_code, remarks) VALUES (%s, %s) RETURNING id",
-                    [username, "To be Scraped"],
+                    "INSERT INTO youtube_channel (channel_code) VALUES (%s) RETURNING id",
+                    [username],
                 )
                 channel_id = cur.fetchone()[0]
                 conn.commit()
                 return channel_id
 
     @staticmethod
-    def update_remarks(channel_code: str, remarks: str) -> bool:
-        with get_db() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                query = (
-                    f"UPDATE youtube_channel SET remarks = %s WHERE channel_code = %s"
-                )
-                cur.execute(query, [remarks, channel_code])
-                conn.commit()
-                return True
-
-    @staticmethod
     def update(channel_code: str, update_data: Dict) -> tuple[bool, int]:
-        if update_data == {}:
+        if not update_data:
             return False, -1
+
         with get_db() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
-                    "SELECT * FROM youtube_channel WHERE channel_code = %s",
+                    "SELECT id, {} FROM youtube_channel WHERE channel_code = %s".format(
+                        ", ".join(update_data.keys())  # Fetch only needed columns
+                    ),
                     (channel_code,),
                 )
                 current_data = cur.fetchone()
@@ -353,42 +350,45 @@ class YtChannelDB:
                 if not current_data:
                     return False, -1
 
-                channel_id = current_data["id"]
+                channel_id = current_data.pop("id")
 
-                if update_data:
-                    # Record changes
-                    changes = ChannelChangeTracker.compare_values(
-                        {k: v for k, v in current_data.items() if k in update_data},
-                        update_data,
-                    )
+                # Record changes
+                changes = ChannelChangeTracker.compare_values(current_data, update_data)
 
-                    for change in changes:
-                        cur.execute(
-                            """
-                            INSERT INTO channel_changes 
-                            (channel_id, field_name, old_value, new_value, change_type)
-                            VALUES (%s, %s, %s, %s, %s)
-                        """,
-                            (
-                                channel_id,
-                                change["field_name"],
-                                change["old_value"],
-                                change["new_value"],
-                                change["change_type"],
-                            ),
+                if changes:
+                    change_records = [
+                        (
+                            channel_id,
+                            c["field_name"],
+                            c["old_value"],
+                            c["new_value"],
+                            c["change_type"],
                         )
-
-                    # Ensure dictionary values are converted to JSON
-                    values = [serialize_value(v) for v in update_data.values()]
-                    values += ["Scraped", channel_id]
-
-                    set_clause = (
-                        ", ".join([f"{k} = %s" for k in update_data.keys()])
-                        + ", remarks = %s"
+                        for c in changes
+                    ]
+                    cur.executemany(
+                        """
+                        INSERT INTO channel_changes 
+                        (channel_id, field_name, old_value, new_value, change_type)
+                        VALUES (%s, %s, %s, %s, %s)
+                        """,
+                        change_records,
                     )
 
-                    query = f"UPDATE youtube_channel SET {set_clause} WHERE id = %s"
-                    cur.execute(query, values)
+                values = [serialize_value(update_data[k]) for k in update_data.keys()]
+                values.append(channel_id)
+
+                set_clause = ", ".join(f"{k} = %s" for k in update_data.keys())
+                cur.execute(
+                    f"UPDATE youtube_channel SET {set_clause} WHERE id = %s", values
+                )
+
+                # update channel_info_scraped in ca se of a real change
+                if changes:
+                    cur.execute(
+                        "UPDATE youtube_channel SET channel_info_scraped = %s WHERE id = %s",
+                        [True, channel_id],
+                    )
 
                 conn.commit()
                 return True, channel_id
@@ -401,18 +401,48 @@ class YtChannelDB:
                     """
                     SELECT id, channel_code 
                     FROM youtube_channel 
-                    WHERE remarks = 'To be Scraped'
+                    WHERE channel_info_scraped = %s
                     AND update_time IS NULL 
                         OR update_time < NOW() - INTERVAL '24 hours'
                     ORDER BY update_time NULLS FIRST
                     LIMIT %s
                     FOR UPDATE SKIP LOCKED
                     """,
-                    (limit,),
+                    (False, limit),
                 )
                 channels = cur.fetchall()
 
                 return [channel["channel_code"] for channel in channels]
+
+    @staticmethod
+    def get_channels() -> list:
+        with get_db() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(
+                    """
+                    SELECT * 
+                    FROM youtube_channel 
+                    """,
+                )
+                channels = cur.fetchall()
+
+                return channels
+
+    @staticmethod
+    def get_channel_stats(channel_code: str) -> list:
+        with get_db() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(
+                    """
+                    SELECT * 
+                    FROM youtube_channel 
+                    WHERE channel_code = %s
+                    """,
+                    (channel_code,),
+                )
+                channel_stats = cur.fetchone()
+
+                return channel_stats
 
 
 class YtShortDB:
@@ -499,7 +529,7 @@ class YtVideoDB:
                 return video_id
 
     @staticmethod
-    def create_many(values: list[tuple]) -> bool:
+    def create_many(values: list[tuple], channel_id: int) -> bool:
         with get_db() as conn:
             with conn.cursor() as cur:
                 cur.executemany(
@@ -510,6 +540,10 @@ class YtVideoDB:
                     ON CONFLICT DO NOTHING
                 """,
                     values,
+                )
+                cur.execute(
+                    f"UPDATE youtube_channel SET videos_info_scraped = %s WHERE id = %s",
+                    [True, channel_id],
                 )
                 conn.commit()
                 return True
@@ -522,6 +556,30 @@ class YtVideoDB:
                 values = list(update_data.values()) + [video_id]
                 query = f"UPDATE youtube_videos SET {set_clause} WHERE id = %s"
                 cur.execute(query, values)
+                conn.commit()
+                return True
+
+    @staticmethod
+    def update_video_and_shorts_count(channel_id: int, num_videos: int) -> bool:
+        with get_db() as conn:
+            with conn.cursor() as cur:
+                query = """
+                    UPDATE youtube_channel 
+                    SET num_videos = %s
+                    WHERE id = %s
+                    RETURNING content_count
+                """
+                cur.execute(query, (num_videos, channel_id))
+                content_count = cur.fetchone()[0]
+                num_shorts = content_count - num_videos
+
+                query = """
+                    UPDATE youtube_channel 
+                    SET num_shorts = %s
+                    WHERE id = %s
+                """
+                cur.execute(query, (num_shorts, channel_id))
+
                 conn.commit()
                 return True
 

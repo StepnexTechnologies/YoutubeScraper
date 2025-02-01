@@ -1,6 +1,7 @@
 from logging import Logger
 import time
 from lib.constants import Constants
+from lib.dashboard_server import DashboardServer
 from lib.job_queue import JobQueue
 from lib.metrics_server import MetricsServer
 from lib.structures import YtScraperConfig, JobType
@@ -9,20 +10,24 @@ from scraper import YtScraper
 
 
 class ScraperService:
-    def __init__(
-        self, constants: Constants, logger: Logger, num_workers: int, metrics_port: int
-    ):
+    def __init__(self, constants: Constants, logger: Logger):
         self.constants = constants
         self.logger = logger
         self.config = YtScraperConfig()
         self.scraper = YtScraper(self.constants, self.config)
         self.job_queue = JobQueue(constants=self.constants)
         self.workers = []
-        self.num_workers = num_workers
-        self.metrics_server = MetricsServer(logger=self.logger, port=metrics_port)
+        self.num_workers = self.constants.MAX_WORKERS
+        self.metrics_server = MetricsServer(
+            logger=self.logger, port=self.constants.METRICS_PORT
+        )
+        self.dashboard_server = DashboardServer(
+            logger=self.logger, port=self.constants.DASHBOARD_PORT
+        )
 
     def start(self):
         self.metrics_server.start()
+        self.dashboard_server.start()
 
         for i in range(self.num_workers):
             worker = ScraperWorker(
@@ -54,3 +59,4 @@ class ScraperService:
             worker.join()
 
         self.metrics_server.stop()
+        self.dashboard_server.stop()

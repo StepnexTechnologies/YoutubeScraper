@@ -1,3 +1,4 @@
+import time
 from datetime import datetime
 
 from selenium.webdriver.common.by import By
@@ -13,7 +14,6 @@ from db import YtVideoDB
 from lib.errors import ScraperRuntimeError
 from lib.structures import Comment, RelatedVideo, TranscriptItem
 from lib.utils import (
-    scroll_to_bottom,
     unzip_large_nums,
     scroll,
     video_duration_parser,
@@ -21,25 +21,51 @@ from lib.utils import (
 
 
 def get_video_info(
-    videos_info_driver,
+    driver,
     channel_name,
     channel_id,
     constants,
     logger,
     videos_db: YtVideoDB,
 ):
+    num_videos = 0
     try:
-        videos_info_driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
-        videos_info_driver.maximize_window()
+        driver.get(constants.VIDEOS_PAGE_LINK.format(channel_name))
+        driver.maximize_window()
         logger.info(f"Fetching video information for channel: {channel_name}")
-        contents = WebDriverWait(videos_info_driver, constants.MAX_DELAY).until(
+        contents = WebDriverWait(driver, constants.MAX_DELAY).until(
             EC.presence_of_element_located((By.ID, "contents"))
         )
 
         # Scrolling logic
         try:
             logger.info("Scrolling through the page to load all videos.")
-            scroll_to_bottom(driver=videos_info_driver, pause_time=3)
+
+            last_height = driver.execute_script(
+                "return document.documentElement.scrollHeight"
+            )
+
+            num_videos = len(contents.find_elements(By.ID, "content"))
+
+            while num_videos < constants.VIDEOS_COUNT_BASIC_INFO:
+                num_videos = len(contents.find_elements(By.ID, "content"))
+
+                driver.execute_script(
+                    "window.scrollTo(0, document.documentElement.scrollHeight);"
+                )
+                time.sleep(constants.SCROLL_WAIT_TIME)
+
+                new_height = driver.execute_script(
+                    "return document.documentElement.scrollHeight"
+                )
+
+                if new_height == last_height:
+                    break
+
+                last_height = new_height
+
+            driver.execute_script("window.scrollTo(0, 0);")
+
         except Exception as e:
             logger.error(f"Scrolling failed: {e}")
 
@@ -73,7 +99,8 @@ def get_video_info(
         try:
             logger.info(f"Storing all videos basic info for channel: {channel_name}")
 
-            videos_db.create_many(values=videos)
+            videos_db.create_many(values=videos, channel_id=channel_id)
+            videos_db.update_video_and_shorts_count(channel_id, num_videos)
 
         except Exception as e:
             logger.error(

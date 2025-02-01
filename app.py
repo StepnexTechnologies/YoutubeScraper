@@ -6,10 +6,8 @@ from lib.constants import Constants
 from service import ScraperService
 from logging.handlers import TimedRotatingFileHandler
 
-# Primary Setup
 constants = Constants()
 
-# Logging Setup
 formatter = logging.Formatter(
     "%(asctime)s - %(threadName)s - %(levelname)s - %(message)s"
 )
@@ -34,8 +32,6 @@ if __name__ == "__main__":
         service = ScraperService(
             constants=constants,
             logger=logger,
-            num_workers=constants.MAX_WORKERS,
-            metrics_port=constants.METRICS_PORT,
         )
         service.start()
 
@@ -46,6 +42,6 @@ if __name__ == "__main__":
             logger.info("Shutting down...")
             service.stop()
 
-    except Exception as exp:
-        logger.error(f"Fatal error: {str(exp)}")
+    except Exception as e:
+        logger.error(f"Fatal error: {str(e)}")
         sys.exit(1)

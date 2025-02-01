@@ -7,8 +7,8 @@ from selenium.common.exceptions import (
     WebDriverException,
 )
 
-from lib.structures import ChannelInfo, Link
-from lib.utils import unzip_large_nums
+from lib.structures import ChannelInfo, Link, AffiliatedChannel
+from lib.utils import unzip_large_nums, save_img_from_url
 
 
 def get_channel_info(driver, channel_name, constants, logger, channel_db):
@@ -27,6 +27,38 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
         joined_date = ""
         location = ""
         links = []
+        banner_url = ""
+        dp_url = ""
+        affiliated_channels = []
+
+        # Banner and DP URL
+        try:
+            logger.info("Fetching banner url")
+            banner_url = (
+                WebDriverWait(driver, constants.MAX_DELAY)
+                .until(
+                    EC.presence_of_element_located((By.ID, "page-header-banner-sizer"))
+                )
+                .find_element(By.TAG_NAME, "yt-image-banner-view-model")
+                .find_element(By.TAG_NAME, "img")
+                .get_attribute("src")
+            )
+        except Exception as e:
+            logger.error(f"Failed to fetch banner url: {e}")
+
+        try:
+            logger.info("Fetching dp url")
+            dp_url = (
+                WebDriverWait(driver, constants.MAX_DELAY)
+                .until(EC.presence_of_element_located((By.ID, "page-header")))
+                .find_element(By.TAG_NAME, "yt-page-header-renderer")
+                .find_element(By.TAG_NAME, "yt-page-header-view-model")
+                .find_element(By.TAG_NAME, "yt-avatar-shape")
+                .find_element(By.TAG_NAME, "img")
+                .get_attribute("src")
+            )
+        except Exception as e:
+            logger.error(f"Failed to fetch dp url: {e}")
 
         # Name and Verification Status
         try:
@@ -84,10 +116,15 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
                 By.TAG_NAME, "yt-channel-external-link-view-model"
             )
             for link_container in link_containers:
-                container = link_container.find_elements(By.TAG_NAME, "span")
-                links.append(
-                    Link(title=container[0].text, url=container[1].text),
-                )
+                try:
+                    container = link_container.find_elements(By.TAG_NAME, "span")
+                    links.append(
+                        Link(title=container[0].text, url=container[1].text),
+                    )
+                except Exception as e:
+                    logger.error(
+                        f"Problem with fetching one particular link for channel: {channel_name}: {str(e)}"
+                    )
         except TimeoutException:
             logger.error("Failed to fetch channel links.")
 
@@ -108,48 +145,42 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
             )
             rows = channel_details_section.find_elements(By.TAG_NAME, "tr")
 
-            try:
-                subscribers = unzip_large_nums(
-                    rows[3].find_elements(By.TAG_NAME, "td")[1].text.split(" ")[0]
-                )
-            except (IndexError, ValueError):
-                logger.error("Failed to fetch subscribers count.")
-                subscribers = 0
+            for row in rows:
+                try:
+                    row.find_element(By.ID, "view-email-button-container")
+                    continue
+                except:
+                    text = row.find_elements(By.TAG_NAME, "td")[1].text
+                    if "subscribers" in text:
+                        try:
+                            subscribers = unzip_large_nums(text.split(" ")[0])
+                        except Exception as e:
+                            logger.error(f"Failed to fetch subscribers: {e}")
+                    elif "videos" in text:
+                        try:
+                            videos_count = int(text.split(" ")[0].replace(",", ""))
+                        except Exception as e:
+                            logger.error(f"Failed to fetch videos count: {e}")
+                    elif "views" in text:
+                        try:
+                            views_count = int(text.split(" ")[0].replace(",", ""))
+                        except Exception as e:
+                            logger.error(f"Failed to fetch views count: {e}")
+                    elif "Joined" in text:
+                        try:
+                            joined_date = text.replace("Joined", "")
+                        except Exception as e:
+                            logger.error(f"Failed to fetch joined date: {e}")
+                    elif "Phone verified" in text:
+                        continue
+                    else:
+                        try:
+                            location = text
+                        except Exception as e:
+                            logger.error(f"Failed to fetch location: {e}")
 
-            try:
-                videos_count = int(
-                    rows[4]
-                    .find_elements(By.TAG_NAME, "td")[1]
-                    .text.split(" ")[0]
-                    .replace(",", "")
-                )
-            except (IndexError, ValueError):
-                logger.error("Failed to fetch videos count.")
-                videos_count = 0
-
-            try:
-                views_count = int(
-                    rows[5]
-                    .find_elements(By.TAG_NAME, "td")[1]
-                    .text.split(" ")[0]
-                    .replace(",", "")
-                )
-            except (IndexError, ValueError):
-                logger.error("Failed to fetch views count.")
-                views_count = 0
-
-            try:
-                joined_date = (
-                    rows[6]
-                    .find_elements(By.TAG_NAME, "td")[1]
-                    .text.replace("Joined ", "")
-                )
-            except (IndexError, AttributeError):
-                logger.error("Failed to fetch joined date.")
-                joined_date = None
-
-        except TimeoutException:
-            logger.error("Failed to fetch channel details section.")
+        except Exception as e:
+            logger.error(f"Failed to fetch channel details: {e}")
 
         # Close details button
         try:
@@ -165,8 +196,75 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
                 )
             )
             close_details_btn.click()
-        except TimeoutException:
-            logger.error("Failed to close channel details popup.")
+        except Exception as e:
+            logger.error(f"Failed to close channel details popup: {e}")
+
+        # # Affiliated Channels
+        # try:
+        #     try:
+        #         items_container = (
+        #             WebDriverWait(driver, constants.MAX_DELAY)
+        #             .until(
+        #                 EC.presence_of_element_located(
+        #                     (
+        #                         By.TAG_NAME,
+        #                         "ytd-apps",
+        #                     )
+        #                 )
+        #             )
+        #             .find_element(By.ID, "content")
+        #             .find_element(By.TAG_NAME, "page-manager")
+        #             .find_element(By.TAG_NAME, "ytd-browse")
+        #             .find_element(By.TAG_NAME, "ytd-two-column-browse-results-renderer")
+        #             .find_element(By.ID, "primary")
+        #             .find_element(By.TAG_NAME, "ytd-section-list-renderer")
+        #             .find_element(By.ID, "contents")
+        #             .find_elements(By.TAG_NAME, "ytd-item-section-renderer")[-1]
+        #             .find_element(By.ID, "contents")
+        #             .find_element(By.ID, "dismissible")
+        #             .find_element(By.ID, "contents")
+        #             .find_element(By.TAG_NAME, "yt-horizontal-list-renderer")
+        #             .find_element(By.ID, "scroll-outer-container")
+        #             .find_element(By.ID, "scroll-container")
+        #             .find_element(By.ID, "items")
+        #         )
+        #     except Exception as e:
+        #         logger.error(f"Failed to find the items_container: {e}")
+        #
+        #     affiliated_channels_containers = items_container.find_elements(
+        #         By.TAG_NAME, "ytd-grid-channel-renderer"
+        #     )
+        #
+        #     affiliated_channels = []
+        #     for container in affiliated_channels_containers:
+        #         try:
+        #             channel = container.find_element(By.ID, "channel").find_element(
+        #                 By.ID, "channel_info"
+        #             )
+        #             channel_url = channel.get_attribute("href")
+        #             channel_code = channel_url.split("/")[-1]
+        #
+        #             title = channel.find_element(By.XPATH, '//*[@id="title"]')
+        #             channel_subscribers = unzip_large_nums(
+        #                 channel.find_element(
+        #                     By.XPATH, '//*[@id="thumbnail-attribution"]'
+        #                 ).text.split(" ")[0]
+        #             )
+        #             affiliated_channels.append(
+        #                 AffiliatedChannel(
+        #                     name=title,
+        #                     url=channel_url,
+        #                     code=channel_code,
+        #                     subscribers=channel_subscribers,
+        #                 )
+        #             )
+        #         except Exception as e:
+        #             logger.error(
+        #                 f"Failed to find the affiliated channels container: {e}"
+        #             )
+        #
+        # except Exception as e:
+        #     logger.error(f"Failed to fetch affiliated channels: {e}")
 
         info = ChannelInfo(
             channel_code=channel_name,
@@ -174,17 +272,22 @@ def get_channel_info(driver, channel_name, constants, logger, channel_db):
             is_verified=is_verified,
             about=about,
             links=links,
-            display_picture_url="",
-            banner_url="",
-            affiliated_channels=[],
+            display_picture_url=dp_url,
+            banner_url=banner_url,
+            affiliated_channels=affiliated_channels,
             subscribers=subscribers,
-            videos_count=videos_count,
+            content_count=videos_count,
+            num_videos=0,
+            num_shorts=0,
             views_count=views_count,
             joined_date=joined_date,
             location=location,
         )
 
         stored, channel_id = channel_db.update(channel_name, info.dict())
+
+        save_img_from_url(constants.BANNER_PATH.format(channel_id), banner_url, logger)
+        save_img_from_url(constants.DP_PATH.format(channel_id), dp_url, logger)
 
     except TimeoutError as e:
         logger.error(f"Timeout error: {e}")

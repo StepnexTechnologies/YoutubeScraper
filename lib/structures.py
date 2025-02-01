@@ -61,14 +61,16 @@ class ChannelInfo(BaseModel):
     is_verified: Optional[bool]
     about: Optional[str]
     links: List[Link]
-    display_picture_url: Optional[str]  # TODO: Not Implemented yet
-    banner_url: Optional[str]  # TODO: Not Implemented yet
-    affiliated_channels: Optional[List[AffiliatedChannel]]  # TODO: Not Implemented yet
+    display_picture_url: Optional[str]
+    banner_url: Optional[str]
+    affiliated_channels: Optional[List[AffiliatedChannel]]  # TODO: Issue while scraping
     subscribers: Optional[int]
-    videos_count: Optional[int]
+    content_count: Optional[int]
+    num_videos: Optional[int]
+    num_shorts: Optional[int]
     views_count: Optional[int]
     joined_date: Optional[str]
-    location: Optional[str]  # TODO:Not Implemented yet
+    location: Optional[str]
 
 
 class Comment(BaseModel):

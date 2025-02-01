@@ -21,6 +21,7 @@ services:
       - my_network
     ports:
       - "5001:5001"
+      - "5002:5002"
     environment:
       - PYTHONUNBUFFERED=1
     depends_on:
@@ -42,15 +43,6 @@ services:
       - my_network
     ports:
       - "3000:3000"
-
-#  selenium-hub:
-#    image: selenium/hub:latest
-#    networks:
-#      - my_network
-#    ports:
-#      - "4442:4442"
-#      - "4443:4443"
-#      - "4444:4444"
 
 networks:
   my_network:
