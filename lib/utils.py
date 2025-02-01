@@ -184,12 +184,14 @@ def video_duration_parser(str_duration: str) -> int:
 
 
 def extract_hashtags(text: str) -> list[str]:
+    # can extract these from titles, descriptions, secondary descriptions, about sections, etc
     if text:
         return re.findall(r"#\w+", text)
     return []
 
 
 def extract_channel_codes(text: str) -> list[str]:
+    # can extract these from titles, descriptions, secondary descriptions, about sections, etc
     if text:
         return re.findall(r"@\w+", text)
     return []
